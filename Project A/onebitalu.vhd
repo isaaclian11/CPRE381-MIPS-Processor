@@ -18,12 +18,10 @@ entity onebitalu is
        i_B  : in std_logic;
        i_Cin  : in std_logic; -- carry in
 	   i_less  : in std_logic; -- used for slt operation
-	   i_sel  : in std_logic_vector(2 downto 0); -- operation select
-	   --i_unsigned  : in std_logic; -- determines if math is signed/unsigned
+	   i_sel  : in std_logic_vector(3 downto 0); -- operation select
 	   o_set  : out std_logic; -- used for slt operation
 	   o_Cout  : out std_logic; -- carry out
        o_result  : out std_logic);
-	   --o_overflow : out std_logic);
 
 end onebitalu;
 
@@ -51,26 +49,24 @@ architecture dataflow of onebitalu is
   s_Xor <= i_A xor i_B;
   -- we want to invert B for subtraction, slt(since it uses subtraction), xor, and nand
   with i_sel select s_FinalB <=
-    s_NotB when "001",
-    s_NotB when "010",
-	s_NotB when "101",
-    s_NotB when "110",
+    s_NotB when "0001",
+    s_NotB when "0010",
+	s_NotB when "0101",
+    s_NotB when "0110",
     i_B when others;
   s_AddSub <= i_A xor s_FinalB xor i_Cin;
   o_set <= s_AddSub;
   s_Cout <= (i_A and s_FinalB) or ((i_A xor s_FinalB) and i_Cin);
   o_Cout <= s_Cout;
-  -- overflow happens if sum of 2 positive numbers is negative or sum of two negative numbers is positive
-  --o_overflow <= (((i_A and s_FinalB and (not s_AddSub)) or ((not i_A) and (not s_FinalB) and s_AddSub)));
   with i_sel select o_result <=
-    s_AddSub when "000", -- add
-    s_AddSub when "001", -- sub
-    i_less when "010", -- slt
-    s_And when "011", -- and
-    s_Or when "100", -- or
-    s_Xor when "101", -- xor
-    s_Nand when "110", -- nand
-    s_Nor when "111", -- nor
+    s_AddSub when "0000", -- add
+    s_AddSub when "0001", -- sub
+    i_less when "0010", -- slt
+    s_And when "0011", -- and
+    s_Or when "0100", -- or
+    s_Xor when "0101", -- xor
+    s_Nand when "0110", -- nand
+    s_Nor when "0111", -- nor
     '0' when others;
 	
 end dataflow;
