@@ -106,10 +106,19 @@ architecture structure of MIPS_Processor is
 		ALUSrc		:	out std_logic;
 		regWrite	:	out std_logic;
 		i_unsigned	:	out std_logic;
-		pc_plus		:	out std_logic;
+		jal		:	out std_logic;
 		lui			:	out std_logic;
 		shamt		:	out std_logic
 	);
+	end component;
+	
+  component reg
+	generic (N : integer);                  -- Size of the register
+	port (D      : in  std_logic_vector(N-1 downto 0);  -- Data input
+        Q      : out std_logic_vector(N-1 downto 0);  -- Data output
+        WE     : in  std_logic;                  -- Write enableenable
+        reset  : in  std_logic;                  -- The clock signal
+        clock  : in  std_logic);                 -- The reset signal
 	end component;
 	
   component ALU32
@@ -129,9 +138,8 @@ architecture structure of MIPS_Processor is
   signal s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_pcPlus, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
   
   -- Other signals
-  signal s_mux2, s_mux3 : std_logic_vector(N-1 downto 0); --Mux outputs
-  signal s_Cout, s_overflow, s_zero : std_logic;
-  signal s_oExtend, s_oRs, i_mux3 : std_logic_vector(N-1 downto 0);
+  signal s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7 : std_logic_vector(N-1 downto 0);
+  signal s_Cout, s_overflow, s_zero, s_branch : std_logic;
   signal s_ALUControl : std_logic_vector(3 downto 0);
   signal s_mux0, s_shiftAmount : std_logic_vector(4 downto 0);
   
@@ -168,7 +176,7 @@ begin
 	port map(
 		i_A => s_mux0,
 		i_B => "11111",
-		i_S => s_pcPlus,
+		i_S => s_jal,
 		o_F => s_RegWrAddr
 	);
 	
@@ -208,7 +216,7 @@ begin
 		ALUSrc		=> s_ALUSrc,
 		regWrite	=> s_RegWr,
 		i_unsigned	=> s_iUnsigned,
-		pc_plus		=> s_pcPlus,
+		jal		=> s_jal,
 		lui			=> s_lui,
 		shamt		=> s_shamt
 		);
@@ -260,15 +268,83 @@ begin
 		i_A => s_DMemAddr,
 		i_B => s_DMemOut,
 		i_S => s_memToReg,
+		o_F => s_mux4
+	);
+	
+  mux5: mux21_n_st
+	generic map (N => N)
+	port map(
+		i_A => s_mux4,
+		i_B => s_pcPlusFour,
+		i_S => s_jal,
+		o_F => s_mux5
+	);
+
+  mux6: mux21_n_st
+	generic map (N => N)
+	port map(
+		i_A => s_mux4,
+		i_B => s_iMux6,
+		i_S => s_lui,
 		o_F => s_RegWrData
 	);
 	
+	
+  mux7: mux21_n_st
+	generic map (N => N)
+	port map(
+		i_A => s_pcPlusFour,
+		i_B => s_shiftedSignExtend,
+		i_S => s_branch,
+		o_F => s_mux7
+	);
+	
+  mux8: mux21_n_st
+	generic map (N => N)
+	port map(
+		i_A => s_mux7,
+		i_B => s_iMux8,
+		i_S => s_jump,
+		o_F => s_iPC
+	);
+	
+  pc: reg
+	generic map(N => N)             
+	port map(D => s_iPC,
+        Q => s_NextInstAddr,
+        WE => '1',
+        reset => iRST,
+        clock  => iCLK);              
+	
+  ExitReg: reg
+	generic map(N => N)
+	port map(D=>s_RegWrData,
+			WE=>'1',
+			clock=>iCLK,
+			reset=>'0',
+			Q=>v0);
+	
   --Since the output of mux3 is 32 bits, we need this condition to handle the shift amount
   s_shiftAmount <= "11111" when s_mux3 > x"001F" else s_mux3(4 downto 0);
+  
   oALUOut <= s_DMemAddr;
-
+  
+  --PC+4
+  s_pcPlusFour <= std_logic_vector(to_unsigned(to_integer(unsigned( s_NextInstAddr )) + 4, 32));
+  
+  --Branch
+  s_branch <= (s_zero and s_beq) or ((not s_zero) and s_bne);
+  
+  --Sign extend shifted left by 2
+  s_shiftedSignExtend <= s_oExtend(29 downto 0) & "00";
+	
+  --PC+4[31..28] & s_Inst(26 downto 0) shifted left by 2
+  s_iMux8 <= s_pcPlusFour(31 downto 28) & s_Inst(25 downto 0) & "00";
+  
+  --i_B for mux6
+  s_iMux6 <= "0000000000000000" & s_Inst(15 downto 0);
+  
   s_Halt <='1' when (s_Inst(31 downto 26) = "000000") and (s_Inst(5 downto 0) = "001100") and (v0 = "00000000000000000000000000001010") else '0';
 
-  -- TODO: Implement the rest of your processor below this comment! 
 
 end structure;

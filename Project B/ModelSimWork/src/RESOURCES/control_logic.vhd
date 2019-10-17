@@ -16,7 +16,7 @@ port(
 	ALUSrc		:	out std_logic;
 	regWrite	:	out std_logic;
 	i_unsigned	:	out std_logic;
-	pc_plus		:	out std_logic;
+	jal		:	out std_logic;
 	lui			:	out std_logic;
 	shamt		:	out std_logic
 );
@@ -33,12 +33,12 @@ begin
 				ALUSrc <= '0';
 				beq <= '0'; 
 				bne <= '0';
-				pc_plus <= '0';
+				jal <= '0';
 				jump <= '0';
 				memToReg <= '0';
 				memWrite <= '0';
 				regWrite <= '1';
-				regDst <= '0';
+				regDst <= '1';
 				i_unsigned <= '0';
 				jr <= '0';
 				lui <= '0';
@@ -102,6 +102,7 @@ begin
 			when "001000" =>
 				ALUControl <= "0000";
 				jr	<= '1';
+				regWrite <= '0';
 			when others =>
 		end case;
 		
@@ -110,7 +111,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -127,7 +128,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -144,7 +145,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -161,7 +162,7 @@ begin
 		ALUSrc <= '0';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -178,7 +179,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '1';
 		memWrite <= '0';
@@ -195,7 +196,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -212,7 +213,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -229,7 +230,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -246,7 +247,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -263,7 +264,7 @@ begin
 		ALUSrc <= '1';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '1';
@@ -280,7 +281,7 @@ begin
 		ALUSrc <= '0';
 		beq <= '1'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -297,7 +298,7 @@ begin
 		ALUSrc <= '0';
 		beq <= '0'; 
 		bne <= '1';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '0';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -314,7 +315,7 @@ begin
 		ALUSrc <= '0';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '0';
+		jal <= '0';
 		jump <= '1';
 		memToReg <= '0';
 		memWrite <= '0';
@@ -330,7 +331,7 @@ begin
 		ALUSrc <= '0';
 		beq <= '0'; 
 		bne <= '0';
-		pc_plus <= '1';
+		jal <= '1';
 		jump <= '1';
 		memToReg <= '0';
 		memWrite <= '0';
