@@ -135,10 +135,10 @@ architecture structure of MIPS_Processor is
 	end component;
 	
   -- Control flow signals 
-  signal s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_pcPlus, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
+  signal s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
   
   -- Other signals
-  signal s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7 : std_logic_vector(N-1 downto 0);
+  signal s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7,s_mux8, s_branchAddr : std_logic_vector(N-1 downto 0);
   signal s_Cout, s_overflow, s_zero, s_branch : std_logic;
   signal s_ALUControl : std_logic_vector(3 downto 0);
   signal s_mux0, s_shiftAmount : std_logic_vector(4 downto 0);
@@ -208,7 +208,7 @@ begin
 	generic map(N => 16)
 	port map (
 		i_A => s_Inst(15 downto 0),
-		i_B => '0',
+		i_B => '1',
 		o_Z => s_oExtend
 	);
 	
@@ -284,7 +284,7 @@ begin
   mux6: mux21_n_st
 	generic map (N => N)
 	port map(
-		i_A => s_mux4,
+		i_A => s_mux5,
 		i_B => s_iMux6,
 		i_S => s_lui,
 		o_F => s_RegWrData
@@ -295,7 +295,7 @@ begin
 	generic map (N => N)
 	port map(
 		i_A => s_pcPlusFour,
-		i_B => s_shiftedSignExtend,
+		i_B => s_branchAddr,
 		i_S => s_branch,
 		o_F => s_mux7
 	);
@@ -306,6 +306,15 @@ begin
 		i_A => s_mux7,
 		i_B => s_iMux8,
 		i_S => s_jump,
+		o_F => s_mux8
+	);
+	
+  mux9: mux21_n_st
+	generic map (N => N)
+	port map(
+		i_A => s_mux8,
+		i_B => s_oRs,
+		i_S => s_jr,
 		o_F => s_iPC
 	);
 	
@@ -338,12 +347,15 @@ begin
   
   --Sign extend shifted left by 2
   s_shiftedSignExtend <= s_oExtend(29 downto 0) & "00";
+  
+  --Address of next instr when branching
+   s_branchAddr <= s_pcPlusFour + s_shiftedSignExtend;
 	
   --PC+4[31..28] & s_Inst(26 downto 0) shifted left by 2
   s_iMux8 <= s_pcPlusFour(31 downto 28) & s_Inst(25 downto 0) & "00";
   
   --i_B for mux6
-  s_iMux6 <= "0000000000000000" & s_Inst(15 downto 0);
+  s_iMux6 <= s_Inst(15 downto 0) & "0000000000000000";
 
 
 end structure;

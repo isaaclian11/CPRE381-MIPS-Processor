@@ -184,7 +184,7 @@ begin
 		memToReg <= '1';
 		memWrite <= '0';
 		regWrite <= '1';
-		regDst <= '1';
+		regDst <= '0';
 		i_unsigned <= '0';
 		jr <= '0';
 		lui <= '0';
