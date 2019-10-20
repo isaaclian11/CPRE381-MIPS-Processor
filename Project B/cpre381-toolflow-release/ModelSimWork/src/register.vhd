@@ -18,7 +18,7 @@ begin
   begin
     if (rising_edge(clock)) then
       if (reset = '1') then
-	Q <= std_logic_vector(to_unsigned(0, Q'length));
+		Q <= std_logic_vector(to_unsigned(4194304, Q'length));
       elsif (WE = '1') then
         Q <= D;
       end if;
