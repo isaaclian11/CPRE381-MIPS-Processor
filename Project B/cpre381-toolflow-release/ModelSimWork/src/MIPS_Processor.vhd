@@ -244,8 +244,8 @@ begin
   mux3: mux21_n_st
 	generic map (N => N)
 	port map(
-		i_A => i_mux3,
-		i_B => s_DMemData,
+		i_A => s_oRs,
+		i_B => i_mux3,
 		i_S => s_shamt,
 		o_F => s_mux3
 	);
@@ -335,7 +335,7 @@ begin
 			Q=>v0);
 	
   --Since the output of mux3 is 32 bits, we need this condition to handle the shift amount
-  s_shiftAmount <= "11111" when s_mux3 > x"001F" else s_mux3(4 downto 0);
+  s_shiftAmount <= s_mux3(4 downto 0);
   
   oALUOut <= s_DMemAddr;
   

@@ -114,7 +114,7 @@ architecture mixed of ALU32 is
   
   shift: barrelShifter
   port map(
-		input => i_A,
+		input => i_B,
 		arith => s_shiftSelect(0),
 		rightShift => s_shiftSelect(1),
 		output => s_shifterResult,
