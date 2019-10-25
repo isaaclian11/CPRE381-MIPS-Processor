@@ -19,7 +19,7 @@ xori $8, $5, 4			#xori $5 and 4, place it in $8
 or $8, $5, $8			#or $5 and $8, place it in $8
 ori $8, $5, 4			#ori $5 and 4, place it in $8
 add $9, $0, $8			# place value of $8 in $9
-beq $9, $8, branch1
+beq $9, $8, branch1		# if $9 and $8 are equal (which they are due to the line above) branch to branch1
 
 preslt:
 
@@ -33,20 +33,20 @@ srl $8, $4, 1			# shift right logical $4 by 1
 srav $8, $4, $2			# shift right arithmetic $4 by $2
 srlv $8, $4, $2			# shift right logical $4 by $2
 
-jal link
-j prehalt
+jal link				# jump and link to link
+j prehalt				# unconditional jump to prehalt
 halt:
 
 addi  $2,  $0,  10              # Place "10" in $v0 to signal an "exit" or "halt"
 syscall                         # Actually cause the halt
 
 branch1:
-bne $9, $1, preslt
+bne $9, $1, preslt		# if $9 and $1 are not equal, branch to preslt
 
 prehalt:
-j halt
+j halt					# unconditional jump back to halt
 
-link:
-add $9, $9, $9
-add $10, $9, $9
-jr $ra
+link:					# some filler instructions to test jal and jr
+add $9, $8, $8			# $9 = $8 + $8
+add $10, $9, $9			# $10 = $9 + $9
+jr $ra					# return to instruction after our jal
