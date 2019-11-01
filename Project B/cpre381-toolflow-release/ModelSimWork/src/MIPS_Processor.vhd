@@ -139,7 +139,7 @@ architecture structure of MIPS_Processor is
   
   -- Other signals
   signal s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7,s_mux8, s_branchAddr : std_logic_vector(N-1 downto 0);
-  signal s_Cout, s_overflow, s_zero, s_branch : std_logic;
+  signal s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
   signal s_ALUControl : std_logic_vector(3 downto 0);
   signal s_mux0, s_shiftAmount : std_logic_vector(4 downto 0);
   
@@ -208,7 +208,7 @@ begin
 	generic map(N => 16)
 	port map (
 		i_A => s_Inst(15 downto 0),
-		i_B => '1',
+		i_B => s_addi,
 		o_Z => s_oExtend
 	);
 	
@@ -338,6 +338,10 @@ begin
   s_shiftAmount <= s_mux3(4 downto 0);
   
   oALUOut <= s_DMemAddr;
+  
+  -- for addi, ori, xori instructions, extender needs to sign extend
+  s_addi <='0' when (s_Inst(31 downto 26) = "001100") or (s_Inst(31 downto 26) = "001101") or (s_Inst(31 downto 26) = "001110") else '1';
+  
   
   --PC+4
   s_pcPlusFour <= std_logic_vector(to_unsigned(to_integer(unsigned( s_NextInstAddr )) + 4, 32));

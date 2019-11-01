@@ -62,7 +62,7 @@ architecture mixed of ALU32 is
   signal s_Cout : std_logic; -- cout for msb
   signal s_overflow : std_logic; -- overflow for msb
   signal s_ignore : std_logic_vector(31 downto 0):= x"00000000"; -- signal to store o_set for all bits but msb
-  signal s_0bitless : std_logic;
+  signal s_0bitless, s_msbxor, s_ofxorset, s_tmp1 : std_logic;
   signal s_shiftSelect : std_logic_vector(1 downto 0); -- signal to hold sra, sla, srl, sll
   begin
   
@@ -136,8 +136,12 @@ architecture mixed of ALU32 is
 	s_shifterResult when "1011",
 	s_result when others;
 
+  s_msbxor <= i_B(31) xor i_A(31);
+  s_tmp1 <= s_ofxorset when s_msbxor = '0' else i_B(31);
+
+  s_ofxorset <= s_overflow xor s_Set;
    
-  s_0bitless <= s_overflow xor s_Set;
+  s_0bitless <= s_ofxorset when i_unsigned = '0' else s_tmp1;
   
   o_Cout <= s_Cout;
   o_overflow <= s_overflow when i_unsigned = '0' else s_Cout;
