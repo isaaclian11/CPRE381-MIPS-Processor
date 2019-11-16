@@ -98,6 +98,27 @@ ARCHITECTURE behavior OF tb_pipeline_registers IS
       out_writereg : OUT std_logic_vector(4 DOWNTO 0));
   END COMPONENT;
 
+  COMPONENT control_logic IS
+    PORT (
+      opcode : IN std_logic_vector(5 DOWNTO 0);
+      func : IN std_logic_vector(5 DOWNTO 0);
+      regDst : OUT std_logic;
+      jump : OUT std_logic;
+      jr : OUT std_logic;
+      beq : OUT std_logic;
+      bne : OUT std_logic;
+      memToReg : OUT std_logic;
+      ALUControl : OUT std_logic_vector(3 DOWNTO 0);
+      memWrite : OUT std_logic;
+      ALUSrc : OUT std_logic;
+      regWrite : OUT std_logic;
+      i_unsigned : OUT std_logic;
+      jal : OUT std_logic;
+      lui : OUT std_logic;
+      shamt : OUT std_logic
+    );
+  END COMPONENT;
+
   --signals
   SIGNAL s_CLK, s_flush, s_stall, s_instr,
   : std_logic := '0';
@@ -106,11 +127,31 @@ ARCHITECTURE behavior OF tb_pipeline_registers IS
   --testbench
 
 BEGIN
+
+  ctl : control_logic
+  PORT MAP(
+    opcode => instr_ifid(31 DOWNTO 26),
+    func => instr_ifid(5 DOWNTO 0),
+    regDst => ctl_RegDst,
+    jump => ctl_jump,
+    jr => ctl_jr,
+    beq => ctl_beq,
+    bne => ctl_bne,
+    memToReg => ctl_MemtoReg,
+    ALUControl => ctl_ALUOp,
+    memWrite => ctl_MemWrite,
+    ALUSrc => ctl_ALUSrc,
+    regWrite => ctl_RegWrite,
+    i_unsigned => '0', --emulated unsigned input
+    jal => ctl_jal,
+    lui => ctl_lui,
+    shamt => ctl_shamt);
+
   IFID : IFIDreg
   PORT MAP(
     flush => s_flush,
     stall => s_stall,
-    instr => s_instr
+    instr => s_instr,
     pcp4 => '4',
     clock => s_CLK,
     out_pcp4 => pcp4_ifid,
@@ -191,9 +232,6 @@ BEGIN
   BEGIN
     s_instr <= x"00000000";
     s_stall <= '0';
-    s_flush <= '1';
-    WAIT FOR cCLK_PER;
-    s_flush <= '0';
     WAIT FOR cCLK_PER;
     s_instr <= x"00000001";
     WAIT FOR cCLK_PER;
@@ -205,7 +243,20 @@ BEGIN
     WAIT FOR cCLK_PER;
     s_instr <= x"00000100";
     WAIT FOR cCLK_PER;
+    s_flush <= '1';
+    WAIT FOR cCLK_PER;
+    s_flush <= '0';
     s_instr <= x"00000101";
+    s_flush <= '1';
+    WAIT FOR cCLK_PER;
+    s_flush <= '1';
+    WAIT FOR cCLK_PER;
+    s_flush <= '1';
+    WAIT FOR cCLK_PER;
+    s_flush <= '1';
+    WAIT FOR cCLK_PER;
+    s_flush <= '1';
+    WAIT FOR cCLK_PER;
     WAIT;
   END PROCESS;
 
