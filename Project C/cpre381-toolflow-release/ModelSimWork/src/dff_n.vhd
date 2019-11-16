@@ -43,3 +43,5 @@ BEGIN
       i_D => i_D(i),
       o_Q => o_Q(i));
   END GENERATE;
+
+END structural;

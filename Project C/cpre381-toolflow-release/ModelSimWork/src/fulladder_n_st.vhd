@@ -50,3 +50,5 @@ BEGIN
   END GENERATE;
 
   o_Cout <= s_A(N);
+  
+END structure;

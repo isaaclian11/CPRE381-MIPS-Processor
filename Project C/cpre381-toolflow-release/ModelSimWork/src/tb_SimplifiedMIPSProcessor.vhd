@@ -95,7 +95,7 @@ BEGIN
 
     -- Setup hierarchical/external names
     -- Reference for external names: https://www.doulos.com/knowhow/vhdl_designers_guide/vhdl_2008/vhdl_200x_ease/#hierarchicalnames
-    ALIAS memWr IS << SIGNAL MySimplifiedMIPSProcess.s_DMemWr : std_logic >> ;
+    ALIAS memWr IS <<SIGNAL MySimplifiedMIPSProcess.s_DMemWr : std_logic>> ;
     ALIAS memAddr IS << SIGNAL MySimplifiedMIPSProcess.s_DMemAddr : std_logic_vector(N - 1 DOWNTO 0) >> ;
     ALIAS memData IS << SIGNAL MySimplifiedMIPSProcess.s_DMemData : std_logic_vector(N - 1 DOWNTO 0) >> ;
 

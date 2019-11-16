@@ -37,20 +37,22 @@ ARCHITECTURE behavior OF IDEXreg IS
 BEGIN
   reg : PROCESS (clock)
   BEGIN
-    IF (rising_edge(clock) AND NOT stall) THEN
-      out_RegWrite <= ctl_RegWrite;
-      out_MemtoReg <= ctl_MemtoReg;
-      out_MemWrite <= ctl_RegWrite;
-      out_ALUOp <= ctl_ALUOp;
-      out_ALUSrc <= ctl_ALUSrc;
-      out_RegDst <= ctl_RegDst;
-      out_readdata1 <= readdata1;
-      out_readdata2 <= readdata2;
-      out_rt <= rt;
-      out_rd <= rd;
-      out_sign_ext <= sign_ext;
-      out_pcp4 <= pcp4;
-    END IF;
+    IF (rising_edge(clock)) THEN
+	  IF (stall = '0') THEN
+        out_RegWrite <= ctl_RegWrite;
+        out_MemtoReg <= ctl_MemtoReg;
+        out_MemWrite <= ctl_RegWrite;
+        out_ALUOp <= ctl_ALUOp;
+        out_ALUSrc <= ctl_ALUSrc;
+        out_RegDst <= ctl_RegDst;
+        out_readdata1 <= readdata1;
+        out_readdata2 <= readdata2;
+        out_rt <= rt;
+        out_rd <= rd;
+        out_sign_ext <= sign_ext;
+        out_pcp4 <= pcp4;
+      END IF;
+	END IF;
   END PROCESS;
 
 END behavior;

@@ -23,13 +23,15 @@ ARCHITECTURE behavior OF MEMWBreg IS
 BEGIN
   reg : PROCESS (clock)
   BEGIN
-    IF (rising_edge(clock) AND NOT stall) THEN
-      out_RegWrite <= ctl_RegWrite;
-      out_MemtoReg <= ctl_MemtoReg;
-      out_aluresult <= alu_result;
-      out_memreaddata <= memreaddata;
-      out_writereg <= writereg;
-    END IF;
+    IF (rising_edge(clock)) THEN
+	  IF (stall = '0') THEN
+        out_RegWrite <= ctl_RegWrite;
+        out_MemtoReg <= ctl_MemtoReg;
+        out_aluresult <= alu_result;
+        out_memreaddata <= memreaddata;
+        out_writereg <= writereg;
+      END IF;
+	END IF;
   END PROCESS;
 
 END behavior;

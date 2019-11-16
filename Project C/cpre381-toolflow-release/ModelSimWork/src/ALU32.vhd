@@ -151,3 +151,5 @@ BEGIN
 	o_Cout <= s_Cout;
 	o_overflow <= s_overflow WHEN i_unsigned = '0' ELSE
 		s_Cout;
+
+END mixed;

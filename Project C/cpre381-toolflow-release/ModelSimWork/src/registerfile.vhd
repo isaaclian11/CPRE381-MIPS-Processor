@@ -85,3 +85,5 @@ BEGIN
     i_MuxData => s_RegData,
     i_MuxSel => i_rt,
     o_MuxOut => o_rd2);
+
+END structural;

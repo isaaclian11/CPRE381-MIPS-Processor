@@ -18,12 +18,17 @@ ARCHITECTURE behavior OF IFIDreg IS
 BEGIN
   reg : PROCESS (clock)
   BEGIN
-    IF (rising_edge(clock) AND NOT stall) THEN
-      WITH flush SELECT out_instr <=
-        instr WHEN 0,
-        x"00000000" WHEN OTHERS;
-      out_pcp4 <= pcp4;
-    END IF;
+    IF (rising_edge(clock)) THEN
+	  IF (stall = '0') THEN
+	    IF (flush = '0') THEN
+		  out_instr <= instr;
+		END IF;
+		IF (flush = '1') THEN
+		  out_instr <= x"00000000";
+		END IF;
+        out_pcp4 <= pcp4;
+      END IF;
+	END IF;
   END PROCESS;
 
 END behavior;

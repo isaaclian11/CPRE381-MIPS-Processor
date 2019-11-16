@@ -34,3 +34,4 @@ BEGIN
       i_A => i_A(i),
       o_F => o_F(i));
   END GENERATE;
+END structure;
