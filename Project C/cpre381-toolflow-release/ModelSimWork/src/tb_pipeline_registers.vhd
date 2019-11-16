@@ -119,19 +119,19 @@ BEGIN
   IDEX : IDEXreg
   PORT MAP(
     stall => s_stall,
-    readdata1 => x"11111111",
-    readdata2 => x"22222222",
+    readdata1 => x"11111111", --emulated read data 1
+    readdata2 => x"22222222", --emulated read data 2
     pcp4 => pcp4_ifid,
-    sign_ext => x"aaaaaaaa",
+    sign_ext => x"aaaaaaaa", --emulated sign extension
     rt => instr_ifid(20 DOWNTO 16),
     rd => instr_ifid(15 DOWNTO 11),
     clock => s_CLK,
-    ctl_RegWrite => dec_reg_write,
-    ctl_MemtoReg => dec_memto_reg,
-    ctl_MemWrite => dec_mem_write,
-    ctl_ALUOp => dec_alu_op,
-    ctl_ALUSrc => dec_alu_src,
-    ctl_RegDst => dec_reg_dst,
+    ctl_RegWrite => dec_RegWrite,
+    ctl_MemtoReg => dec_MemtoReg,
+    ctl_MemWrite => dec_MemWrite,
+    ctl_ALUOp => dec_ALUOp,
+    ctl_ALUSrc => dec_ALUSrc,
+    ctl_RegDst => dec_RegDst,
     out_RegWrite => RegWrite_idex,
     out_MemtoReg => MemToReg_idex,
     out_MemWrite => MemWrite_idex,
@@ -146,7 +146,21 @@ BEGIN
     out_pcp4 => pcp4_idex);
 
   EXMEM : EXMEMreg
-  PORT MAP();
+  PORT MAP(
+    stall => s_stall,
+    clock => s_CLK,
+    ctl_RegWrite => RegWrite_idex,
+    ctl_MemtoReg => MemToReg_idex,
+    ctl_MemWrite => MemWrite_idex,
+    alu_result => x"33333333", --emulated alu result
+    readdata2 => readdata2_idex,
+    writereg => "10101", --emulated output of RegDst mux
+    out_RegWrite => RegWrite_exmem,
+    out_MemtoReg => MemToReg_exmem,
+    out_MemWrite => MemWrite_exmem,
+    out_aluresult => aluresult_exmem,
+    out_writedata => writedata_exmem,
+    out_writereg => writereg_exmem);
 
   MEMWB : MEMWBreg
   PORT MAP();
