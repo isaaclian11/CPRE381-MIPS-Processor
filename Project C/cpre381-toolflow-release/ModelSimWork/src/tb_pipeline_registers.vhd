@@ -120,10 +120,10 @@ ARCHITECTURE behavior OF tb_pipeline_registers IS
   END COMPONENT;
 
   --signals
-  SIGNAL s_CLK, s_flush, s_stall, s_instr,
-  : std_logic := '0';
-
-  SIGNAL s_instr : std_logic_vector(31 DOWNTO 0) := x"00000000";
+  SIGNAL s_CLK, s_flush, s_stall, ctl_RegDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_MemtoReg, ctl_MemWrite, ctl_ALUSrc, ctl_RegWrite, ctl_jal, ctl_lui, ctl_shamt, dec_ALUSrc, dec_MemWrite, dec_MemtoReg, dec_RegDst, dec_RegWrite, RegDst_idex, RegWrite_exmem, RegWrite_idex, RegWrite_memwb, MemToReg_exmem, MemToReg_idex, MemToReg_memwb, MemWrite_exmem, MemWrite_idex, ctl_unsigned, ALUSrc_idex: std_logic := '0';
+  SIGNAL ctl_ALUOp, dec_ALUOp, ALUOp_idex : std_logic_vector(3 DOWNTO 0) := "0000";
+  SIGNAL rt_idex, rd_idex, writereg_exmem, writereg_memwb : std_logic_vector(4 DOWNTO 0) := "00000";
+  SIGNAL s_instr, instr_ifid, pcp4_idex, pcp4_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, aluresult_memwb, sign_ext_idex, writedata_exmem, memreaddata_memwb : std_logic_vector(31 DOWNTO 0) := x"00000000";
   --testbench
 
 BEGIN
@@ -142,7 +142,7 @@ BEGIN
     memWrite => ctl_MemWrite,
     ALUSrc => ctl_ALUSrc,
     regWrite => ctl_RegWrite,
-    i_unsigned => '0', --emulated unsigned input
+    i_unsigned => ctl_unsigned, --emulated unsigned input
     jal => ctl_jal,
     lui => ctl_lui,
     shamt => ctl_shamt);
@@ -152,7 +152,7 @@ BEGIN
     flush => s_flush,
     stall => s_stall,
     instr => s_instr,
-    pcp4 => '4',
+    pcp4 => x"00000004",
     clock => s_CLK,
     out_pcp4 => pcp4_ifid,
     out_instr => instr_ifid);
@@ -209,7 +209,6 @@ BEGIN
     clock => s_CLK,
     ctl_RegWrite => RegWrite_idex,
     ctl_MemtoReg => MemToReg_idex,
-    ctl_MemWrite => MemWrite_idex,
     alu_result => aluresult_exmem,
     memreaddata => x"44444444", --emulated memory read data
     writereg => writereg_exmem,
