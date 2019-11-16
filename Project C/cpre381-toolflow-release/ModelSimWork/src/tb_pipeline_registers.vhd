@@ -163,7 +163,20 @@ BEGIN
     out_writereg => writereg_exmem);
 
   MEMWB : MEMWBreg
-  PORT MAP();
+  PORT MAP(
+    stall => s_stall,
+    clock => s_CLK,
+    ctl_RegWrite => RegWrite_idex,
+    ctl_MemtoReg => MemToReg_idex,
+    ctl_MemWrite => MemWrite_idex,
+    alu_result => aluresult_exmem,
+    memreaddata => x"44444444", --emulated memory read data
+    writereg => writereg_exmem,
+    out_RegWrite => RegWrite_memwb,
+    out_MemtoReg => MemToReg_memwb,
+    out_memreaddata => memreaddata_memwb,
+    out_aluresult => aluresult_memwb,
+    out_writereg => writereg_memwb);
 
   P_CLK : PROCESS
   BEGIN
