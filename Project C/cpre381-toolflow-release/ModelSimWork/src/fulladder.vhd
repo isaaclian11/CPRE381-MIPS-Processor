@@ -2,69 +2,76 @@
 -- Aidan Sherburne
 -- Iowa State University
 -------------------------------------------------------------------------
-
-
 -- fulladder.vhd
 -------------------------------------------------------------------------
 -- DESCRIPTION: Full Adder for CPRE 381 Lab 2 P3b
 -------------------------------------------------------------------------
 
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-entity fulladder is
-  port(i_A  : in std_logic;
-       i_B  : in std_logic;
-       i_Cin  : in std_logic; -- carry in
-	   o_Cout  : out std_logic; -- carry out
-       o_Sum  : out std_logic); -- sum
+ENTITY fulladder IS
+  PORT (
+    i_A : IN std_logic;
+    i_B : IN std_logic;
+    i_Cin : IN std_logic; -- carry in
+    o_Cout : OUT std_logic; -- carry out
+    o_Sum : OUT std_logic); -- sum
 
-end fulladder;
+END fulladder;
 
-architecture structure of fulladder is
+ARCHITECTURE structure OF fulladder IS
 
-component xorg2
-  port(i_A  : in std_logic;
-       i_B  : in std_logic;
-       o_F  : out std_logic);
-end component;
+  COMPONENT xorg2
+    PORT (
+      i_A : IN std_logic;
+      i_B : IN std_logic;
+      o_F : OUT std_logic);
+  END COMPONENT;
 
-component andg2
-  port(i_A          : in std_logic;
-       i_B          : in std_logic;
-       o_F          : out std_logic);
-end component;
+  COMPONENT andg2
+    PORT (
+      i_A : IN std_logic;
+      i_B : IN std_logic;
+      o_F : OUT std_logic);
+  END COMPONENT;
 
-component org2
-  port(i_A          : in std_logic;
-       i_B          : in std_logic;
-       o_F          : out std_logic);
-end component;
+  COMPONENT org2
+    PORT (
+      i_A : IN std_logic;
+      i_B : IN std_logic;
+      o_F : OUT std_logic);
+  END COMPONENT;
 
-signal s_X : std_logic; -- xor
-signal s_y : std_logic; -- and1
-signal s_Z : std_logic; -- and2
+  SIGNAL s_X : std_logic; -- xor
+  SIGNAL s_y : std_logic; -- and1
+  SIGNAL s_Z : std_logic; -- and2
 
-begin
+BEGIN
 
-or1  : org2 port map (i_A => s_Y,
-                      i_B => s_Z,
-					  o_F => o_Cout);
+  or1 : org2 PORT MAP(
+    i_A => s_Y,
+    i_B => s_Z,
+    o_F => o_Cout);
 
-xor1 : xorg2 port map (i_A => i_A,
-                       i_B => i_B,
-					   o_F => s_X);
+  xor1 : xorg2 PORT MAP(
+    i_A => i_A,
+    i_B => i_B,
+    o_F => s_X);
 
-xor2 : xorg2 port map (i_A => s_X,
-                       i_B => i_Cin,
-					   o_F => o_Sum);
-					   
-and1 : andg2 port map (i_A => i_A,
-                       i_B => i_B,
-					   o_F => s_Y);
+  xor2 : xorg2 PORT MAP(
+    i_A => s_X,
+    i_B => i_Cin,
+    o_F => o_Sum);
 
-and2 : andg2 port map (i_A => s_X,
-                       i_B => i_Cin,
-					   o_F => s_Z);
-					   
-end structure;
+  and1 : andg2 PORT MAP(
+    i_A => i_A,
+    i_B => i_B,
+    o_F => s_Y);
+
+  and2 : andg2 PORT MAP(
+    i_A => s_X,
+    i_B => i_Cin,
+    o_F => s_Z);
+
+END structure;

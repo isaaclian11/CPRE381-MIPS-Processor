@@ -1,28 +1,27 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
+ENTITY reg IS
+  GENERIC (N : INTEGER := 32); -- Size of the register
+  PORT (
+    D : IN std_logic_vector(N - 1 DOWNTO 0); -- Data input
+    Q : OUT std_logic_vector(N - 1 DOWNTO 0); -- Data output
+    WE : IN std_logic; -- Write enableenable
+    reset : IN std_logic; -- The clock signal
+    clock : IN std_logic); -- The reset signal
+END reg;
 
-
-entity reg is
-  generic (N : integer := 32);                  -- Size of the register
-  port (D      : in  std_logic_vector(N-1 downto 0);  -- Data input
-        Q      : out std_logic_vector(N-1 downto 0);  -- Data output
-        WE     : in  std_logic;                  -- Write enableenable
-        reset  : in  std_logic;                  -- The clock signal
-        clock  : in  std_logic);                 -- The reset signal
-end reg;
-
-architecture behavior of reg is
-begin
-  REG : process (clock)
-  begin
-    if (rising_edge(clock)) then
-      if (reset = '1') then
-		Q <= std_logic_vector(to_unsigned(4194304, Q'length));
-      elsif (WE = '1') then
+ARCHITECTURE behavior OF reg IS
+BEGIN
+  REG : PROCESS (clock)
+  BEGIN
+    IF (rising_edge(clock)) THEN
+      IF (reset = '1') THEN
+        Q <= std_logic_vector(to_unsigned(4194304, Q'length));
+      ELSIF (WE = '1') THEN
         Q <= D;
-      end if;
-    end if;
-  end process;
+      END IF;
+    END IF;
+  END PROCESS;
 
-end behavior;
+END behavior;

@@ -2,71 +2,76 @@
 -- Aidan Sherburne
 -- Iowa State University
 -------------------------------------------------------------------------
-
-
 -- addsub_n_st.vhd
 -------------------------------------------------------------------------
 -- DESCRIPTION: Structural n-bit adder/subtractor for CPRE 381 Lab 2 P4b
 -------------------------------------------------------------------------
 
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-entity addsub_n_st is
-  generic(N : integer := 1);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       i_B  : in std_logic_vector(N-1 downto 0);
-       i_nAdd_Sub  : in std_logic; -- carry in
-	   o_Cout  : out std_logic; -- carry out
-       o_Sum  : out std_logic_vector(N-1 downto 0)); -- sum
+ENTITY addsub_n_st IS
+  GENERIC (N : INTEGER := 1);
+  PORT (
+    i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+    i_B : IN std_logic_vector(N - 1 DOWNTO 0);
+    i_nAdd_Sub : IN std_logic; -- carry in
+    o_Cout : OUT std_logic; -- carry out
+    o_Sum : OUT std_logic_vector(N - 1 DOWNTO 0)); -- sum
 
-end addsub_n_st;
+END addsub_n_st;
 
-architecture structure of addsub_n_st is
+ARCHITECTURE structure OF addsub_n_st IS
 
-component fulladder_n_st is
-  generic(N : integer := 1);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       i_B  : in std_logic_vector(N-1 downto 0);
-       i_Cin  : in std_logic; -- carry in
-	   o_Cout  : out std_logic; -- carry out
-       o_Sum  : out std_logic_vector(N-1 downto 0)); -- sum
-end component;
+  COMPONENT fulladder_n_st IS
+    GENERIC (N : INTEGER := 1);
+    PORT (
+      i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_B : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_Cin : IN std_logic; -- carry in
+      o_Cout : OUT std_logic; -- carry out
+      o_Sum : OUT std_logic_vector(N - 1 DOWNTO 0)); -- sum
+  END COMPONENT;
 
-component mux21_n_st is
-  generic(N : integer := 1);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       i_B  : in std_logic_vector(N-1 downto 0);
-       i_S  : in std_logic;
-       o_F  : out std_logic_vector(N-1 downto 0));
-end component;
+  COMPONENT mux21_n_st IS
+    GENERIC (N : INTEGER := 1);
+    PORT (
+      i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_B : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_S : IN std_logic;
+      o_F : OUT std_logic_vector(N - 1 DOWNTO 0));
+  END COMPONENT;
 
-component ones_complementer is
-  generic(N : integer := 1);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       o_F  : out std_logic_vector(N-1 downto 0));
-end component;
+  COMPONENT ones_complementer IS
+    GENERIC (N : INTEGER := 1);
+    PORT (
+      i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+      o_F : OUT std_logic_vector(N - 1 DOWNTO 0));
+  END COMPONENT;
 
-signal s_A : std_logic_vector(N-1 downto 0); -- output from inverter, input to mux in b
-signal s_B : std_logic_vector(N-1 downto 0); -- output from mux, input to adder in b
+  SIGNAL s_A : std_logic_vector(N - 1 DOWNTO 0); -- output from inverter, input to mux in b
+  SIGNAL s_B : std_logic_vector(N - 1 DOWNTO 0); -- output from mux, input to adder in b
 
-begin
+BEGIN
 
-fa_st : fulladder_n_st
-  port map (i_A => i_A,
-            i_B => s_B,
-            i_Cin => i_nAdd_Sub,
-	        o_Cout => o_Cout,
-            o_Sum => o_Sum);
+  fa_st : fulladder_n_st
+  PORT MAP(
+    i_A => i_A,
+    i_B => s_B,
+    i_Cin => i_nAdd_Sub,
+    o_Cout => o_Cout,
+    o_Sum => o_Sum);
 
-mux_st : mux21_n_st
-  port map (i_A => i_B,
-            i_B => s_A,
-            i_S => i_nAdd_Sub,
-			o_F => s_B);
+  mux_st : mux21_n_st
+  PORT MAP(
+    i_A => i_B,
+    i_B => s_A,
+    i_S => i_nAdd_Sub,
+    o_F => s_B);
 
-oc_st : ones_complementer
-  port map (i_A => i_B,
-            o_F => s_A);
+  oc_st : ones_complementer
+  PORT MAP(
+    i_A => i_B,
+    o_F => s_A);
 
-end structure;
+END structure;

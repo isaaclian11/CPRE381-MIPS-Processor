@@ -1,21 +1,20 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-entity twoToOneMux_dataflow is
-generic(N	:	integer:=8);
-port(
-	iX	:	in std_logic_vector(N-1 downto 0);
-	iY	:	in std_logic_vector(N-1 downto 0);
-	sel		:	in std_logic;
-	o_F	:	out std_logic_vector(N-1 downto 0)
-);
-end twoToOneMux_dataflow;
+ENTITY twoToOneMux_dataflow IS
+	GENERIC (N : INTEGER := 8);
+	PORT (
+		iX : IN std_logic_vector(N - 1 DOWNTO 0);
+		iY : IN std_logic_vector(N - 1 DOWNTO 0);
+		sel : IN std_logic;
+		o_F : OUT std_logic_vector(N - 1 DOWNTO 0)
+	);
+END twoToOneMux_dataflow;
+ARCHITECTURE dataflow OF twoToOneMux_dataflow IS
 
+BEGIN
 
-architecture dataflow of twoToOneMux_dataflow is
+	o_F <= iX WHEN (sel = '0') ELSE
+		iY;
 
-begin
-
-	o_F	<=	iX	when (sel='0') else iY;
-
-end dataflow;
+END dataflow;

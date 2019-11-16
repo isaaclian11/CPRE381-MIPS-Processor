@@ -1,50 +1,48 @@
 -- Quartus Prime VHDL Template
 -- Single-port RAM with single read/write address
 
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-entity mem is
+ENTITY mem IS
 
-	generic 
-	(
-		DATA_WIDTH : natural := 32;
-		ADDR_WIDTH : natural := 10
+	GENERIC (
+		DATA_WIDTH : NATURAL := 32;
+		ADDR_WIDTH : NATURAL := 10
 	);
 
-	port 
-	(
-		clk		: in std_logic;
-		addr	        : in std_logic_vector((ADDR_WIDTH-1) downto 0);
-		data	        : in std_logic_vector((DATA_WIDTH-1) downto 0);
-		we		: in std_logic := '1';
-		q		: out std_logic_vector((DATA_WIDTH -1) downto 0)
+	PORT (
+		clk : IN std_logic;
+		addr : IN std_logic_vector((ADDR_WIDTH - 1) DOWNTO 0);
+		data : IN std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+		we : IN std_logic := '1';
+		q : OUT std_logic_vector((DATA_WIDTH - 1) DOWNTO 0)
 	);
 
-end mem;
+END mem;
 
-architecture rtl of mem is
+ARCHITECTURE rtl OF mem IS
 
 	-- Build a 2-D array type for the RAM
-	subtype word_t is std_logic_vector((DATA_WIDTH-1) downto 0);
-	type memory_t is array(2**ADDR_WIDTH-1 downto 0) of word_t;
+	SUBTYPE word_t IS std_logic_vector((DATA_WIDTH - 1) DOWNTO 0);
+	TYPE memory_t IS ARRAY(2 ** ADDR_WIDTH - 1 DOWNTO 0) OF word_t;
 
 	-- Declare the RAM signal and specify a default value.	Quartus Prime
 	-- will load the provided memory initialization file (.mif).
-	signal ram : memory_t;
+	SIGNAL ram : memory_t;
 
-begin
+BEGIN
 
-	process(clk)
-	begin
-	if(rising_edge(clk)) then
-		if(we = '1') then
-			ram(to_integer(unsigned(addr))) <= data;
-		end if;
-	end if;
-	end process;
+	PROCESS (clk)
+	BEGIN
+		IF (rising_edge(clk)) THEN
+			IF (we = '1') THEN
+				ram(to_integer(unsigned(addr))) <= data;
+			END IF;
+		END IF;
+	END PROCESS;
 
 	q <= ram(to_integer(unsigned(addr)));
 
-end rtl;
+END rtl;

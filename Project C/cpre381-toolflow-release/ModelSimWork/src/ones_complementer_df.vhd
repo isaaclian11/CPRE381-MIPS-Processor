@@ -2,28 +2,27 @@
 -- Aidan Sherburne
 -- Iowa State University
 -------------------------------------------------------------------------
-
-
 -- ones_complementer_df.vhd
 -------------------------------------------------------------------------
 -- DESCRIPTION: Dataflow one's complementer for CPRE 381 Lab 2 P1b
 -------------------------------------------------------------------------
 
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-entity ones_complementer_df is
-  generic(N : integer := 14);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       o_F  : out std_logic_vector(N-1 downto 0));
+ENTITY ones_complementer_df IS
+      GENERIC (N : INTEGER := 14);
+      PORT (
+            i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+            o_F : OUT std_logic_vector(N - 1 DOWNTO 0));
 
-end ones_complementer_df;
+END ones_complementer_df;
 
-architecture dataflow of ones_complementer_df is
-begin
+ARCHITECTURE dataflow OF ones_complementer_df IS
+BEGIN
 
-G1: for i in 0 to N-1 generate
-      o_F(i) <= not i_A(i);
-end generate;
+      G1 : FOR i IN 0 TO N - 1 GENERATE
+            o_F(i) <= NOT i_A(i);
+      END GENERATE;
 
-end dataflow;
+END dataflow;

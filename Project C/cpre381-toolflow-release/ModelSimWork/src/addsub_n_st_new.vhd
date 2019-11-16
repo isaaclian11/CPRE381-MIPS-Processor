@@ -2,64 +2,67 @@
 -- Aidan Sherburne
 -- Iowa State University
 -------------------------------------------------------------------------
-
-
 -- addsub_n_st_new.vhd
 -------------------------------------------------------------------------
 -- DESCRIPTION: Structural n-bit adder/subtractor for CPRE 381 Lab 3 P2a
 -------------------------------------------------------------------------
 
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE IEEE.numeric_std.ALL;
 
-entity addsub_n_st_new is
-  generic(N : integer := 32);
-  port(i_A : in std_logic_vector(N-1 downto 0);
-       i_B : in std_logic_vector(N-1 downto 0);
-       i_nAdd_Sub : in std_logic;
-	   i_ALUSrc : in std_logic;
-	   i_immediate : in std_logic_vector(N-1 downto 0);
-	   o_Cout : out std_logic; -- carry out
-       o_Sum : out std_logic_vector(N-1 downto 0)); -- sum
+ENTITY addsub_n_st_new IS
+  GENERIC (N : INTEGER := 32);
+  PORT (
+    i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+    i_B : IN std_logic_vector(N - 1 DOWNTO 0);
+    i_nAdd_Sub : IN std_logic;
+    i_ALUSrc : IN std_logic;
+    i_immediate : IN std_logic_vector(N - 1 DOWNTO 0);
+    o_Cout : OUT std_logic; -- carry out
+    o_Sum : OUT std_logic_vector(N - 1 DOWNTO 0)); -- sum
 
-end addsub_n_st_new;
+END addsub_n_st_new;
 
-architecture structure of addsub_n_st_new is
+ARCHITECTURE structure OF addsub_n_st_new IS
 
-component addsub_n_st is
-  generic(N : integer := 32);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       i_B  : in std_logic_vector(N-1 downto 0);
-       i_nAdd_Sub  : in std_logic; -- carry in
-	   o_Cout  : out std_logic; -- carry out
-       o_Sum  : out std_logic_vector(N-1 downto 0)); -- sum
+  COMPONENT addsub_n_st IS
+    GENERIC (N : INTEGER := 32);
+    PORT (
+      i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_B : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_nAdd_Sub : IN std_logic; -- carry in
+      o_Cout : OUT std_logic; -- carry out
+      o_Sum : OUT std_logic_vector(N - 1 DOWNTO 0)); -- sum
 
-end component;
+  END COMPONENT;
 
-component mux21_n_st is
-  generic(N : integer := 32);
-  port(i_A  : in std_logic_vector(N-1 downto 0);
-       i_B  : in std_logic_vector(N-1 downto 0);
-       i_S  : in std_logic;
-       o_F  : out std_logic_vector(N-1 downto 0));
-end component;
+  COMPONENT mux21_n_st IS
+    GENERIC (N : INTEGER := 32);
+    PORT (
+      i_A : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_B : IN std_logic_vector(N - 1 DOWNTO 0);
+      i_S : IN std_logic;
+      o_F : OUT std_logic_vector(N - 1 DOWNTO 0));
+  END COMPONENT;
 
-signal s_A : std_logic_vector(N-1 downto 0);
+  SIGNAL s_A : std_logic_vector(N - 1 DOWNTO 0);
 
-begin
+BEGIN
 
-as_st : addsub_n_st
-  port map (i_A => i_A,
-            i_B => s_A,
-            i_nAdd_Sub => i_nAdd_Sub,
-	        o_Cout => o_Cout,
-            o_Sum => o_Sum);
+  as_st : addsub_n_st
+  PORT MAP(
+    i_A => i_A,
+    i_B => s_A,
+    i_nAdd_Sub => i_nAdd_Sub,
+    o_Cout => o_Cout,
+    o_Sum => o_Sum);
 
-mux_st : mux21_n_st
-  port map (i_A => i_B,
-            i_B => i_immediate,
-            i_S => i_ALUSrc,
-			o_F => s_A);
+  mux_st : mux21_n_st
+  PORT MAP(
+    i_A => i_B,
+    i_B => i_immediate,
+    i_S => i_ALUSrc,
+    o_F => s_A);
 
-end structure;
+END structure;

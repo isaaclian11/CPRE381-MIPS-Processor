@@ -3,8 +3,6 @@
 -- Department of Electrical and Computer Engineering
 -- Iowa State University
 -------------------------------------------------------------------------
-
-
 -- dffx.vhd
 -------------------------------------------------------------------------
 -- DESCRIPTION: This file contains an implementation of an edge-triggered
@@ -15,45 +13,46 @@
 -- 8/19/16 by JAZ::Design created.
 -------------------------------------------------------------------------
 
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-entity dffx is
+ENTITY dffx IS
 
-  port(i_CLK        : in std_logic;     -- Clock input
-       i_RST        : in std_logic;     -- Reset input
-       i_WE         : in std_logic;     -- Write enable input
-       i_D          : in std_logic;     -- Data value input
-       o_Q          : out std_logic);   -- Data value output
+  PORT (
+    i_CLK : IN std_logic; -- Clock input
+    i_RST : IN std_logic; -- Reset input
+    i_WE : IN std_logic; -- Write enable input
+    i_D : IN std_logic; -- Data value input
+    o_Q : OUT std_logic); -- Data value output
 
-end dffx;
+END dffx;
 
-architecture mixed of dffx is
-  signal s_D    : std_logic;    -- Multiplexed input to the FF
-  signal s_Q    : std_logic;    -- Output of the FF
+ARCHITECTURE mixed OF dffx IS
+  SIGNAL s_D : std_logic; -- Multiplexed input to the FF
+  SIGNAL s_Q : std_logic; -- Output of the FF
 
-begin
+BEGIN
 
   -- The output of the FF is fixed to s_Q
   o_Q <= s_Q;
-  
+
   -- Create a multiplexed input to the FF based on i_WE
-  with i_WE select
-    s_D <= i_D when '1',
-           s_Q when others;
-  
+  WITH i_WE SELECT
+    s_D <= i_D WHEN '1',
+    s_Q WHEN OTHERS;
+
   -- This process handles the asyncrhonous reset and
   -- synchronous write. We want to be able to reset 
   -- our processor's registers so that we minimize
   -- glitchy behavior on startup.
-  process (i_CLK, i_RST)
-  begin
-    if (i_RST = '1') then
+  PROCESS (i_CLK, i_RST)
+  BEGIN
+    IF (i_RST = '1') THEN
       s_Q <= '0'; -- Use "(others => '0')" for N-bit values
-    elsif (rising_edge(i_CLK)) then
+    ELSIF (rising_edge(i_CLK)) THEN
       s_Q <= s_D;
-    end if;
+    END IF;
 
-  end process;
-  
-end mixed;
+  END PROCESS;
+
+END mixed;

@@ -2,35 +2,34 @@
 -- Aidan Sherburne
 -- Iowa State University
 -------------------------------------------------------------------------
-
-
 -- mux_321_df.vhd
 -------------------------------------------------------------------------
 -- DESCRIPTION: Dataflow 32:1 mux for CPRE 381 Lab 3 P1g
 -------------------------------------------------------------------------
 
-library IEEE;
-use IEEE.std_logic_1164.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
 
-package vectorarraytype is
-  type vectorarray is array (0 to 31) of std_logic_vector(31 downto 0);
-  
-end package vectorarraytype;
+PACKAGE vectorarraytype IS
+  TYPE vectorarray IS ARRAY (0 TO 31) OF std_logic_vector(31 DOWNTO 0);
 
-library IEEE;
-use IEEE.std_logic_1164.all;
-use work.vectorarraytype.all;
-use IEEE.numeric_std.all;
+END PACKAGE vectorarraytype;
 
-entity mux_321_df is
-  port(i_MuxData : vectorarray;
-       i_MuxSel : in std_logic_vector(4 downto 0); -- select bits
-       o_MuxOut : out std_logic_vector(31 downto 0));
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE work.vectorarraytype.ALL;
+USE IEEE.numeric_std.ALL;
 
-end mux_321_df;
+ENTITY mux_321_df IS
+  PORT (
+    i_MuxData : vectorarray;
+    i_MuxSel : IN std_logic_vector(4 DOWNTO 0); -- select bits
+    o_MuxOut : OUT std_logic_vector(31 DOWNTO 0));
 
-architecture dataflow of mux_321_df is
-begin
+END mux_321_df;
+
+ARCHITECTURE dataflow OF mux_321_df IS
+BEGIN
   o_MuxOut <= i_MuxData(to_integer(unsigned(i_MuxSel))); -- convert i_S to the index of i_A
 
-end dataflow;
+END dataflow;
