@@ -16,13 +16,13 @@ ENTITY IDEXreg IS
     ctl_RegWrite : IN std_logic; -- propagate to WB
     ctl_MemtoReg : IN std_logic; -- propagate to WB
     ctl_MemWrite : IN std_logic; -- propagate to MEM
-    ctl_ALUOp : IN std_logic_vector(2 DOWNTO 0); -- propagate to EX
+    ctl_ALUOp : IN std_logic_vector(3 DOWNTO 0); -- propagate to EX
     ctl_ALUSrc : IN std_logic; -- propagate to EX
     ctl_RegDst : IN std_logic; -- propagate to EX
     out_RegWrite : OUT std_logic;
     out_MemtoReg : OUT std_logic;
     out_MemWrite : OUT std_logic;
-    out_ALUOp : OUT std_logic_vector(2 DOWNTO 0);
+    out_ALUOp : OUT std_logic_vector(3 DOWNTO 0);
     out_ALUSrc : OUT std_logic;
     out_RegDst : OUT std_logic;
     out_readdata1 : OUT std_logic_vector(N - 1 DOWNTO 0);
