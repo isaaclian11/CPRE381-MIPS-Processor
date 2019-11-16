@@ -120,8 +120,8 @@ ARCHITECTURE behavior OF tb_pipeline_registers IS
   END COMPONENT;
 
   --signals
-  SIGNAL s_CLK, s_flush, s_stall, ctl_RegDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_MemtoReg, ctl_MemWrite, ctl_ALUSrc, ctl_RegWrite, ctl_jal, ctl_lui, ctl_shamt, dec_ALUSrc, dec_MemWrite, dec_MemtoReg, dec_RegDst, dec_RegWrite, RegDst_idex, RegWrite_exmem, RegWrite_idex, RegWrite_memwb, MemToReg_exmem, MemToReg_idex, MemToReg_memwb, MemWrite_exmem, MemWrite_idex, ctl_unsigned, ALUSrc_idex: std_logic := '0';
-  SIGNAL ctl_ALUOp, dec_ALUOp, ALUOp_idex : std_logic_vector(3 DOWNTO 0) := "0000";
+  SIGNAL s_CLK, s_flush, ctl_RegDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_MemtoReg, ctl_MemWrite, ctl_ALUSrc, ctl_RegWrite, ctl_jal, ctl_lui, ctl_shamt, dec_ALUSrc, dec_MemWrite, dec_MemtoReg, dec_RegDst, dec_RegWrite, RegDst_idex, RegWrite_exmem, RegWrite_idex, RegWrite_memwb, MemToReg_exmem, MemToReg_idex, MemToReg_memwb, MemWrite_exmem, MemWrite_idex, ctl_unsigned, ALUSrc_idex: std_logic := '0';
+  SIGNAL ctl_ALUOp, dec_ALUOp, ALUOp_idex, s_stall : std_logic_vector(3 DOWNTO 0) := "0000";
   SIGNAL rt_idex, rd_idex, writereg_exmem, writereg_memwb : std_logic_vector(4 DOWNTO 0) := "00000";
   SIGNAL s_instr, instr_ifid, pcp4_idex, pcp4_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, aluresult_memwb, sign_ext_idex, writedata_exmem, memreaddata_memwb : std_logic_vector(31 DOWNTO 0) := x"00000000";
   --testbench
@@ -150,7 +150,7 @@ BEGIN
   IFID : IFIDreg
   PORT MAP(
     flush => s_flush,
-    stall => s_stall,
+    stall => s_stall(0),
     instr => s_instr,
     pcp4 => x"00000004",
     clock => s_CLK,
@@ -159,7 +159,7 @@ BEGIN
 
   IDEX : IDEXreg
   PORT MAP(
-    stall => s_stall,
+    stall => s_stall(1),
     readdata1 => x"11111111", --emulated read data 1
     readdata2 => x"22222222", --emulated read data 2
     pcp4 => pcp4_ifid,
@@ -188,7 +188,7 @@ BEGIN
 
   EXMEM : EXMEMreg
   PORT MAP(
-    stall => s_stall,
+    stall => s_stall(2),
     clock => s_CLK,
     ctl_RegWrite => RegWrite_idex,
     ctl_MemtoReg => MemToReg_idex,
@@ -205,7 +205,7 @@ BEGIN
 
   MEMWB : MEMWBreg
   PORT MAP(
-    stall => s_stall,
+    stall => s_stall(3),
     clock => s_CLK,
     ctl_RegWrite => RegWrite_idex,
     ctl_MemtoReg => MemToReg_idex,
@@ -230,31 +230,41 @@ BEGIN
   P_TB : PROCESS
   BEGIN
     s_instr <= x"00000000";
-    s_stall <= '0';
+    s_stall <= "0000";
+	s_flush <= '0';
     WAIT FOR cCLK_PER;
     s_instr <= x"00000001";
     WAIT FOR cCLK_PER;
     s_instr <= x"00000010";
-    s_stall <= '1';
     WAIT FOR cCLK_PER;
     s_instr <= x"00000011";
-    s_stall <= '0';
     WAIT FOR cCLK_PER;
     s_instr <= x"00000100";
     WAIT FOR cCLK_PER;
-    s_flush <= '1';
-    WAIT FOR cCLK_PER;
-    s_flush <= '0';
     s_instr <= x"00000101";
     s_flush <= '1';
     WAIT FOR cCLK_PER;
+	s_instr <= x"99999999";
+    s_stall <= "1110";
+    s_flush <= '0';
+    WAIT FOR cCLK_PER;
+	s_instr <= x"88888888";
+    s_stall <= "1101";
+    WAIT FOR cCLK_PER;
+	s_instr <= x"77777777";
+    s_stall <= "1011";
+    WAIT FOR cCLK_PER;
+	s_instr <= x"66666666";
+    s_stall <= "0111";
     s_flush <= '1';
     WAIT FOR cCLK_PER;
     s_flush <= '1';
     WAIT FOR cCLK_PER;
     s_flush <= '1';
     WAIT FOR cCLK_PER;
-    s_flush <= '1';
+	s_flush <= '1';
+    WAIT FOR cCLK_PER;
+	s_flush <= '1';
     WAIT FOR cCLK_PER;
     WAIT;
   END PROCESS;
