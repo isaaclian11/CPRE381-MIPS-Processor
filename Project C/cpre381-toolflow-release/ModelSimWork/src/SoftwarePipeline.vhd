@@ -386,6 +386,24 @@ BEGIN
     out_aluresult => aluresult_memwb,
     out_writereg => writereg_memwb);
 
+	--regdstmux : mux21_n_st
+	--GENERIC MAP(N => N)
+	--PORT MAP(
+	--	i_A => rt_idex,
+	--	i_B => rd_idex,
+	--	i_S => RegDst_idex,
+	--	o_F => o_regdstmux
+	--);
+	
+	--jalmux : mux21_n_st
+	--GENERIC MAP(N => N)
+	--PORT MAP(
+	--	i_A => o_regdstmux,
+	--	i_B => "11111",
+	--	i_S => jal_idex,
+	--	o_F => s_mux2
+	--);
+	
 	mux2 : mux21_n_st
 	GENERIC MAP(N => N)
 	PORT MAP(
