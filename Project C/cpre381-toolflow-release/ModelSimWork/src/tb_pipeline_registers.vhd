@@ -120,8 +120,8 @@ ARCHITECTURE behavior OF tb_pipeline_registers IS
   END COMPONENT;
 
   --signals
-  SIGNAL s_CLK, s_flush, ctl_RegDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_MemtoReg, ctl_MemWrite, ctl_ALUSrc, ctl_RegWrite, ctl_jal, ctl_lui, ctl_shamt, dec_ALUSrc, dec_MemWrite, dec_MemtoReg, dec_RegDst, dec_RegWrite, RegDst_idex, RegWrite_exmem, RegWrite_idex, RegWrite_memwb, MemToReg_exmem, MemToReg_idex, MemToReg_memwb, MemWrite_exmem, MemWrite_idex, ctl_unsigned, ALUSrc_idex: std_logic := '0';
-  SIGNAL ctl_ALUOp, dec_ALUOp, ALUOp_idex, s_stall : std_logic_vector(3 DOWNTO 0) := "0000";
+  SIGNAL s_CLK, s_flush, ctl_RegDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_MemtoReg, ctl_MemWrite, ctl_ALUSrc, ctl_RegWrite, ctl_jal, ctl_lui, ctl_shamt, RegDst_idex, RegWrite_exmem, RegWrite_idex, RegWrite_memwb, MemToReg_exmem, MemToReg_idex, MemToReg_memwb, MemWrite_exmem, MemWrite_idex, ctl_unsigned, ALUSrc_idex: std_logic := '0';
+  SIGNAL ctl_ALUOp, ALUOp_idex, s_stall : std_logic_vector(3 DOWNTO 0) := "0000";
   SIGNAL rt_idex, rd_idex, writereg_exmem, writereg_memwb : std_logic_vector(4 DOWNTO 0) := "00000";
   SIGNAL s_instr, instr_ifid, pcp4_idex, pcp4_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, aluresult_memwb, sign_ext_idex, writedata_exmem, memreaddata_memwb : std_logic_vector(31 DOWNTO 0) := x"00000000";
   --testbench
@@ -167,12 +167,12 @@ BEGIN
     rt => instr_ifid(20 DOWNTO 16),
     rd => instr_ifid(15 DOWNTO 11),
     clock => s_CLK,
-    ctl_RegWrite => dec_RegWrite,
-    ctl_MemtoReg => dec_MemtoReg,
-    ctl_MemWrite => dec_MemWrite,
-    ctl_ALUOp => dec_ALUOp,
-    ctl_ALUSrc => dec_ALUSrc,
-    ctl_RegDst => dec_RegDst,
+    ctl_RegWrite => ctl_RegWrite,
+    ctl_MemtoReg => ctl_MemtoReg,
+    ctl_MemWrite => ctl_MemWrite,
+    ctl_ALUOp => ctl_ALUOp,
+    ctl_ALUSrc => ctl_ALUSrc,
+    ctl_RegDst => ctl_RegDst,
     out_RegWrite => RegWrite_idex,
     out_MemtoReg => MemToReg_idex,
     out_MemWrite => MemWrite_idex,
