@@ -6,6 +6,7 @@ ENTITY IDEXreg IS
   GENERIC (N : INTEGER := 32);
   PORT (
     stall : IN std_logic;
+	opcode : IN std_logic_vector(5 DOWNTO 0);
     readdata1 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 1
     readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
     pcp4 : IN std_logic_vector(N - 1 DOWNTO 0); -- PC+4
@@ -30,7 +31,8 @@ ENTITY IDEXreg IS
     out_rt : OUT std_logic_vector(4 DOWNTO 0);
     out_rd : OUT std_logic_vector(4 DOWNTO 0);
     out_sign_ext : OUT std_logic_vector(N - 1 DOWNTO 0);
-    out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0));
+    out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0);
+	out_opcode : OUT std_logic_vector(5 DOWNTO 0));
 END IDEXreg;
 
 ARCHITECTURE behavior OF IDEXreg IS
@@ -51,6 +53,7 @@ BEGIN
         out_rd <= rd;
         out_sign_ext <= sign_ext;
         out_pcp4 <= pcp4;
+		out_opcode <= opcode;
       END IF;
 	END IF;
   END PROCESS;
