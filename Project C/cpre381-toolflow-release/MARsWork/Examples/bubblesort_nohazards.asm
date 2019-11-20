@@ -27,7 +27,7 @@ add $0, $0, $0					#NOP
 slt $t0, $s4, $s6   			#i<n-1?
 add $0, $0, $0					#NOP
 add $0, $0, $0					#NOP
-beq $t0, $0, print   			#if not, exit
+beq $t0, $0, exit   			#if not, exit
 
 condition2:
 sll $s5, $s2, 2     			#byte addressing j
@@ -66,31 +66,6 @@ addi $s2, $s2, 1    			#j++
 add $0, $0, $0					#NOP
 add $0, $0, $0					#NOP
 j condition2
-
-
-print:
-lui $at, 0x00001001
-add $0, $0, $0					#NOP
-add $0, $0, $0					#NOP
-ori $t0, $at, 0x00000000
-lui $at, 0x00001001
-add $0, $0, $0					#NOP
-add $0, $0, $0					#NOP
-ori $t2, $at, 0x00000018
-add $0, $0, $0					#NOP
-add $0, $0, $0					#NOP
-
-loop:
-slt $t5, $t0, $t2 
-add $0, $0, $0					#NOP
-add $0, $0, $0					#NOP
-beq $t5, $0, exit
-lw $t3, 0($t0)
-addi $t0, $t0, 4
-li $v0, 1
-or $a0, $t3, $0
-syscall
-j loop
 
 exit:
 li $v0, 10
