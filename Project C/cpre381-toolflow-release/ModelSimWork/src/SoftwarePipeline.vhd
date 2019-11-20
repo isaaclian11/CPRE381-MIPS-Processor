@@ -223,11 +223,11 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
 	
 	-- added pipeline signals
-	SIGNAL pcp4_ifid, instr_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, writedata_exmem : std_logic_vector(N - 1 DOWNTO 0);
-	SIGNAL opcode_idex, opcode_exmem : std_logic_vector(5 DOWNTO 0);
-	SIGNAL rt_idex, rd_idex, writereg_exmem : std_logic_vector(4 DOWNTO 0);
+	SIGNAL pcp4_ifid, instr_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, writedata_exmem, memreaddata_memwb, aluresult_memwb : std_logic_vector(N - 1 DOWNTO 0);
+	SIGNAL opcode_idex, opcode_exmem, opcode_memwb : std_logic_vector(5 DOWNTO 0);
+	SIGNAL rt_idex, rd_idex, writereg_exmem, writereg_memwb : std_logic_vector(4 DOWNTO 0);
 	SIGNAL s_stall, aluop_idex : std_logic_vector(3 DOWNTO 0);
-	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, sign_ext_idex, pcp4_idex, regwrite_exmem, memtoreg_exmem, memwrite_exmem : std_logic;
+	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, sign_ext_idex, pcp4_idex, regwrite_exmem, memtoreg_exmem, memwrite_exmem, regwrite_memwb, memtoreg_memwb : std_logic;
 
 BEGIN
 
@@ -278,6 +278,7 @@ BEGIN
 	PORT MAP(
 	  stall => s_stall(2),
       clock => iCLK,
+	  opcode => opcode_idex,
       ctl_RegWrite => regwrite_idex,
       ctl_MemtoReg => memtoreg_idex,
       ctl_MemWrite => memwrite_idex,
@@ -291,6 +292,24 @@ BEGIN
       out_writedata => writedata_exmem,
       out_writereg => writereg_exmem,
       out_opcode => opcode_exmem
+	);
+	
+	memwb : MEMWBreg
+	PORT MAP(
+	  stall => s_stall(3),
+      clock => iCLK,
+	  opcode => opcode_exmem,
+	  ctl_RegWrite => regwrite_exmem,
+      ctl_MemtoReg => memtoreg_exmem,
+	  alu_result => aluresult_exmem,
+	  memreaddata => s_DMemOut, -- pre-existing read data from memory module in MEM stage
+	  writereg => writereg_exmem,
+	  out_RegWrite => regwrite_memwb,
+	  out_MemToReg => memtoreg_memwb,
+	  out_memreaddata => memreaddata_memwb,
+	  out_aluresult => aluresult_memwb,
+	  out_writereg => writereg_memwb,
+	  out_opcode => opcode_memwb
 	);
 
 	i_mux3 <= "000000000000000000000000000" & s_Inst(10 DOWNTO 6);
