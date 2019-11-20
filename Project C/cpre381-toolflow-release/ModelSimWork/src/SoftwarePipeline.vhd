@@ -11,7 +11,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY MIPS_Processor IS
+ENTITY SoftwarePipeline IS
 	GENERIC (N : INTEGER := 32);
 	PORT (
 		iCLK : IN std_logic;
@@ -21,8 +21,8 @@ ENTITY MIPS_Processor IS
 		iInstExt : IN std_logic_vector(N - 1 DOWNTO 0);
 		oALUOut : OUT std_logic_vector(N - 1 DOWNTO 0)); -- TODO: Hook this up to the output of the ALU. It is important for synthesis that you have this output that can effectively be impacted by all other components so they are not optimized away.
 
-END MIPS_Processor;
-ARCHITECTURE structure OF MIPS_Processor IS
+END SoftwarePipeline;
+ARCHITECTURE structure OF SoftwarePipeline IS
 
 	-- Required data memory signals
 	SIGNAL s_DMemWr : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
@@ -171,7 +171,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
       out_rt : OUT std_logic_vector(4 DOWNTO 0);
       out_rd : OUT std_logic_vector(4 DOWNTO 0);
       out_sign_ext : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0));
+      out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0);
+	  out_opcode : OUT std_logic_vector(5 DOWNTO 0));
   END COMPONENT;
 
   COMPONENT EXMEMreg IS
@@ -190,7 +191,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
       out_MemWrite : OUT std_logic;
       out_aluresult : OUT std_logic_vector(N - 1 DOWNTO 0);
       out_writedata : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_writereg : OUT std_logic_vector(4 DOWNTO 0));
+      out_writereg : OUT std_logic_vector(4 DOWNTO 0);
+	  out_opcode : OUT std_logic_vector(5 DOWNTO 0));
   END COMPONENT;
 
   COMPONENT MEMWBreg IS
@@ -207,19 +209,36 @@ ARCHITECTURE structure OF MIPS_Processor IS
       out_MemtoReg : OUT std_logic;
       out_memreaddata : OUT std_logic_vector(N - 1 DOWNTO 0);
       out_aluresult : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_writereg : OUT std_logic_vector(4 DOWNTO 0));
+      out_writereg : OUT std_logic_vector(4 DOWNTO 0);
+	  out_opcode : IN std_logic_vector(5 DOWNTO 0));
   END COMPONENT;
 
 	-- Control flow signals 
 	SIGNAL s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
 
 	-- Other signals
-	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7, s_mux8, s_branchAddr : std_logic_vector(N - 1 DOWNTO 0);
+	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7, s_mux8, s_branchAddr, pcp4_ifid, instr_ifid : std_logic_vector(N - 1 DOWNTO 0);
 	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
-	SIGNAL s_ALUControl : std_logic_vector(3 DOWNTO 0);
+	SIGNAL s_ALUControl, s_stall : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount : std_logic_vector(4 DOWNTO 0);
+	
+	-- added pipeline signals
+	SIGNAL pcp4_ifid, instr_ifid : std_logic_vector(N - 1 DOWNTO 0);
+	SIGNAL s_flush : std_logic;
+	SIGNAL s_stall : std_logic_vector(3 DOWNTO 0);
 
 BEGIN
+
+	ifid : IFIDreg
+	PORT MAP(
+	  flush => s_flush,
+	  stall => s_stall(0),
+	  instr => s_inst,
+	  pcp4 => s_pcPlusFour,
+	  clock => iCLK,
+	  out_pcp4 => pcp4_ifid,
+	  out_instr => instr_ifid
+	);
 
 	i_mux3 <= "000000000000000000000000000" & s_Inst(10 DOWNTO 6);
 
