@@ -223,11 +223,11 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
 	
 	-- added pipeline signals
-	SIGNAL pcp4_ifid, instr_ifid, readdata1_idex, readdata2_idex : std_logic_vector(N - 1 DOWNTO 0);
-	SIGNAL opcode_idex : std_logic_vector(5 DOWNTO 0);
-	SIGNAL rt_idex, rd_idex : std_logic_vector(4 DOWNTO 0);
+	SIGNAL pcp4_ifid, instr_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, writedata_exmem : std_logic_vector(N - 1 DOWNTO 0);
+	SIGNAL opcode_idex, opcode_exmem : std_logic_vector(5 DOWNTO 0);
+	SIGNAL rt_idex, rd_idex, writereg_exmem : std_logic_vector(4 DOWNTO 0);
 	SIGNAL s_stall, aluop_idex : std_logic_vector(3 DOWNTO 0);
-	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, sign_ext_idex, pcp4_idex : std_logic;
+	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, sign_ext_idex, pcp4_idex, regwrite_exmem, memtoreg_exmem, memwrite_exmem : std_logic;
 
 BEGIN
 
@@ -272,6 +272,25 @@ BEGIN
       out_sign_ext => sign_ext_idex,
       out_pcp4 => pcp4_idex,
 	  out_opcode => opcode_idex
+	);
+	
+	exmem : EXMEMreg
+	PORT MAP(
+	  stall => s_stall(2),
+      clock => iCLK,
+      ctl_RegWrite => regwrite_idex,
+      ctl_MemtoReg => memtoreg_idex,
+      ctl_MemWrite => memwrite_idex,
+      alu_result => s_DMemAddr, -- pre-existing output from ALU in EX stage
+      readdata2 => readdata2_idex,
+      writereg => rd_idex,
+      out_RegWrite => regwrite_exmem,
+      out_MemtoReg => memtoreg_exmem,
+      out_MemWrite => memwrite_exmem,
+      out_aluresult => aluresult_exmem,
+      out_writedata => writedata_exmem,
+      out_writereg => writereg_exmem,
+      out_opcode => opcode_exmem
 	);
 
 	i_mux3 <= "000000000000000000000000000" & s_Inst(10 DOWNTO 6);
