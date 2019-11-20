@@ -11,7 +11,7 @@ USE IEEE.std_logic_1164.ALL;
 USE IEEE.std_logic_unsigned.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY SoftwarePipeline IS
+ENTITY MIPS_Processor IS
 	GENERIC (N : INTEGER := 32);
 	PORT (
 		iCLK : IN std_logic;
@@ -21,8 +21,8 @@ ENTITY SoftwarePipeline IS
 		iInstExt : IN std_logic_vector(N - 1 DOWNTO 0);
 		oALUOut : OUT std_logic_vector(N - 1 DOWNTO 0)); -- TODO: Hook this up to the output of the ALU. It is important for synthesis that you have this output that can effectively be impacted by all other components so they are not optimized away.
 
-END SoftwarePipeline;
-ARCHITECTURE structure OF SoftwarePipeline IS
+END MIPS_Processor;
+ARCHITECTURE structure OF MIPS_Processor IS
 
 	-- Required data memory signals
 	SIGNAL s_DMemWr : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
@@ -130,85 +130,6 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 			o_Zero : OUT std_logic);
 
 	END COMPONENT;
-	
-	COMPONENT IFIDreg IS
-    GENERIC (N : INTEGER := 32);
-    PORT (
-      flush : IN std_logic;
-      stall : IN std_logic;
-      instr : IN std_logic_vector(N - 1 DOWNTO 0); -- instruction data
-      pcp4 : IN std_logic_vector(N - 1 DOWNTO 0); -- PC+4
-      clock : IN std_logic;
-      out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_instr : OUT std_logic_vector(N - 1 DOWNTO 0));
-  END COMPONENT;
-
-  COMPONENT IDEXreg IS
-    GENERIC (N : INTEGER := 32);
-    PORT (
-      stall : IN std_logic;
-      readdata1 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 1
-      readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
-      pcp4 : IN std_logic_vector(N - 1 DOWNTO 0); -- PC+4
-      sign_ext : IN std_logic_vector(N - 1 DOWNTO 0); -- output of sign extender
-      rt : IN std_logic_vector(4 DOWNTO 0); -- instruction[20-16], Rt
-      rd : IN std_logic_vector(4 DOWNTO 0); -- instruction[15-11], Rd
-      clock : IN std_logic;
-      ctl_RegWrite : IN std_logic; -- propagate to WB
-      ctl_MemtoReg : IN std_logic; -- propagate to WB
-      ctl_MemWrite : IN std_logic; -- propagate to MEM
-      ctl_ALUOp : IN std_logic_vector(3 DOWNTO 0); -- propagate to EX
-      ctl_ALUSrc : IN std_logic; -- propagate to EX
-      ctl_RegDst : IN std_logic; -- propagate to EX
-      out_RegWrite : OUT std_logic;
-      out_MemtoReg : OUT std_logic;
-      out_MemWrite : OUT std_logic;
-      out_ALUOp : OUT std_logic_vector(3 DOWNTO 0);
-      out_ALUSrc : OUT std_logic;
-      out_RegDst : OUT std_logic;
-      out_readdata1 : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_readdata2 : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_rt : OUT std_logic_vector(4 DOWNTO 0);
-      out_rd : OUT std_logic_vector(4 DOWNTO 0);
-      out_sign_ext : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0));
-  END COMPONENT;
-
-  COMPONENT EXMEMreg IS
-    GENERIC (N : INTEGER := 32);
-    PORT (
-      stall : IN std_logic;
-      clock : IN std_logic;
-      ctl_RegWrite : IN std_logic; -- propagate to WB
-      ctl_MemtoReg : IN std_logic; -- propagate to WB
-      ctl_MemWrite : IN std_logic; -- propagate to MEM
-      alu_result : IN std_logic_vector(N - 1 DOWNTO 0); -- 32bit result of alu operation
-      readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
-      writereg : IN std_logic_vector(4 DOWNTO 0); -- output of RegDst mux
-      out_RegWrite : OUT std_logic;
-      out_MemtoReg : OUT std_logic;
-      out_MemWrite : OUT std_logic;
-      out_aluresult : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_writedata : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_writereg : OUT std_logic_vector(4 DOWNTO 0));
-  END COMPONENT;
-
-  COMPONENT MEMWBreg IS
-    GENERIC (N : INTEGER := 32);
-    PORT (
-      stall : IN std_logic;
-      clock : IN std_logic;
-      ctl_RegWrite : IN std_logic; -- propagate to WB
-      ctl_MemtoReg : IN std_logic; -- propagate to WB
-      alu_result : IN std_logic_vector(N - 1 DOWNTO 0); -- 32bit result of alu operation
-      memreaddata : IN std_logic_vector(N - 1 DOWNTO 0); -- read data from memory module
-      writereg : IN std_logic_vector(4 DOWNTO 0); -- output of RegDst mux
-      out_RegWrite : OUT std_logic;
-      out_MemtoReg : OUT std_logic;
-      out_memreaddata : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_aluresult : OUT std_logic_vector(N - 1 DOWNTO 0);
-      out_writereg : OUT std_logic_vector(4 DOWNTO 0));
-  END COMPONENT;
 
 	-- Control flow signals 
 	SIGNAL s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
@@ -218,14 +139,10 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
 	SIGNAL s_ALUControl : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount : std_logic_vector(4 DOWNTO 0);
-	
-	SIGNAL s_flush, RegDst_idex, RegWrite_exmem, RegWrite_idex, RegWrite_memwb, MemToReg_exmem, MemToReg_idex, MemToReg_memwb, MemWrite_exmem, MemWrite_idex, ctl_unsigned, ALUSrc_idex: std_logic := '0';
-  SIGNAL ALUOp_idex, s_stall : std_logic_vector(3 DOWNTO 0) := "0000";
-  SIGNAL rt_idex, rd_idex, writereg_exmem, writereg_memwb : std_logic_vector(4 DOWNTO 0) := "00000";
-  SIGNAL instr_ifid, pcp4_idex, pcp4_ifid, readdata1_idex, readdata2_idex, aluresult_exmem, aluresult_memwb, sign_ext_idex, writedata_exmem, memreaddata_memwb : std_logic_vector(31 DOWNTO 0) := x"00000000";
+
 BEGIN
 
-	i_mux3 <= "000000000000000000000000000" & instr_ifid(10 DOWNTO 6);
+	i_mux3 <= "000000000000000000000000000" & s_Inst(10 DOWNTO 6);
 
 	-- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
 	WITH iInstLd SELECT
@@ -254,14 +171,14 @@ BEGIN
 		q => s_DMemOut);
 
 	s_Halt <= '1' WHEN (s_Inst(31 DOWNTO 26) = "000000") AND (s_Inst(5 DOWNTO 0) = "001100") AND (v0 = "00000000000000000000000000001010") ELSE
-		'0'; -- needs to be updated to allow the rest of the pipelined instructions to complete
+		'0';
 
 	mux0 : mux21_n_st
 	GENERIC MAP(N => 5)
 	PORT MAP(
-		i_A => instr_ifid(20 DOWNTO 16),
-		i_B => instr_ifid(15 DOWNTO 11),
-		i_S => s_RegWr,
+		i_A => s_Inst(20 DOWNTO 16),
+		i_B => s_Inst(15 DOWNTO 11),
+		i_S => s_regDst,
 		o_F => s_mux0
 	);
 
@@ -297,8 +214,8 @@ BEGIN
 
 	control : control_logic
 	PORT MAP(
-		opcode => instr_ifid(31 DOWNTO 26),
-		func =>  instr_ifid(5 DOWNTO 0),
+		opcode => s_Inst(31 DOWNTO 26),
+		func => s_Inst(5 DOWNTO 0),
 		regDst => s_regDst,
 		jump => s_jump,
 		jr => s_jr,
@@ -314,109 +231,20 @@ BEGIN
 		lui => s_lui,
 		shamt => s_shamt
 	);
-	
-	IFID : IFIDreg
-  PORT MAP(
-    flush => s_flush,
-    stall => s_stall(0),
-    instr => s_inst,
-    pcp4 => s_pcPlusFour,
-    clock => iCLK,
-    out_pcp4 => pcp4_ifid,
-    out_instr => instr_ifid);
 
-  IDEX : IDEXreg
-  PORT MAP(
-    stall => s_stall(1),
-    readdata1 => s_oRs,
-    readdata2 => s_DMemData,
-    pcp4 => pcp4_ifid,
-    sign_ext => s_oExtend,
-    rt => instr_ifid(20 DOWNTO 16),
-    rd => instr_ifid(15 DOWNTO 11),
-    clock => iCLK,
-    ctl_RegWrite => s_RegWr,
-    ctl_MemtoReg => s_memToReg,
-    ctl_MemWrite => s_DMemWr,
-    ctl_ALUOp => s_ALUControl,
-    ctl_ALUSrc => s_ALUSrc,
-    ctl_RegDst => s_regDst,
-    out_RegWrite => RegWrite_idex,
-    out_MemtoReg => MemToReg_idex,
-    out_MemWrite => MemWrite_idex,
-    out_ALUOp => ALUOp_idex,
-    out_ALUSrc => ALUSrc_idex,
-    out_RegDst => RegDst_idex,
-    out_readdata1 => readdata1_idex,
-    out_readdata2 => readdata2_idex,
-    out_rt => rt_idex,
-    out_rd => rd_idex,
-    out_sign_ext => sign_ext_idex,
-    out_pcp4 => pcp4_idex);
-
-  EXMEM : EXMEMreg
-  PORT MAP(
-    stall => s_stall(2),
-    clock => iCLK,
-    ctl_RegWrite => RegWrite_idex,
-    ctl_MemtoReg => MemToReg_idex,
-    ctl_MemWrite => MemWrite_idex,
-    alu_result => s_DMemAddr,
-    readdata2 => readdata2_idex,
-    writereg => s_RegWrAddr,
-    out_RegWrite => RegWrite_exmem,
-    out_MemtoReg => MemToReg_exmem,
-    out_MemWrite => MemWrite_exmem,
-    out_aluresult => aluresult_exmem,
-    out_writedata => writedata_exmem,
-    out_writereg => writereg_exmem);
-
-  MEMWB : MEMWBreg
-  PORT MAP(
-    stall => s_stall(3),
-    clock => iCLK,
-    ctl_RegWrite => RegWrite_idex,
-    ctl_MemtoReg => MemToReg_idex,
-    alu_result => aluresult_exmem,
-    memreaddata => x"44444444", --emulated memory read data
-    writereg => writereg_exmem,
-    out_RegWrite => RegWrite_memwb,
-    out_MemtoReg => MemToReg_memwb,
-    out_memreaddata => memreaddata_memwb,
-    out_aluresult => aluresult_memwb,
-    out_writereg => writereg_memwb);
-
-	--regdstmux : mux21_n_st
-	--GENERIC MAP(N => N)
-	--PORT MAP(
-	--	i_A => rt_idex,
-	--	i_B => rd_idex,
-	--	i_S => RegDst_idex,
-	--	o_F => o_regdstmux
-	--);
-	
-	--jalmux : mux21_n_st
-	--GENERIC MAP(N => N)
-	--PORT MAP(
-	--	i_A => o_regdstmux,
-	--	i_B => "11111",
-	--	i_S => jal_idex,
-	--	o_F => s_mux2
-	--);
-	
 	mux2 : mux21_n_st
 	GENERIC MAP(N => N)
 	PORT MAP(
-		i_A => readdata2_idex,
-		i_B => sign_ext_idex,
-		i_S => ALUSrc_idex,
+		i_A => s_DMemData,
+		i_B => s_oExtend,
+		i_S => s_ALUSrc,
 		o_F => s_mux2
 	);
 
 	mux3 : mux21_n_st
 	GENERIC MAP(N => N)
 	PORT MAP(
-		i_A => readdata1_idex,
+		i_A => s_oRs,
 		i_B => i_mux3,
 		i_S => s_shamt,
 		o_F => s_mux3
