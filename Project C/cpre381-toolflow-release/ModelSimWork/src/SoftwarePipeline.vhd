@@ -218,14 +218,16 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 
 	-- Other signals
 	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_mux5, s_pcPlusFour, s_iMux6, s_mux7, s_mux8, s_branchAddr, pcp4_ifid, instr_ifid : std_logic_vector(N - 1 DOWNTO 0);
-	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
-	SIGNAL s_ALUControl, s_stall : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount : std_logic_vector(4 DOWNTO 0);
+	SIGNAL s_ALUControl, s_stall : std_logic_vector(3 DOWNTO 0);
+	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi : std_logic;
 	
 	-- added pipeline signals
-	SIGNAL pcp4_ifid, instr_ifid : std_logic_vector(N - 1 DOWNTO 0);
-	SIGNAL s_flush : std_logic;
-	SIGNAL s_stall : std_logic_vector(3 DOWNTO 0);
+	SIGNAL pcp4_ifid, instr_ifid, readdata1_idex, readdata2_idex : std_logic_vector(N - 1 DOWNTO 0);
+	SIGNAL opcode_idex : std_logic_vector(5 DOWNTO 0);
+	SIGNAL rt_idex, rd_idex : std_logic_vector(4 DOWNTO 0);
+	SIGNAL s_stall, aluop_idex : std_logic_vector(3 DOWNTO 0);
+	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, sign_ext_idex, pcp4_idex : std_logic;
 
 BEGIN
 
@@ -238,6 +240,38 @@ BEGIN
 	  clock => iCLK,
 	  out_pcp4 => pcp4_ifid,
 	  out_instr => instr_ifid
+	);
+	
+	idex : IDEXreg
+	PORT MAP(
+	  stall => s_stall(1),
+	  opcode => instr_ifid(31 DOWNTO 26),
+	  readdata1 => s_oRs, -- pre-existing rd1 signal from registerfile
+	  readdata2 => s_DMemData, -- pre-existing rd2 signal from registerfile
+	  pcp4 => pcp4_ifid, -- propagated pcp4 from ifid
+      sign_ext => s_oExtend, -- pre-existing output from extender
+      rt => instr_ifid(20 DOWNTO 16),
+      rd => instr_ifid(15 DOWNTO 11),
+      clock => iCLK,
+      ctl_RegWrite => s_RegWr, -- control signals from control unit
+      ctl_MemtoReg => s_memToReg,
+      ctl_MemWrite => s_DMemWr,
+      ctl_ALUOp => s_ALUControl,
+      ctl_ALUSrc => s_ALUSrc,
+      ctl_RegDst => s_regDst,
+      out_RegWrite => regwrite_idex,
+      out_MemtoReg => memtoreg_idex,
+      out_MemWrite => memwrite_idex,
+      out_ALUOp => aluop_idex,
+      out_ALUSrc => alusrc_idex,
+      out_RegDst => regdst_idex,
+      out_readdata1 => readdata1_idex,
+      out_readdata2 => readdata2_idex,
+      out_rt => rt_idex,
+      out_rd => rd_idex,
+      out_sign_ext => sign_ext_idex,
+      out_pcp4 => pcp4_idex,
+	  out_opcode => opcode_idex
 	);
 
 	i_mux3 <= "000000000000000000000000000" & s_Inst(10 DOWNTO 6);
