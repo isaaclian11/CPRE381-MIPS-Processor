@@ -538,6 +538,16 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 		o_F => s_RegWrData
 	);
 	
+	ExitReg : reg
+	GENERIC MAP(N => N)
+	PORT MAP(
+		D => s_RegWrData,
+		WE => '1',
+		clock => iCLK,
+		reset => '0',
+		Q => v0);
+
+	
 	s_pcPlusFour <= std_logic_vector(to_unsigned(to_integer(unsigned(s_NextInstAddr)) + 4, 32));
 		
 	-- for addi, ori, xori instructions, extender needs to sign extend
