@@ -497,7 +497,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	  instr => instr_exmem,
 	  ctl_RegWrite => s_RegWr,
       ctl_MemtoReg => memtoreg_exmem,
-	  alu_result => s_ALUOut,
+	  alu_result => s_DMemAddr,
 	  ctl_jal => jal_idex,
 	  ctl_lui => lui_idex,
 	  pcp4 => pcp4_exmem,
@@ -510,8 +510,8 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	  out_writereg => s_RegWrAddr,
 	  out_instr => instr_memwb,
 	  out_pcp4 => pcp4_memwb,
-	  out_jal => jal_exmem,
-	  out_lui => lui_exmem
+	  out_jal => jal_memwb,
+	  out_lui => lui_memwb
 	);
 	
 	
@@ -569,7 +569,6 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 		i_unsigned => s_iUnsigned,
 		i_shiftamount => "00000",
 		o_Cout => s_Cout,
-		o_result => s_ALUOut,
 		o_overflow => s_overflow,
 		o_Zero => s_zeroSig
 	);
@@ -591,5 +590,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	
 	--i_B for mux 6
 	s_iMux6 <= instr_memwb(15 DOWNTO 0) & "0000000000000000";
+	
+	oALUOut <= s_ALUOut;
 
 end structure;
