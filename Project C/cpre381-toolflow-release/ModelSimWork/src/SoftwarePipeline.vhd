@@ -262,6 +262,10 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	WITH iInstLd SELECT
 		s_IMemAddr <= s_NextInstAddr WHEN '0',
 		iInstAddr WHEN OTHERS;
+		
+	s_stall <= "0000";
+	s_flush <= '0';
+		
 	IMem : mem
 	GENERIC MAP(
 		ADDR_WIDTH => 10,
