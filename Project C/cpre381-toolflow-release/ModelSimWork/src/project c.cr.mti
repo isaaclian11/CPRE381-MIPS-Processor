@@ -66,6 +66,15 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity extender
 -- Compiling architecture dataflow of extender
 
+} {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IDEXreg
+-- Compiling architecture behavior of IDEXreg
+
 } {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
@@ -96,15 +105,6 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity MIPS_Processor
 -- Compiling architecture structure of MIPS_Processor
 
-} {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity IDEXreg
--- Compiling architecture behavior of IDEXreg
-
 } {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
@@ -121,132 +121,7 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity xorg2
 -- Compiling architecture dataflow of xorg2
 
-} {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd} {0 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package NUMERIC_STD
--- Compiling entity SoftwarePipeline
--- Compiling architecture structure of SoftwarePipeline
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(243): near ",": (vcom-1576) expecting IDENTIFIER.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(246): (vcom-1294) Declaration with designator "s_stall" already exists in this region.
-** =====> Prior declaration of "s_stall" is at D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(238).
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(283): (vcom-1136) Unknown identifier "pcp4_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(284): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(292): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(293): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(292): (vcom-1436) Actual expression (slice name) of formal "i_rs" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(293): (vcom-1436) Actual expression (slice name) of formal "i_rt" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(303): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(303): (vcom-1436) Actual expression (slice name) of formal "i_A" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(310): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(311): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(310): (vcom-1436) Actual expression (slice name) of formal "opcode" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(311): (vcom-1436) Actual expression (slice name) of formal "func" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(331): (vcom-1136) Unknown identifier "pcp4_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(363): near "shamt": (vcom-1576) expecting ',' or ')'.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(393): Statement cannot be labeled.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(396): (vcom-1136) Unknown identifier "readdata2_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(397): Signal "sign_ext_idex" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(405): (vcom-1136) Unknown identifier "readdata1_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(406): (vcom-1136) Unknown identifier "shamt_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(413): (vcom-1136) Unknown identifier "readdata1_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(427): (vcom-1136) Unknown identifier "inst_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(428): (vcom-1136) Unknown identifier "inst_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(427): (vcom-1436) Actual expression (slice name) of formal "i_A" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(428): (vcom-1436) Actual expression (slice name) of formal "i_B" is not globally static.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(446): (vcom-1136) Unknown identifier "inst_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(455): (vcom-1136) Unknown identifier "readdata2_idex".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(462): (vcom-1136) Unknown identifier "instr_exmem".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(463): (vcom-1136) Unknown identifier "pcp4_exmem".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(448): Signal "pcp4_idex" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(502): near ")": syntax error
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(505): Statement cannot be labeled.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(508): (vcom-1136) Unknown identifier "aluresult_memwb".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(509): (vcom-1136) Unknown identifier "memreaddata_memwb".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(518): (vcom-1136) Unknown identifier "pcp4_memwb".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): Bad expression in left operand of infix expression "or".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): Bad expression in right operand of infix expression "or".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): Bad expression in left operand of infix expression "or".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): Bad expression in right operand of infix expression "or".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(535): Type error resolving infix expression "or" as type std.STANDARD.BOOLEAN.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(537): Type error resolving infix expression "<=" as type ieee.std_logic_1164.STD_LOGIC.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(542): (vcom-1014) Array type selected signal assignment expression must be of a locally static subtype.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(546): No feasible entries for infix operator "and".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(546): No feasible entries for infix operator "and".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(546): Bad expression in left operand of infix expression "or".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(546): Bad expression in right operand of infix expression "or".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(546): Type error resolving infix expression "or" as type ieee.std_logic_1164.STD_LOGIC.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(548): Enumeration literal '1' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(550): (vcom-1136) Unknown identifier "pcp4_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(550): Bad expression in right operand of infix expression "<=".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(550): near ";": (vcom-1576) expecting ')'.
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(552): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(552): Type error resolving infix expression "&" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(557): (vcom-1136) Unknown identifier "instr_memwb".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(557): (vcom-1136) Unknown identifier "instr_memwb".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(557): Bad expression in left operand of infix expression "and".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(557): Bad expression in right operand of infix expression "and".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(557): Bad expression in left operand of infix expression "and".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(557): Type error resolving infix expression "and" as type std.STANDARD.BOOLEAN.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(561): (vcom-1136) Unknown identifier "pcp4_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(561): (vcom-1136) Unknown identifier "instr_ifid".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(561): Bad expression in left operand of infix expression "&".
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(561): Type error resolving infix expression "&" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(564): (vcom-1136) Unknown identifier "instr_memwb".
-
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(564): Type error resolving infix expression "&" as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/PipelinedProcessor.vhd(566): near "EOF": syntax error
-
-} {11.0 12.0 13.0 14.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 31.0 32.0 33.0 34.0 35.0 36.0 37.0 38.0 39.0 40.0 41.0 42.0 43.0 44.0 46.0 47.0 49.0 50.0 51.0 52.0 53.0 54.0 55.0 56.0 57.0 58.0 59.0 60.0 61.0 62.0 63.0 64.0 65.0 66.0 67.0 68.0 69.0 70.0 74.0 75.0 76.0 77.0 78.0 79.0 80.0 81.0 82.0 83.0 86.0 87.0 92.0 93.0 100.0 101.0 103.0 104.0 105.0 106.0 108.0 109.0 110.0 111.0 116.0 117.0 118.0 119.0 122.0 123.0 125.0} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd}
+} {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -386,6 +261,15 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Compiling entity dffx
 -- Compiling architecture mixed of dffx
 
+} {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd}
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity EXMEMreg
+-- Compiling architecture behavior of EXMEMreg
+
 } {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd}
 Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
 -- Loading package STANDARD
@@ -419,14 +303,5 @@ Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 
 -- Loading package vectorarraytype
 -- Compiling entity newprocessor
 -- Compiling architecture structural of newprocessor
-
-} {} {}} {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/Projects/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd}
-Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity EXMEMreg
--- Compiling architecture behavior of EXMEMreg
 
 } {} {}}

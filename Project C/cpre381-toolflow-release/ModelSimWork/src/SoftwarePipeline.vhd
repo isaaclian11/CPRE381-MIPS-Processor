@@ -233,7 +233,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	out_jal : OUT std_logic;
     out_lui : OUT std_logic;
 	out_pcp4 : OUT std_logic_vector(N-1 DOWNTO 0);
-	out_instr : IN std_logic_vector(N-1 DOWNTO 0));
+	out_instr : OUT std_logic_vector(N-1 DOWNTO 0));
   END COMPONENT;
 
 	-- Control flow signals 
@@ -503,7 +503,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	  out_MemToReg => memtoreg_memwb,
 	  out_memreaddata => memreaddata_memwb,
 	  out_aluresult => aluresult_memwb,
-	  out_writereg => s_RegWrData,
+	  out_writereg => s_RegWrAddr,
 	  out_instr => instr_memwb,
 	  out_pcp4 => pcp4_memwb,
 	  out_jal => jal_exmem,
