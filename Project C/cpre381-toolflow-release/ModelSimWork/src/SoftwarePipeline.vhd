@@ -1,3 +1,12 @@
+-------------------------------------------------------------------------
+-- Aidan Sherburne
+-- Iowa State University
+-------------------------------------------------------------------------
+-- SoftwarerPipeline.vhd
+-------------------------------------------------------------------------
+-- DESCRIPTION: Software scheduled pipeline for Project C phase 1
+-------------------------------------------------------------------------
+
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE IEEE.std_logic_unsigned.ALL;
