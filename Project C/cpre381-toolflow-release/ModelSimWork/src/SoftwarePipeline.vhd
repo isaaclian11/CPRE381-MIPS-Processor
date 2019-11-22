@@ -245,7 +245,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut : std_logic_vector(N - 1 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount, s_regAddr : std_logic_vector(4 DOWNTO 0);
 	SIGNAL s_ALUControl, s_stall : std_logic_vector(3 DOWNTO 0);
-	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi, s_zeroSig, s_DMemWrite : std_logic;
+	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi, s_zeroSig, s_DMemWrite, s_RegWrite : std_logic;
 	
 	-- added pipeline signals
 	SIGNAL pcp4_ifid, instr_ifid, shamt_idex, readdata1_idex, aluresult_exmem, writedata_exmem, memreaddata_memwb, 
@@ -331,7 +331,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 		ALUControl => s_ALUControl,
 		memWrite => s_DMemWrite,
 		ALUSrc => s_ALUSrc,
-		regWrite => s_RegWr,
+		regWrite => s_RegWrite,
 		i_unsigned => s_iUnsigned,
 		jal => s_jal,
 		lui => s_lui,
@@ -375,7 +375,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
       instr => instr_ifid,
 	  shamt => i_mux3,
       clock => iCLK,
-      ctl_RegWrite => s_RegWr, -- control signals from control unit
+      ctl_RegWrite => s_RegWrite, -- control signals from control unit
       ctl_MemtoReg => s_memToReg,
       ctl_MemWrite => s_DMemWrite,
       ctl_ALUOp => s_ALUControl,
@@ -495,7 +495,7 @@ ARCHITECTURE structure OF SoftwarePipeline IS
 	  stall => s_stall(3),
       clock => iCLK,
 	  instr => instr_exmem,
-	  ctl_RegWrite => s_RegWr,
+	  ctl_RegWrite => regwrite_exmem,
       ctl_MemtoReg => memtoreg_exmem,
 	  alu_result => s_DMemAddr,
 	  ctl_jal => jal_idex,

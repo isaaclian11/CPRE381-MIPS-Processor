@@ -21,7 +21,8 @@ ENTITY registerfile IS
     i_rd : IN std_logic_vector(4 DOWNTO 0); -- write address
     i_wd : IN std_logic_vector(31 DOWNTO 0); -- write data
     o_rd1 : OUT std_logic_vector(31 DOWNTO 0); -- read data 1
-    o_rd2 : OUT std_logic_vector(31 DOWNTO 0)); -- read data 2
+    o_rd2 : OUT std_logic_vector(31 DOWNTO 0);
+	v0 : OUT std_logic_vector(31 DOWNTO 0)); -- read data 2
 
 END registerfile;
 
@@ -85,5 +86,11 @@ BEGIN
     i_MuxData => s_RegData,
     i_MuxSel => i_rt,
     o_MuxOut => o_rd2);
+	
+   mux3 : mux_321_df
+  PORT MAP(
+    i_MuxData => s_RegData,
+    i_MuxSel => "00010",
+    o_MuxOut => v0);
 
 END structural;
