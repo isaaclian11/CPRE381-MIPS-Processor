@@ -50,7 +50,7 @@ BEGIN
 	  IF (stall = '0') THEN
         out_RegWrite <= ctl_RegWrite;
         out_MemtoReg <= ctl_MemtoReg;
-        out_MemWrite <= ctl_RegWrite;
+        out_MemWrite <= ctl_MemWrite;
         out_ALUOp <= ctl_ALUOp;
         out_ALUSrc <= ctl_ALUSrc;
         out_RegDst <= ctl_RegDst;
