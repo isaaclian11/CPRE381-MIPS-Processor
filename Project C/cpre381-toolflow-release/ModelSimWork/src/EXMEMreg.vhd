@@ -13,7 +13,6 @@ ENTITY EXMEMreg IS
     ctl_RegWrite : IN std_logic; -- propagate to WB
     ctl_MemtoReg : IN std_logic; -- propagate to WB
     ctl_MemWrite : IN std_logic; -- propagate to MEM
-	v0: IN std_logic_vector(N-1 DOWNTO 0);
     alu_result : IN std_logic_vector(N - 1 DOWNTO 0); -- 32bit result of alu operation
     readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
     writereg : IN std_logic_vector(4 DOWNTO 0); -- output of RegDst mux
@@ -48,7 +47,6 @@ BEGIN
 		out_pcp4 <= pcp4;
 		out_jal <= ctl_jal;
 		out_lui <= ctl_lui;
-		out_v0 <= v0;
 	  END IF;
     END IF;
   END PROCESS;

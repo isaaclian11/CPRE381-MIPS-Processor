@@ -14,7 +14,6 @@ ENTITY MEMWBreg IS
     memreaddata : IN std_logic_vector(N - 1 DOWNTO 0); -- read data from memory module
     writereg : IN std_logic_vector(4 DOWNTO 0); -- output of RegDst mux
 	pcp4 : IN std_logic_vector(N-1 DOWNTO 0);
-	v0: IN std_logic_vector(N-1 DOWNTO 0);
 	ctl_jal : IN std_logic;
     ctl_lui : IN std_logic;
     out_RegWrite : OUT std_logic;
@@ -44,7 +43,6 @@ BEGIN
 		out_pcp4 <= pcp4;
 		out_jal <= ctl_jal;
 		out_lui <= ctl_lui;
-		out_v0 <= v0;
       END IF;
 	END IF;
   END PROCESS;

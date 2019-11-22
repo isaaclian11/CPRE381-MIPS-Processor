@@ -155,7 +155,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
     sign_ext : IN std_logic_vector(N - 1 DOWNTO 0); -- output of sign extender
     instr: IN std_logic_vector(N-1 DOWNTO 0);
     shamt : IN std_logic_vector(N-1 downto 0);
-	v0 : IN std_logic_vector(N-1 downto 0);
     clock : IN std_logic;
     ctl_RegWrite : IN std_logic; -- propagate to WB
     ctl_MemtoReg : IN std_logic; -- propagate to WB
@@ -183,7 +182,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
     out_inst : OUT std_logic_vector(N-1 DOWNTO 0);
     out_sign_ext : OUT std_logic_vector(N - 1 DOWNTO 0);
     out_pcp4 : OUT std_logic_vector(N - 1 DOWNTO 0);
-	out_v0 : OUT std_logic_vector(N-1 DOWNTO 0);
 	out_opcode : OUT std_logic_vector(5 DOWNTO 0));
   END COMPONENT;
 
@@ -197,7 +195,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
     ctl_RegWrite : IN std_logic; -- propagate to WB
     ctl_MemtoReg : IN std_logic; -- propagate to WB
     ctl_MemWrite : IN std_logic; -- propagate to MEM
-	v0: IN std_logic_vector(N-1 DOWNTO 0);
     alu_result : IN std_logic_vector(N - 1 DOWNTO 0); -- 32bit result of alu operation
     readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
     writereg : IN std_logic_vector(4 DOWNTO 0); -- output of RegDst mux
@@ -212,7 +209,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	out_pcp4 : OUT std_logic_vector(N-1 DOWNTO 0);
 	out_jal : OUT std_logic;
     out_lui : OUT std_logic;
-	out_v0 : OUT std_logic_vector(N-1 DOWNTO 0);
 	out_instr : OUT std_logic_vector(N-1 DOWNTO 0));
   END COMPONENT;
 
@@ -228,7 +224,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
     memreaddata : IN std_logic_vector(N - 1 DOWNTO 0); -- read data from memory module
     writereg : IN std_logic_vector(4 DOWNTO 0); -- output of RegDst mux
 	pcp4 : IN std_logic_vector(N-1 DOWNTO 0);
-	v0: IN std_logic_vector(N-1 DOWNTO 0);
 	ctl_jal : IN std_logic;
     ctl_lui : IN std_logic;
     out_RegWrite : OUT std_logic;
@@ -239,7 +234,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	out_jal : OUT std_logic;
     out_lui : OUT std_logic;
 	out_pcp4 : OUT std_logic_vector(N-1 DOWNTO 0);
-	out_v0 : OUT std_logic_vector(N-1 DOWNTO 0);
 	out_instr : OUT std_logic_vector(N-1 DOWNTO 0));
   END COMPONENT;
 
@@ -249,7 +243,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	-- Other signals
 	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, 
 	s_mux5, s_pcPlusFour, s_iMux6, s_mux7, s_mux8, s_branchAddr, s_rtout, 
-	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut, s_v0, v0_idex, v0_exmem, v0_memwb : std_logic_vector(N - 1 DOWNTO 0);
+	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut, s_v0 : std_logic_vector(N - 1 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount, s_regAddr : std_logic_vector(4 DOWNTO 0);
 	SIGNAL s_ALUControl, s_stall : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi, s_zeroSig, s_DMemWrite, s_RegWrite : std_logic;
@@ -391,7 +385,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	  ctl_RegDst => s_regDst,
 	  ctl_lui => s_lui,
 	  ctl_jal => s_jal,
-	  v0 => s_v0,
 	  ctl_shamt => s_shamt,
 	  ctl_unsigned => s_iUnsigned,
       out_RegWrite => regwrite_idex,
@@ -409,8 +402,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
       out_inst => inst_idex,
 	  out_shamt => shamt_idex,
       out_sign_ext => sign_ext_idex,
-      out_pcp4 => pcp4_idex,
-	  out_v0 => v0_idex
+      out_pcp4 => pcp4_idex
 	);
 	
 	mux2 : mux21_n_st
@@ -476,7 +468,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	  ctl_lui => lui_idex,
       alu_result => s_ALUOut, -- pre-existing output from ALU in EX stage
       readdata2 => readdata2_idex,
-	  v0 => v0_idex,
       out_RegWrite => regwrite_exmem,
       out_MemtoReg => memtoreg_exmem,
       out_MemWrite => s_DMemWr,
@@ -486,8 +477,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	  out_instr => instr_exmem,
 	  out_pcp4 => pcp4_exmem,
 	  out_jal => jal_exmem,
-	  out_lui => lui_exmem, 
-	  out_v0 => v0_exmem
+	  out_lui => lui_exmem
 	);
 	
 	
@@ -512,7 +502,6 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	  alu_result => s_DMemAddr,
 	  ctl_jal => jal_idex,
 	  ctl_lui => lui_idex,
-	  v0 => v0_exmem,
 	  pcp4 => pcp4_exmem,
 	  memreaddata => s_DMemOut, -- pre-existing read data from memory module in MEM stage
 	  writereg => writereg_exmem,
@@ -524,8 +513,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	  out_instr => instr_memwb,
 	  out_pcp4 => pcp4_memwb,
 	  out_jal => jal_memwb,
-	  out_lui => lui_memwb,
-	  out_v0 => v0
+	  out_lui => lui_memwb
 	);
 	
 	
@@ -588,7 +576,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	--Since the output of mux3 is 32 bits, we need this condition to handle the shift amount
 	s_shiftAmount <= s_mux3(4 DOWNTO 0);
 
-	s_Halt <= '1' WHEN (instr_memwb(31 DOWNTO 26) = "000000") AND (instr_memwb(5 DOWNTO 0) = "001100") AND (v0 = "00000000000000000000000000001010") ELSE
+	s_Halt <= '1' WHEN (instr_memwb(31 DOWNTO 26) = "000000") AND (instr_memwb(5 DOWNTO 0) = "001100") AND (s_v0 = "00000000000000000000000000001010") ELSE
 		'0';
 		
 	--PC+4[31..28] + instr_ifid(26 downto 0) shifted left by 2
