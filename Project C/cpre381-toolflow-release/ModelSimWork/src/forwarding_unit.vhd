@@ -19,12 +19,12 @@ architecture mixed of forwarding_unit is
 
 begin
 
-forwardA <= "00";
-forwardB <= "00";
-
 process(instr_idex, rd_exmem, rd_memwb, regwrite_exmem, regwrite_memwb)
 
 begin
+
+forwardA <= "00";
+forwardB <= "00";
 
 --EX hazard
 if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(25 downto 21))) then

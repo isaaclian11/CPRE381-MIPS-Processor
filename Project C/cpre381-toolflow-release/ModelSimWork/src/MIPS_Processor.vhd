@@ -240,6 +240,29 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	out_pcp4 : OUT std_logic_vector(N-1 DOWNTO 0);
 	out_instr : OUT std_logic_vector(N-1 DOWNTO 0));
   END COMPONENT;
+  
+  COMPONENT hazard_detection IS
+  port(
+	instr_idex: in std_logic_vector(31 downto 0); --Used to check lw and rt_idex
+	instr_ifid: in std_logic_vector(31 downto 0); --Used for rs_ifid and rt_ifid
+	jump : in std_logic; --Jump signal from the control unit
+	stall : out std_logic;
+	flush_ifid : out std_logic;
+	flush_idex : out std_logic
+	);
+  END COMPONENT;
+  
+  COMPONENT forwarding_unit IS
+  port(
+	instr_idex : in std_logic_vector(31 downto 0);
+	rd_exmem : in std_logic_vector(4 downto 0);
+	rd_memwb : in std_logic_vector(4 downto 0);
+	regwrite_exmem : in std_logic;
+	regwrite_memwb : in std_logic;
+	forwardA : out std_logic_vector(1 downto 0);
+	forwardB : out std_logic_vector(1 downto 0)
+	);
+  END COMPONENT;
 
 	-- Control flow signals 
 	SIGNAL s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
@@ -254,13 +277,15 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	
 	-- added pipeline signals
 	SIGNAL pcp4_ifid, instr_ifid, shamt_idex, readdata1_idex, aluresult_exmem, writedata_exmem, memreaddata_memwb, 
-	aluresult_memwb, inst_idex, instr_exmem, pcp4_exmem, instr_memwb, pcp4_memwb, readdata2_idex, sign_ext_idex, pcp4_idex, pcp4BeforeID : std_logic_vector(N - 1 DOWNTO 0);
+	aluresult_memwb, inst_idex, instr_exmem, pcp4_exmem, instr_memwb, pcp4_memwb, readdata2_idex, sign_ext_idex, pcp4_idex, pcp4BeforeID,
+			ALU_iA, ALU_iB: std_logic_vector(N - 1 DOWNTO 0);
 	SIGNAL opcode_idex, opcode_exmem, opcode_memwb : std_logic_vector(5 DOWNTO 0);
-	SIGNAL rt_idex, rd_idex, writereg_exmem, writereg_memwb : std_logic_vector(4 DOWNTO 0);
+	SIGNAL rt_idex, rd_idex, writereg_exmem : std_logic_vector(4 DOWNTO 0);
 	SIGNAL aluop_idex : std_logic_vector(3 DOWNTO 0);
-	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex
-	, regwrite_exmem, memtoreg_exmem, memwrite_exmem, regwrite_memwb, memtoreg_memwb, 
-			jal_idex, lui_idex, unsigned_idex, shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb : std_logic;
+	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, 
+			regwrite_exmem, memtoreg_exmem, memtoreg_memwb, jal_idex, lui_idex, unsigned_idex, 
+			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb : std_logic;
+	SIGNAL forwardA, forwardB : std_logic_vector(1 downto 0);
 			
 	begin
 	-- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
@@ -421,10 +446,20 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		o_F => s_mux2
 	);
 	
+	with forwardA select
+		ALU_iA 	<= readdata1_idex when "00",
+				s_RegWrData when "01",
+				s_DMemAddr when others;
+	
+	with forwardB select
+		ALU_iB 	<= s_mux2 when "00",
+				s_RegWrData when "01",
+				s_DMemAddr when others;
+	
 	mux3 : mux21_n_st
 	GENERIC MAP(N => N)
 	PORT MAP(
-		i_A => readdata1_idex,
+		i_A => ALU_iA,
 		i_B => shamt_idex,
 		i_S => shamtCtl_idex,
 		o_F => s_mux3
@@ -432,8 +467,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	
 	ALU : ALU32
 	PORT MAP(
-		i_A => readdata1_idex,
-		i_B => s_mux2,
+		i_A => ALU_iA,
+		i_B => ALU_iB,
 		i_sel => aluop_idex,
 		i_unsigned => unsigned_idex,
 		i_shiftamount => s_shiftAmount,
@@ -553,7 +588,16 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		o_F => s_RegWrData
 	);
 	
-
+	forward: forwarding_unit
+	PORT MAP(
+		instr_idex => inst_idex,
+		rd_exmem => writereg_exmem,
+		rd_memwb => s_RegWrAddr,
+		regwrite_exmem => regwrite_exmem,
+		regwrite_memwb => s_RegWr,
+		forwardA => forwardA,
+		forwardB => forwardB
+	);
 	
 	s_pcPlusFour <= std_logic_vector(to_unsigned(to_integer(unsigned(s_NextInstAddr)) + 4, 32));
 		
