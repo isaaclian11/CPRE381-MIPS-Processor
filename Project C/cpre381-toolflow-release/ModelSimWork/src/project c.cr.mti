@@ -1,18 +1,10 @@
-//my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/org2.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/org2.vhd
+{//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity org2
--- Compiling architecture dataflow of org2
-
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd
-Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity twoToOneMux_dataflow
--- Compiling architecture dataflow of twoToOneMux_dataflow
+-- Compiling entity fulladder
+-- Compiling architecture structure of fulladder
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -23,6 +15,22 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity EXMEMreg
 -- Compiling architecture behavior of EXMEMreg
 
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity twoToOneMux_dataflow
+-- Compiling architecture dataflow of twoToOneMux_dataflow
+
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/org2.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/org2.vhd
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity org2
+-- Compiling architecture dataflow of org2
+
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -31,30 +39,22 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity ALU32
 -- Compiling architecture mixed of ALU32
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd}
-Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity tb_dmem
--- Compiling architecture behavioral of tb_dmem
-
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd}
-Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity ones_complementer_df
--- Compiling architecture dataflow of ones_complementer_df
-
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd}
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity IDEXreg
--- Compiling architecture behavior of IDEXreg
+-- Compiling entity MEMWBreg
+-- Compiling architecture behavior of MEMWBreg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity decoder_532_df
+-- Compiling architecture dataflow of decoder_532_df
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -65,13 +65,52 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity hazard_detection
 -- Compiling architecture dataflow of hazard_detection
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd}
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity decoder_532_df
--- Compiling architecture dataflow of decoder_532_df
+-- Loading package NUMERIC_STD
+-- Compiling entity IDEXreg
+-- Compiling architecture behavior of IDEXreg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ones_complementer_df
+-- Compiling architecture dataflow of ones_complementer_df
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_dmem
+-- Compiling architecture behavioral of tb_dmem
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity MIPS_Processor
+-- Compiling architecture structure of MIPS_Processor
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package vectorarraytype
+-- Loading package vectorarraytype
+-- Loading package NUMERIC_STD
+-- Compiling entity mux_321_df
+-- Compiling architecture dataflow of mux_321_df
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -88,6 +127,15 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package std_logic_1164
 -- Compiling entity fulladder
 -- Compiling architecture structure of fulladder
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_pipeline_registers
+-- Compiling architecture behavior of tb_pipeline_registers
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -108,6 +156,14 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity SoftwarePipeline
 -- Compiling architecture structure of SoftwarePipeline
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_control_logic
+-- Compiling architecture behavior of tb_control_logic
+
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -125,6 +181,23 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity extender
 -- Compiling architecture dataflow of extender
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity addsub_n_st_new
+-- Compiling architecture structure of addsub_n_st_new
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity decoder_532_df
+-- Compiling architecture dataflow of decoder_532_df
+
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -133,6 +206,15 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package NUMERIC_STD
 -- Compiling entity tb_pipeline_registers
 -- Compiling architecture behavior of tb_pipeline_registers
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/newprocessor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/newprocessor.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package vectorarraytype
+-- Compiling entity newprocessor
+-- Compiling architecture structural of newprocessor
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/newprocessor.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/newprocessor.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -151,6 +233,15 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package NUMERIC_STD
 -- Compiling entity tb_pipeline_registers
 -- Compiling architecture behavior of tb_pipeline_registers
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package vectorarraytype
+-- Compiling entity registerfile
+-- Compiling architecture structural of registerfile
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -248,6 +339,31 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity mem
 -- Compiling architecture rtl of mem
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IDEXreg
+-- Compiling architecture behavior of IDEXreg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_dmem
+-- Compiling architecture behavioral of tb_dmem
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity dffx
+-- Compiling architecture mixed of dffx
+
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -288,6 +404,39 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity mux21_n_st
 -- Compiling architecture structure of mux21_n_st
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity xorg2
+-- Compiling architecture dataflow of xorg2
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity EXMEMreg
+-- Compiling architecture behavior of EXMEMreg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity invg
+-- Compiling architecture dataflow of invg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity andg2
+-- Compiling architecture dataflow of andg2
+
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -303,6 +452,14 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package std_logic_1164
 -- Compiling entity invg
 -- Compiling architecture dataflow of invg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity control_logic
+-- Compiling architecture dataflow of control_logic
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -356,6 +513,17 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity addsub_n_st_new
 -- Compiling architecture structure of addsub_n_st_new
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity SoftwarePipeline
+-- Compiling architecture structure of SoftwarePipeline
+
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -381,6 +549,14 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity xorg2
 -- Compiling architecture dataflow of xorg2
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity control_logic
+-- Compiling architecture dataflow of control_logic
+
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -405,13 +581,13 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity tb_control_logic
 -- Compiling architecture behavior of tb_control_logic
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd}
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity control_logic
--- Compiling architecture dataflow of control_logic
+-- Compiling entity barrelShifter
+-- Compiling architecture behavorial of barrelShifter
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -421,13 +597,21 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity andg2
 -- Compiling architecture dataflow of andg2
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd}
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity fulladder_n_df
--- Compiling architecture dataflow of fulladder_n_df
+-- Compiling entity fulladder_n_st
+-- Compiling architecture structure of fulladder_n_st
+
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity addsub_n_st
+-- Compiling architecture structure of addsub_n_st
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -437,13 +621,38 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity control_logic
 -- Compiling architecture dataflow of control_logic
 
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity addsub_n_st
--- Compiling architecture structure of addsub_n_st
+-- Compiling entity fulladder_n_df
+-- Compiling architecture dataflow of fulladder_n_df
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ones_complementer_df
+-- Compiling architecture dataflow of ones_complementer_df
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux21_n_st
+-- Compiling architecture structure of mux21_n_st
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity hazard_detection
+-- Compiling architecture dataflow of hazard_detection
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/mem.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/mem.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -454,14 +663,6 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity mem
 -- Compiling architecture rtl of mem
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd}
-Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity mux21_n_df
--- Compiling architecture dataflow of mux21_n_df
-
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -470,6 +671,32 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity ones_complementer_df
 -- Compiling architecture dataflow of ones_complementer_df
 
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux21_n_df
+-- Compiling architecture dataflow of mux21_n_df
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package vectorarraytype
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_np
+-- Compiling architecture behavior of tb_np
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity onebitalu
+-- Compiling architecture dataflow of onebitalu
+
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
@@ -477,6 +704,23 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package std_logic_1164
 -- Compiling entity barrelShifter
 -- Compiling architecture behavorial of barrelShifter
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity reg
+-- Compiling architecture behavior of reg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity dff_n
+-- Compiling architecture structural of dff_n
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -487,13 +731,13 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity addsub_n_st_new
 -- Compiling architecture structure of addsub_n_st_new
 
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity barrelShifter
--- Compiling architecture behavorial of barrelShifter
+-- Compiling entity addsub_n_st
+-- Compiling architecture structure of addsub_n_st
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -502,6 +746,39 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package std_logic_1164
 -- Compiling entity dffx
 -- Compiling architecture mixed of dffx
+
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity barrelShifter
+-- Compiling architecture behavorial of barrelShifter
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ones_complementer
+-- Compiling architecture structure of ones_complementer
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mem
+-- Compiling architecture rtl of mem
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/extender.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/extender.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity extender
+-- Compiling architecture dataflow of extender
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -512,32 +789,21 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity EXMEMreg
 -- Compiling architecture behavior of EXMEMreg
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd}
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package vectorarraytype
--- Loading package NUMERIC_STD
--- Compiling entity tb_np
--- Compiling architecture behavior of tb_np
+-- Compiling entity fulladder_n_df
+-- Compiling architecture dataflow of fulladder_n_df
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd}
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity onebitalu
--- Compiling architecture dataflow of onebitalu
-
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd
-Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity IDEXreg
--- Compiling architecture behavior of IDEXreg
+-- Compiling entity tb_dmem
+-- Compiling architecture behavioral of tb_dmem
 
 } {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -550,13 +816,41 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity mux_321_df
 -- Compiling architecture dataflow of mux_321_df
 
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity tb_dmem
--- Compiling architecture behavioral of tb_dmem
+-- Loading package NUMERIC_STD
+-- Compiling entity IDEXreg
+-- Compiling architecture behavior of IDEXreg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity onebitalu
+-- Compiling architecture dataflow of onebitalu
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package vectorarraytype
+-- Loading package NUMERIC_STD
+-- Compiling entity tb_np
+-- Compiling architecture behavior of tb_np
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity control_mux
+-- Compiling architecture dataflow of control_mux
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -565,6 +859,14 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package std_logic_1164
 -- Compiling entity invg
 -- Compiling architecture dataflow of invg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity mux21_n_df
+-- Compiling architecture dataflow of mux21_n_df
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -592,16 +894,13 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity ones_complementer
 -- Compiling architecture structure of ones_complementer
 
-} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd}
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling package vectorarraytype
--- Loading package vectorarraytype
--- Loading package NUMERIC_STD
--- Compiling entity mux_321_df
--- Compiling architecture dataflow of mux_321_df
+-- Compiling entity dff_n
+-- Compiling architecture structural of dff_n
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -614,13 +913,32 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity MIPS_Processor
 -- Compiling architecture structure of MIPS_Processor
 
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity dff_n
--- Compiling architecture structural of dff_n
+-- Compiling package vectorarraytype
+-- Loading package vectorarraytype
+-- Loading package NUMERIC_STD
+-- Compiling entity mux_321_df
+-- Compiling architecture dataflow of mux_321_df
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ALU32
+-- Compiling architecture mixed of ALU32
+
+} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity fulladder_n_st
+-- Compiling architecture structure of fulladder_n_st
 
 } {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
@@ -633,12 +951,38 @@ Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Compiling entity SoftwarePipeline
 -- Compiling architecture structure of SoftwarePipeline
 
-} {} {}} //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd {1 {vcom -work work -2002 -explicit -stats=none //my.files.iastate.edu/Users/isanga/Desktop/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd}
 Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity fulladder_n_st
--- Compiling architecture structure of fulladder_n_st
+-- Compiling entity twoToOneMux_dataflow
+-- Compiling architecture dataflow of twoToOneMux_dataflow
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/org2.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/org2.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity org2
+-- Compiling architecture dataflow of org2
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity IFIDreg
+-- Compiling architecture behavior of IFIDreg
+
+} {} {}} {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd} {1 {vcom -work work -2002 -explicit -stats=none {//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd}
+Model Technology ModelSim DE-64 vcom 10.7b Compiler 2018.06 Jun  8 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity forwarding_unit
+-- Compiling architecture mixed of forwarding_unit
 
 } {} {}}

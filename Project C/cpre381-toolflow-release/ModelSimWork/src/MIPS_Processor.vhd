@@ -114,7 +114,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		PORT (
 			D : IN std_logic_vector(N - 1 DOWNTO 0); -- Data input
 			Q : OUT std_logic_vector(N - 1 DOWNTO 0); -- Data output
-			WE : IN std_logic; -- Write enableenable
+			stall : IN std_logic; -- Write enableenable
 			reset : IN std_logic; -- The clock signal
 			clock : IN std_logic); -- The reset signal
 	END COMPONENT;
@@ -150,6 +150,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
     GENERIC (N : INTEGER := 32);
     PORT (
      stall : IN std_logic;
+	 flush : IN std_logic;
     readdata1 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 1
     readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
     pcp4 : IN std_logic_vector(N - 1 DOWNTO 0); -- PC+4
@@ -263,6 +264,40 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	forwardB : out std_logic_vector(1 downto 0)
 	);
   END COMPONENT;
+  
+  COMPONENT control_mux is
+  PORT (
+		i_regDst : IN std_logic;
+		i_jump : IN std_logic;
+		i_jr : IN std_logic;
+		i_beq : IN std_logic;
+		i_bne : IN std_logic;
+		i_memToReg : IN std_logic;
+		i_ALUControl : IN std_logic_vector(3 DOWNTO 0);
+		i_memWrite : IN std_logic;
+		i_ALUSrc : IN std_logic;
+		i_regWrite : IN std_logic;
+		i_i_unsigned : IN std_logic;
+		i_jal : IN std_logic;
+		i_lui : IN std_logic;
+		i_shamt : IN std_logic;
+		regDst : OUT std_logic;
+		jump : OUT std_logic;
+		jr : OUT std_logic;
+		beq : OUT std_logic;
+		bne : OUT std_logic;
+		memToReg : OUT std_logic;
+		ALUControl : OUT std_logic_vector(3 DOWNTO 0);
+		memWrite : OUT std_logic;
+		ALUSrc : OUT std_logic;
+		regWrite : OUT std_logic;
+		i_unsigned : OUT std_logic;
+		jal : OUT std_logic;
+		lui : OUT std_logic;
+		shamt : OUT std_logic;
+		sel : IN std_logic
+	);
+END COMPONENT;
 
 	-- Control flow signals 
 	SIGNAL s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
@@ -270,10 +305,10 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	-- Other signals
 	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, 
 	s_mux5, s_pcPlusFour, s_iMux6, s_mux7, s_mux8, s_branchAddr, s_rtout, 
-	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut : std_logic_vector(N - 1 DOWNTO 0);
+	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut, s_memDataForward, s_memAddrForward : std_logic_vector(N - 1 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount, s_regAddr : std_logic_vector(4 DOWNTO 0);
-	SIGNAL s_ALUControl, s_stall : std_logic_vector(3 DOWNTO 0);
-	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi, s_zeroSig, s_DMemWrite, s_RegWrite, s_brJpJal : std_logic;
+	SIGNAL s_ALUControl, s_stall, ctl_ALUControl : std_logic_vector(3 DOWNTO 0);
+	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi, s_zeroSig, s_DMemWrite, s_RegWrite, s_brJpJal, ctl_regDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_memToReg, ctl_memWrite, ctl_ALUSrc, ctl_regWrite, ctl_jal, ctl_lui, ctl_shamt, ctl_i_unsigned, s_nop : std_logic;
 	
 	-- added pipeline signals
 	SIGNAL pcp4_ifid, instr_ifid, shamt_idex, readdata1_idex, aluresult_exmem, writedata_exmem, memreaddata_memwb, 
@@ -282,9 +317,9 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	SIGNAL opcode_idex, opcode_exmem, opcode_memwb : std_logic_vector(5 DOWNTO 0);
 	SIGNAL rt_idex, rd_idex, writereg_exmem : std_logic_vector(4 DOWNTO 0);
 	SIGNAL aluop_idex : std_logic_vector(3 DOWNTO 0);
-	SIGNAL s_flush, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, 
+	SIGNAL s_flushifid, s_flushidex, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, 
 			regwrite_exmem, memtoreg_exmem, memtoreg_memwb, jal_idex, lui_idex, unsigned_idex, 
-			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb : std_logic;
+			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb, s_pcWrite : std_logic;
 	SIGNAL forwardA, forwardB : std_logic_vector(1 downto 0);
 			
 	begin
@@ -294,8 +329,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		iInstAddr WHEN OTHERS;
 		
 	s_stall <= "0000";
-	s_flush <= '0';
-
+	s_flushifid <= '0';
+	
 		
 	IMem : mem
 	GENERIC MAP(
@@ -313,14 +348,14 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	PORT MAP(
 		D => pcp4BeforeID,
 		Q => s_NextInstAddr,
-		WE => '1',
+		stall => s_nop,
 		reset => iRST,
 		clock => iCLK);
 	
 	ifid : IFIDreg
 	PORT MAP(
-	  flush => s_flush,
-	  stall => s_stall(0),
+	  flush => '0',
+	  stall => s_nop,
 	  instr => s_inst,
 	  pcp4 => s_pcPlusFour,
 	  clock => iCLK,
@@ -355,6 +390,38 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	PORT MAP(
 		opcode => instr_ifid(31 DOWNTO 26),
 		func => instr_ifid(5 DOWNTO 0),
+		regDst => ctl_regDst,
+		jump => ctl_jump,
+		jr => ctl_jr,
+		beq => ctl_beq,
+		bne => ctl_bne,
+		memToReg => ctl_memToReg,
+		ALUControl => ctl_ALUControl,
+		memWrite => ctl_memWrite,
+		ALUSrc => ctl_ALUSrc,
+		regWrite => ctl_regWrite,
+		i_unsigned => ctl_i_unsigned,
+		jal => ctl_jal,
+		lui => ctl_lui,
+		shamt => ctl_shamt
+	);
+	
+	controlmux : control_mux
+	PORT MAP(
+		i_regDst => ctl_regDst,
+		i_jump => ctl_jump,
+		i_jr => ctl_jr,
+		i_beq => ctl_beq,
+		i_bne => ctl_bne,
+		i_memToReg => ctl_memToReg, 
+		i_ALUControl => ctl_ALUControl, 
+		i_memWrite => ctl_memWrite,
+		i_ALUSrc => ctl_ALUSrc,
+		i_regWrite => ctl_regWrite,
+		i_i_unsigned => ctl_i_unsigned,
+		i_jal => ctl_jal,
+		i_lui => ctl_lui,
+		i_shamt => ctl_shamt,
 		regDst => s_regDst,
 		jump => s_jump,
 		jr => s_jr,
@@ -368,7 +435,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		i_unsigned => s_iUnsigned,
 		jal => s_jal,
 		lui => s_lui,
-		shamt => s_shamt
+		shamt => s_shamt,
+		sel => s_nop
 	);
 	
 	mux7 : mux21_n_st
@@ -400,7 +468,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	
 	idex : IDEXreg
 	PORT MAP(
-	  stall => s_stall(1),
+	  stall => '0',
+	  flush => s_flushidex,
 	  readdata1 => s_oRs, -- pre-existing rd1 signal from registerfile
 	  readdata2 => s_rtout, -- pre-existing rd2 signal from registerfile
 	  pcp4 => pcp4_ifid, -- propagated pcp4 from ifid
@@ -440,10 +509,10 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	mux2 : mux21_n_st
 	GENERIC MAP(N => N)
 	PORT MAP(
-		i_A => readdata2_idex,
+		i_A => s_mux2,
 		i_B => sign_ext_idex,
 		i_S => alusrc_idex,
-		o_F => s_mux2
+		o_F => ALU_iB
 	);
 	
 	with forwardA select
@@ -452,7 +521,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 				s_DMemAddr when others;
 	
 	with forwardB select
-		ALU_iB 	<= s_mux2 when "00",
+		s_mux2 	<= readdata2_idex when "00",
 				s_RegWrData when "01",
 				s_DMemAddr when others;
 	
@@ -498,7 +567,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	
 	exmem : EXMEMreg
 	PORT MAP(
-	  stall => s_stall(2),
+	  stall => '0',
       clock => iCLK,
 	  instr => inst_idex,
 	  writereg => s_regAddr,
@@ -509,7 +578,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	  ctl_jal => jal_idex,
 	  ctl_lui => lui_idex,
       alu_result => s_ALUOut, -- pre-existing output from ALU in EX stage
-      readdata2 => readdata2_idex,
+      readdata2 => s_memDataForward,
       out_RegWrite => regwrite_exmem,
       out_MemtoReg => memtoreg_exmem,
       out_MemWrite => s_DMemWr,
@@ -524,6 +593,11 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	);
 	
 	
+	with forwardB select
+	s_memDataForward <= s_DMemAddr when "10",
+					readdata2_idex when others;
+					
+	
 	DMem : mem
 	GENERIC MAP(
 		ADDR_WIDTH => 10,
@@ -537,7 +611,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		
 	memwb : MEMWBreg
 	PORT MAP(
-	  stall => s_stall(3),
+	  stall => '0',
       clock => iCLK,
 	  instr => instr_exmem,
 	  ctl_RegWrite => regwrite_exmem,
@@ -597,6 +671,16 @@ ARCHITECTURE structure OF MIPS_Processor IS
 		regwrite_memwb => s_RegWr,
 		forwardA => forwardA,
 		forwardB => forwardB
+	);
+	
+	hazards : hazard_detection
+	port MAP(
+		instr_idex => inst_idex,
+		instr_ifid => instr_ifid,
+		jump => s_jump,
+		stall => s_nop,
+		flush_ifid => s_flushifid,
+		flush_idex => s_flushidex
 	);
 	
 	s_pcPlusFour <= std_logic_vector(to_unsigned(to_integer(unsigned(s_NextInstAddr)) + 4, 32));

@@ -6,7 +6,7 @@ ENTITY reg IS
   PORT (
     D : IN std_logic_vector(N - 1 DOWNTO 0); -- Data input
     Q : OUT std_logic_vector(N - 1 DOWNTO 0); -- Data output
-    WE : IN std_logic; -- Write enable
+    stall : IN std_logic; 
     reset : IN std_logic; 
     clock : IN std_logic); 
 END reg;
@@ -18,7 +18,9 @@ BEGIN
 	IF (reset = '1') THEN
         Q <= std_logic_vector(to_unsigned(4194304, Q'length));
     ELSIF (rising_edge(clock)) THEN
+	if(stall='0') then
 		Q <= D;
+	end if;
     END IF;
   END PROCESS;
 

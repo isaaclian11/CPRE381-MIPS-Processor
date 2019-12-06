@@ -6,6 +6,7 @@ ENTITY IDEXreg IS
   GENERIC (N : INTEGER := 32);
   PORT (
     stall : IN std_logic;
+	flush : IN std_logic;
     readdata1 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 1
     readdata2 : IN std_logic_vector(N - 1 DOWNTO 0); -- register read data 2
     pcp4 : IN std_logic_vector(N - 1 DOWNTO 0); -- PC+4
@@ -50,22 +51,41 @@ BEGIN
 	IF(reset = '0') THEN
 		IF (rising_edge(clock)) THEN
 		  IF (stall = '0') THEN
-			out_RegWrite <= ctl_RegWrite;
-			out_MemtoReg <= ctl_MemtoReg;
-			out_MemWrite <= ctl_MemWrite;
-			out_ALUOp <= ctl_ALUOp;
-			out_ALUSrc <= ctl_ALUSrc;
-			out_RegDst <= ctl_RegDst;
-			out_jal <= ctl_jal;
-			out_lui <= ctl_lui;
-			out_readdata1 <= readdata1;
-			out_readdata2 <= readdata2;
-			out_inst <= instr;
-			out_shamt <= shamt;
-			out_sign_ext <= sign_ext;
-			out_pcp4 <= pcp4;
-			out_unsigned <= ctl_unsigned;
-			out_shamtCtl <= ctl_shamt;
+			IF (flush = '0') THEN
+				out_RegWrite <= ctl_RegWrite;
+				out_MemtoReg <= ctl_MemtoReg;
+				out_MemWrite <= ctl_MemWrite;
+				out_ALUOp <= ctl_ALUOp;
+				out_ALUSrc <= ctl_ALUSrc;
+				out_RegDst <= ctl_RegDst;
+				out_jal <= ctl_jal;
+				out_lui <= ctl_lui;
+				out_readdata1 <= readdata1;
+				out_readdata2 <= readdata2;
+				out_inst <= instr;
+				out_shamt <= shamt;
+				out_sign_ext <= sign_ext;
+				out_pcp4 <= pcp4;
+				out_unsigned <= ctl_unsigned;
+				out_shamtCtl <= ctl_shamt;
+			ELSE
+				out_RegWrite <= '0';
+				out_MemtoReg <= '0';
+				out_MemWrite <= '0';
+				out_ALUOp <= "0000";
+				out_ALUSrc <= '0';
+				out_RegDst <= '0';
+				out_jal <= '0';
+				out_lui <= '0';
+				out_readdata1 <= x"00000000";
+				out_readdata2 <= x"00000000";
+				out_inst <= x"00000000";
+				out_shamt <= x"00000000";
+				out_sign_ext <= x"00000000";
+				out_pcp4 <= x"00000000";
+				out_unsigned <= '0';
+				out_shamtCtl <= '0';
+			END IF;
 		  END IF;
 		END IF;
 	ELSE 
