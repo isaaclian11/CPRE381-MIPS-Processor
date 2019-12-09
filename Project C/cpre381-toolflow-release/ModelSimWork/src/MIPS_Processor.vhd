@@ -463,7 +463,7 @@ END COMPONENT;
 	GENERIC MAP(N => N)
 	PORT MAP(
 		i_A => s_mux8,
-		i_B => s_oRs,
+		i_B => s_orsForward,
 		i_S => s_jr,
 		o_F => s_iPC
 	);
@@ -695,7 +695,7 @@ END COMPONENT;
 	port MAP(
 		instr_idex => inst_idex,
 		instr_ifid => instr_ifid,
-		jump => s_jump,
+		jump => s_brJpJal,
 		stall => s_nop,
 		flush_ifid => s_flushifid,
 		flush_idex => s_flushidex
@@ -713,8 +713,8 @@ END COMPONENT;
 	
 	Branch : ALU32
 	PORT MAP(
-		i_A => s_oRs,
-		i_B => s_rtout,
+		i_A => s_orsForward,
+		i_B => s_ortForward,
 		i_sel => "0001",
 		i_unsigned => s_iUnsigned,
 		i_shiftamount => "00000",

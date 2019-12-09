@@ -31,13 +31,6 @@ forwardB <= "00";
 forwardC <= '0';
 forwardD <= "00";
 
---EX hazard
-if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(25 downto 21))) then
-	forwardA <= "10";
-end if;
-if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(20 downto 16))) then
-	forwardB <= "10";
-end if;
 --MEM hazard
 if((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(25 downto 21))) then
 	forwardA <= "01";
@@ -46,6 +39,13 @@ if((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(20 
 	forwardB <= "01";
 	--SW after LW
 	forwardC <= '1';
+end if;
+--EX hazard
+if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(25 downto 21))) then
+	forwardA <= "10";
+end if;
+if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(20 downto 16))) then
+	forwardB <= "10";
 end if;
 if((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(25 downto 21)) then 
 	forwardD <= "01";

@@ -68,3 +68,11 @@ add wave -position insertpoint vsim8:/tb_simplifiedmipsprocessor/MySimplifiedMIP
 # Compile of MIPS_Processor.vhd was successful.
 add wave -position insertpoint vsim9:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 # Compile of MIPS_Processor.vhd was successful.
+# Compile of hazard_detection.vhd was successful.
+# Compile of MIPS_Processor.vhd was successful.
+# Compile of MIPS_Processor.vhd was successful.
+add wave -position insertpoint vsim10:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+# Compile of MIPS_Processor.vhd was successful.
+# Compile of MIPS_Processor.vhd was successful.
+# Compile of MIPS_Processor.vhd was successful.
+add wave -position insertpoint vsim11:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
