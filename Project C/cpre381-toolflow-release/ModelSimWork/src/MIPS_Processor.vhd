@@ -256,12 +256,15 @@ ARCHITECTURE structure OF MIPS_Processor IS
   COMPONENT forwarding_unit IS
   port(
 	instr_idex : in std_logic_vector(31 downto 0);
+	instr_ifid : in std_logic_vector(31 downto 0);
 	rd_exmem : in std_logic_vector(4 downto 0);
 	rd_memwb : in std_logic_vector(4 downto 0);
 	regwrite_exmem : in std_logic;
 	regwrite_memwb : in std_logic;
 	forwardA : out std_logic_vector(1 downto 0);
-	forwardB : out std_logic_vector(1 downto 0)
+	forwardB : out std_logic_vector(1 downto 0);
+	forwardC : out std_logic;
+	forwardD : out std_logic_vector(1 downto 0)
 	);
   END COMPONENT;
   
@@ -303,24 +306,23 @@ END COMPONENT;
 	SIGNAL s_ALUSrc, s_iUnsigned, s_shamt, s_memToReg, s_regDst, s_jump, s_bne, s_beq, s_jal, s_jr, s_lui : std_logic;
 
 	-- Other signals
-	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, 
+	SIGNAL s_mux2, s_mux3, s_mux4, s_shiftedSignExtend, s_iMux8, s_iPC, s_oExtend, s_oRs, i_mux3, s_readdata1,
 	s_mux5, s_pcPlusFour, s_iMux6, s_mux7, s_mux8, s_branchAddr, s_rtout, 
-	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut, s_memDataForward, s_memAddrForward : std_logic_vector(N - 1 DOWNTO 0);
+	s_RsEqualsRt, s_RsNotEqualsRt, s_ALUOut, s_memDataForward, s_memDataForwardEXMEM, s_rtoForward, s_orsForward, s_ortForward : std_logic_vector(N - 1 DOWNTO 0);
 	SIGNAL s_mux0, s_shiftAmount, s_regAddr : std_logic_vector(4 DOWNTO 0);
 	SIGNAL s_ALUControl, s_stall, ctl_ALUControl : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_Cout, s_overflow, s_zero, s_branch, s_addi, s_zeroSig, s_DMemWrite, s_RegWrite, s_brJpJal, ctl_regDst, ctl_jump, ctl_jr, ctl_beq, ctl_bne, ctl_memToReg, ctl_memWrite, ctl_ALUSrc, ctl_regWrite, ctl_jal, ctl_lui, ctl_shamt, ctl_i_unsigned, s_nop : std_logic;
 	
 	-- added pipeline signals
-	SIGNAL pcp4_ifid, instr_ifid, shamt_idex, readdata1_idex, aluresult_exmem, writedata_exmem, memreaddata_memwb, 
+	SIGNAL pcp4_ifid, instr_ifid, shamt_idex, readdata1_idex, memreaddata_memwb, 
 	aluresult_memwb, inst_idex, instr_exmem, pcp4_exmem, instr_memwb, pcp4_memwb, readdata2_idex, sign_ext_idex, pcp4_idex, pcp4BeforeID,
 			ALU_iA, ALU_iB: std_logic_vector(N - 1 DOWNTO 0);
-	SIGNAL opcode_idex, opcode_exmem, opcode_memwb : std_logic_vector(5 DOWNTO 0);
-	SIGNAL rt_idex, rd_idex, writereg_exmem : std_logic_vector(4 DOWNTO 0);
+	SIGNAL writereg_exmem : std_logic_vector(4 DOWNTO 0);
 	SIGNAL aluop_idex : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_flushifid, s_flushidex, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, 
 			regwrite_exmem, memtoreg_exmem, memtoreg_memwb, jal_idex, lui_idex, unsigned_idex, 
-			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb, s_pcWrite : std_logic;
-	SIGNAL forwardA, forwardB : std_logic_vector(1 downto 0);
+			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb, forwardC : std_logic;
+	SIGNAL forwardA, forwardB, forwardD : std_logic_vector(1 downto 0);
 			
 	begin
 	-- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
@@ -470,8 +472,8 @@ END COMPONENT;
 	PORT MAP(
 	  stall => '0',
 	  flush => s_flushidex,
-	  readdata1 => s_oRs, -- pre-existing rd1 signal from registerfile
-	  readdata2 => s_rtout, -- pre-existing rd2 signal from registerfile
+	  readdata1 => s_orsForward, -- pre-existing rd1 signal from registerfile
+	  readdata2 => s_ortForward, -- pre-existing rd2 signal from registerfile
 	  pcp4 => pcp4_ifid, -- propagated pcp4 from ifid
       sign_ext => s_oExtend, -- pre-existing output from extender
       instr => instr_ifid,
@@ -524,6 +526,8 @@ END COMPONENT;
 		s_mux2 	<= readdata2_idex when "00",
 				s_RegWrData when "01",
 				s_DMemAddr when others;
+	
+		
 	
 	mux3 : mux21_n_st
 	GENERIC MAP(N => N)
@@ -578,7 +582,7 @@ END COMPONENT;
 	  ctl_jal => jal_idex,
 	  ctl_lui => lui_idex,
       alu_result => s_ALUOut, -- pre-existing output from ALU in EX stage
-      readdata2 => s_memDataForward,
+      readdata2 => s_rtoForward,
       out_RegWrite => regwrite_exmem,
       out_MemtoReg => memtoreg_exmem,
       out_MemWrite => s_DMemWr,
@@ -597,7 +601,18 @@ END COMPONENT;
 	s_memDataForward <= s_DMemAddr when "10",
 					readdata2_idex when others;
 					
+	with forwardC select 
+	s_rtoForward <= s_RegWrData when '1',
+					s_memDataForward when others;
+					
+	with forwardD select
+	s_orsForward <= s_RegWrData when "01",
+					s_oRs when others;
 	
+	with forwardD select
+	s_ortForward <= s_RegWrData when "10",
+					s_rtout when others;
+					
 	DMem : mem
 	GENERIC MAP(
 		ADDR_WIDTH => 10,
@@ -665,12 +680,15 @@ END COMPONENT;
 	forward: forwarding_unit
 	PORT MAP(
 		instr_idex => inst_idex,
+		instr_ifid => instr_ifid,
 		rd_exmem => writereg_exmem,
 		rd_memwb => s_RegWrAddr,
 		regwrite_exmem => regwrite_exmem,
 		regwrite_memwb => s_RegWr,
 		forwardA => forwardA,
-		forwardB => forwardB
+		forwardB => forwardB,
+		forwardC => forwardC,
+		forwardD => forwardD
 	);
 	
 	hazards : hazard_detection

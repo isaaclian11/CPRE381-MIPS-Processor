@@ -21,9 +21,9 @@ Vf:IMj5Ac=64m<_<<?AF1G3
 !s100 Wk5XKUa[[V`Qmd1CacN8O3
 Z6 OP;C;10.7b;67
 32
-Z7 !s110 1575587142
+Z7 !s110 1575909366
 !i10b 1
-Z8 !s108 1575587141.000000
+Z8 !s108 1575909365.000000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd|
 Z10 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st.vhd|
 !i113 1
@@ -61,11 +61,11 @@ ViYU[AV2fCCi??cWMm<7Ec2
 !s100 8_M]5cQfQ``V>4R[=:Ncc0
 R6
 32
-R7
+Z16 !s110 1575909367
 !i10b 1
-Z16 !s108 1575587142.000000
-Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd|
-Z18 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd|
+Z17 !s108 1575909366.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd|
+Z19 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/addsub_n_st_new.vhd|
 !i113 1
 R11
 R12
@@ -80,11 +80,11 @@ VOVkg_;Q465zU@>d9gG@b52
 !s100 DJEnnd^T=Od]Bl@69E?TS2
 R6
 32
-R7
-!i10b 1
 R16
+!i10b 1
 R17
 R18
+R19
 !i113 1
 R11
 R12
@@ -93,19 +93,19 @@ R0
 R1
 R2
 R3
-Z19 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd
-Z20 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd
+Z20 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd
+Z21 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd
 l0
 L13
 Vk_kG[9fAL6Y8[e1djnja31
 !s100 mg6GFEPYVS1eO4RV5<[eN2
 R6
 32
-R7
-!i10b 1
 R16
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd|
-Z22 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd|
+!i10b 1
+Z22 !s108 1575909367.000000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd|
+Z24 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ALU32.vhd|
 !i113 1
 R11
 R12
@@ -119,11 +119,11 @@ V^9?5h2P:glPX<Edf26=0j3
 !s100 hbXh=jX[[DH30XUg5DAk[0
 R6
 32
-R7
-!i10b 1
 R16
-R21
+!i10b 1
 R22
+R23
+R24
 !i113 1
 R11
 R12
@@ -132,19 +132,19 @@ R0
 R1
 R2
 R3
-Z23 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd
-Z24 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd
+Z25 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd
+Z26 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd
 l0
 L21
 VTNV=UkQlLDXE?H<zQCmV12
 !s100 ^8e_[ThQ5=k_6kB:4Lk_J3
 R6
 32
-R7
-!i10b 1
 R16
-Z25 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd|
-Z26 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd|
+!i10b 1
+R22
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd|
+Z28 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/andg2.vhd|
 !i113 1
 R11
 R12
@@ -158,11 +158,11 @@ V<`6>;1_i1ObHDjdAJ<5lL1
 !s100 BB3j^ooi40MhzZY6B0[d00
 R6
 32
-R7
-!i10b 1
 R16
-R25
-R26
+!i10b 1
+R22
+R27
+R28
 !i113 1
 R11
 R12
@@ -171,17 +171,17 @@ R0
 R1
 R2
 R3
-Z27 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd
-Z28 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd
+Z29 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd
+Z30 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd
 l0
 L4
 VLh<FCbS[^57oUf]59`ec<1
 !s100 oCh>PAEg`JG=YE[_CXbHm2
 R6
 32
-Z29 !s110 1575587143
+R16
 !i10b 1
-Z30 !s108 1575587143.000000
+R22
 Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd|
 Z32 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/barrelShifter.vhd|
 !i113 1
@@ -197,9 +197,9 @@ VOPbCE4BS8Pen2m8DAWd<?3
 !s100 YIoM_2UE?YYSFo^Bck>1k1
 R6
 32
-R29
+R16
 !i10b 1
-R30
+R22
 R31
 R32
 !i113 1
@@ -218,11 +218,11 @@ V9h:i_1WdUVfMIJN1e3=371
 !s100 F3GBJ2O@i8^J^9:N8CGPi2
 R6
 32
-R29
+Z35 !s110 1575909368
 !i10b 1
-R30
-Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd|
-Z36 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd|
+Z36 !s108 1575909368.000000
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd|
+Z38 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_logic.vhd|
 !i113 1
 R11
 R12
@@ -236,31 +236,31 @@ V9dGV]]_lPKGcf1D7=CO9C1
 !s100 eFzNA;9UASCFCkdW`[@_?3
 R6
 32
-R29
-!i10b 1
-R30
 R35
+!i10b 1
 R36
+R37
+R38
 !i113 1
 R11
 R12
 Econtrol_mux
-Z37 w1575587354
+Z39 w1575587354
 R13
 R1
 R2
 R3
-Z38 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd
-Z39 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd
+Z40 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd
+Z41 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd
 l0
 L5
 V3`kMg^5UlD;OgbG[;`dOn0
 !s100 RUj;VkHg1Y1APo8Zg4CT>2
 R6
 32
-Z40 !s110 1575587360
+R35
 !i10b 1
-Z41 !s108 1575587360.000000
+R36
 Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd|
 Z43 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/control_mux.vhd|
 !i113 1
@@ -277,9 +277,9 @@ Vk`=>OnSOnE=5?zTe5^M3]3
 !s100 7Jz1`3`JWY2?dQUD?l=l61
 R6
 32
-R40
+R35
 !i10b 1
-R41
+R36
 R42
 R43
 !i113 1
@@ -298,11 +298,11 @@ VZ2mVjTn8W3c84edgRdUil1
 !s100 L<bG]CU5?L6BbD8:]b`oB1
 R6
 32
-Z46 !s110 1575587144
+Z46 !s110 1575909369
 !i10b 1
-Z47 !s108 1575587144.000000
-Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd|
-Z49 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd|
+R36
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd|
+Z48 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/decoder_532_df.vhd|
 !i113 1
 R11
 R12
@@ -318,9 +318,9 @@ R6
 32
 R46
 !i10b 1
+R36
 R47
 R48
-R49
 !i113 1
 R11
 R12
@@ -329,19 +329,19 @@ R0
 R1
 R2
 R3
-Z50 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd
-Z51 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd
+Z49 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd
+Z50 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd
 l0
 L13
 Vz4zmD03WNDhlU6WBaG;:>3
 !s100 K5Rd@JG=]CdhVeX@D0`>e3
 R6
 32
-Z52 !s110 1575587145
+R46
 !i10b 1
-R47
-Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd|
-Z54 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd|
+Z51 !s108 1575909369.000000
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd|
+Z53 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dff_n.vhd|
 !i113 1
 R11
 R12
@@ -355,11 +355,11 @@ VPEN0amJ6;omAjX;B_9GYa2
 !s100 Wnfi@L<VIc:5^]0QRAzWA0
 R6
 32
-R52
+R46
 !i10b 1
-R47
+R51
+R52
 R53
-R54
 !i113 1
 R11
 R12
@@ -368,19 +368,19 @@ R0
 R1
 R2
 R3
-Z55 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd
-Z56 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd
+Z54 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd
+Z55 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd
 l0
 L19
 VKLBXWP0a4a3JBBmo`K8M12
 !s100 XSR`GZc<:ezPn2I8XOCjM3
 R6
 32
-R52
+R46
 !i10b 1
-Z57 !s108 1575587145.000000
-Z58 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd|
-Z59 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd|
+R51
+Z56 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd|
+Z57 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/dffx.vhd|
 !i113 1
 R11
 R12
@@ -394,31 +394,31 @@ V<>k?0oQTV>ek2QRDc5R;F1
 !s100 L>S6??o1YFWRCn=<j1T^M2
 R6
 32
-R52
+R46
 !i10b 1
+R51
+R56
 R57
-R58
-R59
 !i113 1
 R11
 R12
 Eexmemreg
-R0
+Z58 w1575911600
 R13
 R1
 R2
 R3
-Z60 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd
-Z61 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd
+Z59 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd
+Z60 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd
 l0
 L6
 Vi<>TW8`CHcd01[JP^WYN83
 !s100 e4k8jkdh`IijL8bL5A5a31
 R6
 32
-Z62 !s110 1575587146
+Z61 !s110 1575911768
 !i10b 1
-R57
+Z62 !s108 1575911767.000000
 Z63 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd|
 Z64 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/EXMEMreg.vhd|
 !i113 1
@@ -435,9 +435,9 @@ VO9Sn>JnV0<ola7>0``B2m2
 !s100 3nHBVSH]G_OU6]_YJJ<eA1
 R6
 32
-R62
+R61
 !i10b 1
-R57
+R62
 R63
 R64
 !i113 1
@@ -456,11 +456,11 @@ VJbFcSzC4KX<=5md^d1<T`3
 !s100 6O9I5ff`0REBmKoM9EXWW0
 R6
 32
-R62
+Z67 !s110 1575909370
 !i10b 1
-Z67 !s108 1575587146.000000
-Z68 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/extender.vhd|
-Z69 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/extender.vhd|
+Z68 !s108 1575909370.000000
+Z69 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/extender.vhd|
+Z70 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/extender.vhd|
 !i113 1
 R11
 R12
@@ -474,33 +474,33 @@ VAg1zZM[;@Fi?kWR@XlZmn2
 !s100 l7fc]e]fVVjjfLz[B?dBA0
 R6
 32
-R62
-!i10b 1
 R67
+!i10b 1
 R68
 R69
+R70
 !i113 1
 R11
 R12
 Eforwarding_unit
-R0
+Z71 w1575916161
 R13
 R1
 R2
 R3
-Z70 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd
-Z71 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd
+Z72 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd
+Z73 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd
 l0
 L5
-Vzdkj4;Y_U]G[;bcA5>L9f3
-!s100 ]<4JXj5Ahm20OGi0nbVDa2
+V^`CE7VHf5[;A70m]4_bh]2
+!s100 9<72:=8]ZUf:>Tea@O3XG3
 R6
 32
-R62
+Z74 !s110 1575916169
 !i10b 1
-R67
-Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd|
-Z73 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd|
+Z75 !s108 1575916168.000000
+Z76 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd|
+Z77 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/forwarding_unit.vhd|
 !i113 1
 R11
 R12
@@ -508,18 +508,18 @@ Amixed
 R13
 R1
 R2
-DEx4 work 15 forwarding_unit 0 22 zdkj4;Y_U]G[;bcA5>L9f3
-l20
-L18
-VUcWWYT@MXEYihB:RmlUg30
-!s100 UUCO?;MBc;RXT``YOT4^91
+DEx4 work 15 forwarding_unit 0 22 ^`CE7VHf5[;A70m]4_bh]2
+l23
+L21
+VL=_FV7V1;bjM=WkQ=5f]40
+!s100 nJCQZTO2Ue;l]D5ER9^Uo3
 R6
 32
-R62
+R74
 !i10b 1
-R67
-R72
-R73
+R75
+R76
+R77
 !i113 1
 R11
 R12
@@ -528,19 +528,19 @@ R0
 R1
 R2
 R3
-Z74 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd
-Z75 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd
+Z78 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd
+Z79 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd
 l0
 L13
 VhL6fo:Jgc9D<^2QG32hH21
 !s100 4U@_1eSAbBB=eI_32[3:m3
 R6
 32
-Z76 !s110 1575587147
+R67
 !i10b 1
-Z77 !s108 1575587147.000000
-Z78 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd|
-Z79 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd|
+R68
+Z80 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd|
+Z81 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder.vhd|
 !i113 1
 R11
 R12
@@ -554,11 +554,11 @@ VUAzB;lQzJolCfabg]hooa1
 !s100 [@5<`e:Yn^<JQ6M@HMU;;1
 R6
 32
-R76
+R67
 !i10b 1
-R77
-R78
-R79
+R68
+R80
+R81
 !i113 1
 R11
 R12
@@ -567,19 +567,19 @@ R0
 R1
 R2
 R3
-Z80 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd
-Z81 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd
+Z82 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd
+Z83 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd
 l0
 L13
 Vh9CM]LWjD`cX6<[<hT>VD2
 !s100 eClJ;AZ9fgbRTmi[lOhCS0
 R6
 32
-R76
+Z84 !s110 1575909371
 !i10b 1
-R77
-Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd|
-Z83 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd|
+Z85 !s108 1575909371.000000
+Z86 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd|
+Z87 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_df.vhd|
 !i113 1
 R11
 R12
@@ -593,11 +593,11 @@ V9I47k<8h^AQBZdLI0i9aD3
 !s100 YQ[of7BhWKmQc_6M1m5]z1
 R6
 32
-R76
+R84
 !i10b 1
-R77
-R82
-R83
+R85
+R86
+R87
 !i113 1
 R11
 R12
@@ -606,19 +606,19 @@ R0
 R1
 R2
 R3
-Z84 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd
-Z85 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd
+Z88 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd
+Z89 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd
 l0
 L13
 VaHV0L>[;4Z^^_fDUoD[B71
 !s100 TmfFWW1?m[zJA]9D@XMkM0
 R6
 32
-Z86 !s110 1575587148
+Z90 !s110 1575909372
 !i10b 1
-Z87 !s108 1575587148.000000
-Z88 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd|
-Z89 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd|
+R85
+Z91 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd|
+Z92 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/fulladder_n_st.vhd|
 !i113 1
 R11
 R12
@@ -632,33 +632,33 @@ V0`J>S]TIC4m8fDioZ]e5D3
 !s100 bXSgSefkTd;zPi4gT^fUj3
 R6
 32
-R86
+R90
 !i10b 1
-R87
-R88
-R89
+R85
+R91
+R92
 !i113 1
 R11
 R12
 Ehazard_detection
-Z90 w1575587134
+Z93 w1575587134
 R13
 R1
 R2
 R3
-Z91 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd
-Z92 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd
+Z94 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd
+Z95 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd
 l0
 L5
 V2Y^]OM3`kWSnMbKF149ek2
 !s100 ac_zX=PX0l;MBe6eGmIB`0
 R6
 32
-R86
+R90
 !i10b 1
-R87
-Z93 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd|
-Z94 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd|
+Z96 !s108 1575909372.000000
+Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd|
+Z98 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/hazard_detection.vhd|
 !i113 1
 R11
 R12
@@ -673,33 +673,33 @@ VW_@Sb6TPW6342W8h7_Nnj0
 !s100 10gX_D:6_a^Z?O2U^Wb2i0
 R6
 32
-R86
+R90
 !i10b 1
-R87
-R93
-R94
+R96
+R97
+R98
 !i113 1
 R11
 R12
 Eidexreg
-Z95 w1575587640
+Z99 w1575587640
 R13
 R1
 R2
 R3
-Z96 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd
-Z97 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd
+Z100 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd
+Z101 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd
 l0
 L5
 V>>:DhLLLKk>dQATYg9k4Y0
 !s100 Hd<XA4hWOM^@2WAHbGWl50
 R6
 32
-Z98 !s110 1575587647
+Z102 !s110 1575909373
 !i10b 1
-Z99 !s108 1575587647.000000
-Z100 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd|
-Z101 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd|
+R96
+Z103 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd|
+Z104 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IDEXreg.vhd|
 !i113 1
 R11
 R12
@@ -714,11 +714,11 @@ VRh`G4zlIRneEg48jQ9aJb0
 !s100 7=LHK7DZiZ?b9[7m]Q@[D2
 R6
 32
-R98
+R102
 !i10b 1
-R99
-R100
-R101
+R96
+R103
+R104
 !i113 1
 R11
 R12
@@ -728,19 +728,19 @@ R13
 R1
 R2
 R3
-Z102 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd
-Z103 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd
+Z105 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd
+Z106 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd
 l0
 L5
 Vo1Y^7_TNdle51>NTfz_Xo0
 !s100 lEggb6Cfk[]5UBMfmHkdS3
 R6
 32
-Z104 !s110 1575587149
+R102
 !i10b 1
-R87
-Z105 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd|
-Z106 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd|
+Z107 !s108 1575909373.000000
+Z108 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd|
+Z109 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/IFIDreg.vhd|
 !i113 1
 R11
 R12
@@ -755,11 +755,11 @@ VP;<CPM@SSTf2X<l;[z^W<1
 !s100 kfe>;9^PLQLJ]^^m?]L532
 R6
 32
-R104
+R102
 !i10b 1
-R87
-R105
-R106
+R107
+R108
+R109
 !i113 1
 R11
 R12
@@ -768,19 +768,19 @@ R0
 R1
 R2
 R3
-Z107 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd
-Z108 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd
+Z110 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd
+Z111 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd
 l0
 L21
 VRYm3efPiK2keS`fiDP1n[0
 !s100 Gm0bQ]9n3nU7b3imSGRmG3
 R6
 32
-R104
+R102
 !i10b 1
-Z109 !s108 1575587149.000000
-Z110 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd|
-Z111 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd|
+R107
+Z112 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd|
+Z113 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/invg.vhd|
 !i113 1
 R11
 R12
@@ -794,11 +794,11 @@ Vf=F95CY3Uk6LeJ6P7aYjh0
 !s100 VTDb[lhLlkkFmQFcA2`>^0
 R6
 32
-R104
+R102
 !i10b 1
-R109
-R110
-R111
+R107
+R112
+R113
 !i113 1
 R11
 R12
@@ -808,19 +808,19 @@ R13
 R1
 R2
 R3
-Z112 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd
-Z113 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd
+Z114 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd
+Z115 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd
 l0
 L8
 VZS4Z3j=?Jo^MElbY3h?I@3
 !s100 53e8>YEdF:;DX`UgHPfE:0
 R6
 32
-Z114 !s110 1575587150
+Z116 !s110 1575909374
 !i10b 1
-R109
-Z115 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd|
-Z116 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd|
+Z117 !s108 1575909374.000000
+Z118 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd|
+Z119 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mem.vhd|
 !i113 1
 R11
 R12
@@ -835,11 +835,11 @@ V;Dk:zjJhOARBPN7BH7TGj3
 !s100 k`>^CCSTG@I[E]8ZdNEAB2
 R6
 32
-R114
-!i10b 1
-R109
-R115
 R116
+!i10b 1
+R117
+R118
+R119
 !i113 1
 R11
 R12
@@ -849,19 +849,19 @@ R13
 R1
 R2
 R3
-Z117 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd
-Z118 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd
+Z120 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd
+Z121 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd
 l0
 L5
 VG`nZKebLldMjTYKL;eeHD3
 !s100 gjiAW3C_U^@Ribg3?I>KG2
 R6
 32
-R114
+R116
 !i10b 1
-Z119 !s108 1575587150.000000
-Z120 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd|
-Z121 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd|
+R117
+Z122 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd|
+Z123 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MEMWBreg.vhd|
 !i113 1
 R11
 R12
@@ -876,56 +876,56 @@ V[fZ9TzjQ]kH10]7WLZd900
 !s100 [b5V0Q3ao98i:RJDi4IVR2
 R6
 32
-R114
+R116
 !i10b 1
-R119
-R120
-R121
+R117
+R122
+R123
 !i113 1
 R11
 R12
 Emips_processor
-Z122 w1575587674
+Z124 w1575916757
 R13
-Z123 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z124 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z125 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z126 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 R1
 R2
 R3
-Z125 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd
-Z126 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd
+Z127 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd
+Z128 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd
 l0
 L15
 Vh2?OR=HIO]jce5De`X<U[0
 !s100 IfCENJ]iX7Wc_OQcOn`iZ1
 R6
 32
-Z127 !s110 1575587679
+Z129 !s110 1575917507
 !i10b 1
-Z128 !s108 1575587678.000000
-Z129 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd|
-Z130 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd|
+Z130 !s108 1575917506.000000
+Z131 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd|
+Z132 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/MIPS_Processor.vhd|
 !i113 1
 R11
 R12
 Astructure
 R13
-R123
-R124
+R125
+R126
 R1
 R2
-Z131 DEx4 work 14 mips_processor 0 22 h2?OR=HIO]jce5De`X<U[0
-l325
+Z133 DEx4 work 14 mips_processor 0 22 h2?OR=HIO]jce5De`X<U[0
+l327
 L26
-V6G_nY`1QT]i2g3GK<ge3<0
-!s100 ?9^UNMESWB4h]I3P:TD;:0
+VhI8T7_j:Q6UeQH?>8[GKC1
+!s100 ba:e5j7EbnS3gOhg>7]DB2
 R6
 32
-R127
-!i10b 1
-R128
 R129
+!i10b 1
 R130
+R131
+R132
 !i113 1
 R11
 R12
@@ -934,19 +934,19 @@ R0
 R1
 R2
 R3
-Z132 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd
-Z133 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd
+Z134 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd
+Z135 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd
 l0
 L13
 VWia;hl`=`>a8CF@V6F>nh0
 !s100 HCh=[k;^d<z:CU6:=<k?C0
 R6
 32
-Z134 !s110 1575587152
+Z136 !s110 1575909375
 !i10b 1
-Z135 !s108 1575587152.000000
-Z136 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd|
-Z137 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd|
+Z137 !s108 1575909375.000000
+Z138 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd|
+Z139 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_df.vhd|
 !i113 1
 R11
 R12
@@ -960,11 +960,11 @@ VzD@I3FB8PWgX8;[dFh=2n0
 !s100 O2XhzKSOT<gDkC:dBMCYH0
 R6
 32
-R134
-!i10b 1
-R135
 R136
+!i10b 1
 R137
+R138
+R139
 !i113 1
 R11
 R12
@@ -973,17 +973,17 @@ R0
 R1
 R2
 R3
-Z138 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd
-Z139 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd
+Z140 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd
+Z141 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd
 l0
 L13
 VJUECMjH9S^B87_5HG?j`10
 !s100 m;28XYbR6e_VmHA[Qa=BG3
 R6
 32
-Z140 !s110 1575587153
+R136
 !i10b 1
-Z141 !s108 1575587153.000000
+R137
 Z142 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd|
 Z143 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux21_n_st.vhd|
 !i113 1
@@ -999,9 +999,9 @@ V^[Q5iD;RC1S=H>VMiSEO10
 !s100 OnDlKBN>m7H=OP?eESg3`0
 R6
 32
-R140
+R136
 !i10b 1
-R141
+R137
 R142
 R143
 !i113 1
@@ -1022,9 +1022,9 @@ VngT4LQ`laU[]8lIKbUC_[2
 !s100 NO_EUe?jSHW<hPS3E4;aD2
 R6
 32
-R134
+R136
 !i10b 1
-R119
+R117
 Z147 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd|
 Z148 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/mux_321_df.vhd|
 !i113 1
@@ -1042,9 +1042,9 @@ VJhJP<EMj7SM3FRKZ=bkgL2
 !s100 EGm3Jg]2^I88bZd=Sf=1C3
 R6
 32
-R134
+R136
 !i10b 1
-R119
+R117
 R147
 R148
 !i113 1
@@ -1064,9 +1064,9 @@ VOfdTiWDBm:aLTh2EXY;TT0
 !s100 VYP4B1QS?SG0^OkR@8I6F0
 R6
 32
-R140
+R136
 !i10b 1
-R141
+R137
 Z151 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/newprocessor.vhd|
 Z152 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/newprocessor.vhd|
 !i113 1
@@ -1083,9 +1083,9 @@ V>E8^;WCWl_P@`J?lCRjCV0
 !s100 lPNO=M7C;52WOeodb8PhF3
 R6
 32
-R140
+R136
 !i10b 1
-R141
+R137
 R151
 R152
 !i113 1
@@ -1104,11 +1104,11 @@ V59A_5R@8Ih23`6oMcd_iZ3
 !s100 >3T9oH4VRbT3>X4zV>e6E3
 R6
 32
-R140
+Z155 !s110 1575909376
 !i10b 1
-R141
-Z155 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd|
-Z156 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd|
+Z156 !s108 1575909376.000000
+Z157 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd|
+Z158 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/onebitalu.vhd|
 !i113 1
 R11
 R12
@@ -1122,11 +1122,11 @@ V]U8Cbea0gaZ6mD7_9BUSb3
 !s100 78coIfBVcOL8iaDX]P?bZ0
 R6
 32
-R140
-!i10b 1
-R141
 R155
+!i10b 1
 R156
+R157
+R158
 !i113 1
 R11
 R12
@@ -1135,19 +1135,19 @@ R0
 R1
 R2
 R3
-Z157 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd
-Z158 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd
+Z159 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd
+Z160 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd
 l0
 L13
 VYG4ZDPXa]U5:8Q=<ZLl2Y2
 !s100 h92Zee>J6@zi2Enn]GEaP0
 R6
 32
-Z159 !s110 1575587154
+R155
 !i10b 1
-R141
-Z160 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd|
-Z161 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd|
+R156
+Z161 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd|
+Z162 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer.vhd|
 !i113 1
 R11
 R12
@@ -1161,11 +1161,11 @@ VQeN8;V]7XSmo5FK6XIYE^3
 !s100 ZB6l49WY;KXP@2j3m5V5e3
 R6
 32
-R159
+R155
 !i10b 1
-R141
-R160
+R156
 R161
+R162
 !i113 1
 R11
 R12
@@ -1174,17 +1174,17 @@ R0
 R1
 R2
 R3
-Z162 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd
-Z163 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd
+Z163 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd
+Z164 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd
 l0
 L13
 V5>?HAaWP<KD2iiH[1X]O42
 !s100 o39WCm1oKPfRYoG7d;PZ[2
 R6
 32
-R159
+R155
 !i10b 1
-Z164 !s108 1575587154.000000
+R156
 Z165 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd|
 Z166 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/ones_complementer_df.vhd|
 !i113 1
@@ -1200,9 +1200,9 @@ VIeNNO[4g=cKT^WcOF772G1
 !s100 0]V;;iAIb3LoWOOhK>USV1
 R6
 32
-R159
+R155
 !i10b 1
-R164
+R156
 R165
 R166
 !i113 1
@@ -1221,11 +1221,11 @@ Vf:^kMHYR9LET<4Wa78NY_0
 !s100 Qm_]1Y4W[>am>MH2J>H_n1
 R6
 32
-R159
+Z169 !s110 1575909377
 !i10b 1
-R164
-Z169 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/org2.vhd|
-Z170 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/org2.vhd|
+R156
+Z170 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/org2.vhd|
+Z171 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/org2.vhd|
 !i113 1
 R11
 R12
@@ -1239,33 +1239,33 @@ VTERd]V=;>O5=1Q59G4AZ_2
 !s100 _<4Pm4NOzA8WEHeZcZGJz3
 R6
 32
-R159
-!i10b 1
-R164
 R169
+!i10b 1
+R156
 R170
+R171
 !i113 1
 R11
 R12
 Ereg
-R0
+Z172 w1575596963
 R13
 R1
 R2
 R3
-Z171 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd
-Z172 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd
+Z173 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd
+Z174 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd
 l0
 L4
-V^@[0OS?:f]zP5HKPdROW80
-!s100 <OVhCm<mIiWaQoiZW5XgC2
+VR;h2j0AN;7Imn`5ACNilo2
+!s100 6h1hcfALKHRH97N`TX3Rl3
 R6
 32
-Z173 !s110 1575587155
+R169
 !i10b 1
-R164
-Z174 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd|
-Z175 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd|
+Z175 !s108 1575909377.000000
+Z176 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd|
+Z177 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/register.vhd|
 !i113 1
 R11
 R12
@@ -1273,18 +1273,18 @@ Abehavior
 R13
 R1
 R2
-DEx4 work 3 reg 0 22 ^@[0OS?:f]zP5HKPdROW80
+DEx4 work 3 reg 0 22 R;h2j0AN;7Imn`5ACNilo2
 l15
 L14
-VH7T9ZVNC:>Yjn`<;mPG]>1
-!s100 WPAi<58AITKRS<C<z;;R82
+V<=9;c>7AJ>=KZf7Z5g:ib3
+!s100 i?XkB9X<``3N><XjLmk`22
 R6
 32
-R173
+R169
 !i10b 1
-R164
-R174
 R175
+R176
+R177
 !i113 1
 R11
 R12
@@ -1294,19 +1294,19 @@ R144
 R1
 R2
 R3
-Z176 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd
-Z177 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd
+Z178 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd
+Z179 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd
 l0
 L14
 VT1mN4OgMT98R<1hcmEeOz1
 !s100 2F8K^lINdU_da_5ajO<iR3
 R6
 32
-R173
+Z180 !s110 1575909378
 !i10b 1
-Z178 !s108 1575587155.000000
-Z179 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd|
-Z180 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd|
+R175
+Z181 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd|
+Z182 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/registerfile.vhd|
 !i113 1
 R11
 R12
@@ -1321,42 +1321,42 @@ V9_UN;aRe[Y^PH@cCFl3b_3
 !s100 lg;NU^j_B@;?;hjV4dY030
 R6
 32
-R173
-!i10b 1
-R178
-R179
 R180
+!i10b 1
+R175
+R181
+R182
 !i113 1
 R11
 R12
 Esoftwarepipeline
 R0
 R13
-R123
-R124
+R125
+R126
 R1
 R2
 R3
-Z181 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd
-Z182 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd
+Z183 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd
+Z184 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd
 l0
 L15
 VTFQkPAM9hZfJn4l::l9G31
 !s100 bbAlYLn9Fl64z^hEZ>F4E3
 R6
 32
-R173
+R180
 !i10b 1
-R178
-Z183 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd|
-Z184 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd|
+Z185 !s108 1575909378.000000
+Z186 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd|
+Z187 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/SoftwarePipeline.vhd|
 !i113 1
 R11
 R12
 Astructure
 R13
-R123
-R124
+R125
+R126
 R1
 R2
 DEx4 work 16 softwarepipeline 0 22 TFQkPAM9hZfJn4l::l9G31
@@ -1366,11 +1366,11 @@ Vk7kU9h5nZGSSW5MYDo]n`0
 !s100 ml8jTeOFJBiimP8Qld2Fi0
 R6
 32
-R173
+R180
 !i10b 1
-R178
-R183
-R184
+R185
+R186
+R187
 !i113 1
 R11
 R12
@@ -1379,19 +1379,19 @@ R0
 R1
 R2
 R3
-Z185 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd
-Z186 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd
+Z188 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd
+Z189 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd
 l0
 L4
 V>Bg]7jzL9^DbM3kPS^>L@0
 !s100 Z9d42h`FaA;i?@Zn<>LE33
 R6
 32
-Z187 !s110 1575587156
+Z190 !s110 1575909379
 !i10b 1
-R178
-Z188 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd|
-Z189 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd|
+Z191 !s108 1575909379.000000
+Z192 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd|
+Z193 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_control_logic.vhd|
 !i113 1
 R11
 R12
@@ -1405,11 +1405,11 @@ VLNTc8V2:NG>lVG?b6B]^h0
 !s100 Nc_MH9nGSN8lc=8GQ70S42
 R6
 32
-R187
+R190
 !i10b 1
-R178
-R188
-R189
+R191
+R192
+R193
 !i113 1
 R11
 R12
@@ -1418,19 +1418,19 @@ R0
 R1
 R2
 R3
-Z190 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd
-Z191 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd
+Z194 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd
+Z195 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd
 l0
 L13
 V6=hd=9Xa:lShX8HG=g7H<1
 !s100 ch`K5ZnM?@27EKKJ>L2eS2
 R6
 32
-R187
+Z196 !s110 1575909380
 !i10b 1
-Z192 !s108 1575587156.000000
-Z193 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd|
-Z194 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd|
+R191
+Z197 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd|
+Z198 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_dmem.vhd|
 !i113 1
 R11
 R12
@@ -1444,11 +1444,11 @@ Vm0bVgR4G4G7YB5RG<QZ6G3
 !s100 8GMm2aHzRJz?WaLeVP]hN1
 R6
 32
-R187
+R196
 !i10b 1
-R192
-R193
-R194
+R191
+R197
+R198
 !i113 1
 R11
 R12
@@ -1459,19 +1459,19 @@ R144
 R1
 R2
 R3
-Z195 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd
-Z196 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd
+Z199 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd
+Z200 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd
 l0
 L14
 V9Wk?h`?J8T82N4Tc1PoJM3
 !s100 zJHZNl3>Hma86B]QUQEL?1
 R6
 32
-Z197 !s110 1575587157
+R196
 !i10b 1
-R192
-Z198 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd|
-Z199 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd|
+Z201 !s108 1575909380.000000
+Z202 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd|
+Z203 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_np.vhd|
 !i113 1
 R11
 R12
@@ -1487,11 +1487,11 @@ VY=WldXKT@i<Wzd>Mk=>_b2
 !s100 J8ZL5IBITaKKge_lozj>40
 R6
 32
-R197
+R196
 !i10b 1
-R192
-R198
-R199
+R201
+R202
+R203
 !i113 1
 R11
 R12
@@ -1501,19 +1501,19 @@ R13
 R1
 R2
 R3
-Z200 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd
-Z201 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd
+Z204 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd
+Z205 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd
 l0
 L13
 Vokk[kE4EJ>=7d;f^i@ElJ3
 !s100 LO6DLZkii5L8cM;9Bgo672
 R6
 32
-R197
+R196
 !i10b 1
-Z202 !s108 1575587157.000000
-Z203 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd|
-Z204 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd|
+R201
+Z206 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd|
+Z207 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/tb_pipeline_registers.vhd|
 !i113 1
 R11
 R12
@@ -1528,11 +1528,11 @@ Vb8zIC5a@Q2e9=48n18bZN0
 !s100 Bmg?c1K=5698>8Hb7[^WU3
 R6
 32
-R197
+R196
 !i10b 1
-R202
-R203
-R204
+R201
+R206
+R207
 !i113 1
 R11
 R12
@@ -1541,19 +1541,19 @@ R0
 R1
 R2
 R3
-Z205 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd
-Z206 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd
+Z208 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd
+Z209 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd
 l0
 L4
 Vn6oClYBFY975517d]F3003
 !s100 I5B5ojdeWz8Flij0ch`@:1
 R6
 32
-Z207 !s110 1575587158
+Z210 !s110 1575909381
 !i10b 1
-Z208 !s108 1575587158.000000
-Z209 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd|
-Z210 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd|
+R201
+Z211 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd|
+Z212 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/twoToOneMux_dataflow.vhd|
 !i113 1
 R11
 R12
@@ -1567,11 +1567,11 @@ V>R?LLfJaQOhK;j;B8<I`h3
 !s100 l_l6n2QP6bk<5GimGd<aR1
 R6
 32
-R207
-!i10b 1
-R208
-R209
 R210
+!i10b 1
+R201
+R211
+R212
 !i113 1
 R11
 R12
@@ -1588,32 +1588,32 @@ V5^m3<RkMR3Zl;X]7a@>Un2
 !s100 ZUK2X]XT9TODzdcez;Kh51
 R6
 32
-R134
+R136
 !i10b 1
-R119
+R117
 R147
 R148
 !i113 1
 R11
 R12
 Exorg2
-Z211 w1575583907
+Z213 w1575583907
 R1
 R2
 R3
-Z212 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd
-Z213 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd
+Z214 8//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd
+Z215 F//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd
 l0
 L21
 VB@6UO47e[?XZPI?a9Q<LS0
 !s100 g^VE4oYgCdaQ8fB9=LK423
 R6
 32
-R207
+R210
 !i10b 1
-R208
-Z214 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd|
-Z215 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd|
+Z216 !s108 1575909381.000000
+Z217 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|//my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd|
+Z218 !s107 //my.files.iastate.edu/Users/isanga/Desktop/C/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/xorg2.vhd|
 !i113 1
 R11
 R12
@@ -1627,11 +1627,11 @@ VV7FTYnI@;PoY@VZ=]RAez0
 !s100 3OXfDIET7i]`k73=h65dB3
 R6
 32
-R207
+R210
 !i10b 1
-R208
-R214
-R215
+R216
+R217
+R218
 !i113 1
 R11
 R12

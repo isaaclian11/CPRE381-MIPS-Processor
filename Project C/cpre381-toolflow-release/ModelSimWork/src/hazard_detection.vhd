@@ -24,7 +24,7 @@ begin
 	flush_ifid <= '0';
 	
 -- load hazard
-if((instr_idex(31 downto 26) = "100011") and ((instr_idex(20 downto 16) = instr_ifid(25 downto 21) and instr_ifid(25 downto 21) /= "00000") or (instr_idex(20 downto 16) = instr_ifid(20 downto 16) and instr_ifid(20 downto 16) /= "00000"))) then
+if((instr_idex(31 downto 26) = "100011" or instr_idex(31 downto 26)="001111") and ((instr_idex(20 downto 16) = instr_ifid(25 downto 21) and instr_ifid(25 downto 21) /= "00000") or (instr_idex(20 downto 16) = instr_ifid(20 downto 16) and instr_ifid(20 downto 16) /= "00000"))) then
 	stall <= '1';
 	flush_idex <= '1';
 end if;
