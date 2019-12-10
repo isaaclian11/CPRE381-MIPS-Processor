@@ -246,7 +246,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
   port(
 	instr_idex: in std_logic_vector(31 downto 0); --Used to check lw and rt_idex
 	instr_ifid: in std_logic_vector(31 downto 0); --Used for rs_ifid and rt_ifid
-	jump : in std_logic; --Jump signal from the control unit
+	branch : in std_logic; --Jump signal from the control unit
 	stall : out std_logic;
 	flush_ifid : out std_logic;
 	flush_idex : out std_logic
@@ -321,7 +321,7 @@ END COMPONENT;
 	SIGNAL aluop_idex : std_logic_vector(3 DOWNTO 0);
 	SIGNAL s_flushifid, s_flushidex, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, 
 			regwrite_exmem, memtoreg_exmem, memtoreg_memwb, jal_idex, lui_idex, unsigned_idex, 
-			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb, forwardC : std_logic;
+			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb, forwardC, s_bothBranches, s_flushBranch : std_logic;
 	SIGNAL forwardA, forwardB, forwardD : std_logic_vector(1 downto 0);
 			
 	begin
@@ -331,7 +331,6 @@ END COMPONENT;
 		iInstAddr WHEN OTHERS;
 		
 	s_stall <= "0000";
-	s_flushifid <= '0';
 	
 		
 	IMem : mem
@@ -356,7 +355,7 @@ END COMPONENT;
 	
 	ifid : IFIDreg
 	PORT MAP(
-	  flush => '0',
+	  flush => s_flushifid,
 	  stall => s_nop,
 	  instr => s_inst,
 	  pcp4 => s_pcPlusFour,
@@ -695,7 +694,7 @@ END COMPONENT;
 	port MAP(
 		instr_idex => inst_idex,
 		instr_ifid => instr_ifid,
-		jump => s_brJpJal,
+		branch => s_bothBranches,
 		stall => s_nop,
 		flush_ifid => s_flushifid,
 		flush_idex => s_flushidex
@@ -718,19 +717,24 @@ END COMPONENT;
 		i_sel => "0001",
 		i_unsigned => s_iUnsigned,
 		i_shiftamount => "00000",
-		o_Cout => s_Cout,
 		o_overflow => s_overflow,
 		o_Zero => s_zeroSig
 	);
 	
 	--This will be used in the mux that goes into the PC Reg as a select input. 
-	s_brJpJal <= (s_jr OR s_jump OR s_branch);
+	with s_flushifid select
+	s_brJpJal <= '0' when '1',
+				s_flushBranch when others;
+	
+	s_flushBranch <= (s_jr OR s_jump OR s_branch);
 		
 	--Output of mux that goes into PC reg
 	pcp4BeforeID <= s_pcPlusFour WHEN (s_brJpJal = '0') else s_iPC;
 	
 	--Determines whether to branch or not to branch
 	s_branch <= ((s_zeroSig AND s_beq) OR ((NOT s_zeroSig) AND s_bne));
+	
+	s_bothBranches <= (s_beq or s_bne);
 	
 	--Branch address
 	s_branchAddr <= pcp4_ifid + s_shiftedSignExtend;
