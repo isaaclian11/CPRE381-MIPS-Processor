@@ -19,7 +19,7 @@ add $0, $0, $0			#NOP
 add $0, $0, $0			#NOP
 beq $5, $0, branch
 add $0, $0, $0
-addi $11, $0, 11
+addi $11, $0, 12
 branch: 
 addi $6, $0, 6
 j exit

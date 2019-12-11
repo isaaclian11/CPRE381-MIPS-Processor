@@ -35,32 +35,31 @@ forwardE <= "00";
 
 
 --MEM hazard
-if((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(25 downto 21))) then
-	forwardA <= "01";
-end if;
-if((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(20 downto 16))) then
-	forwardB <= "01";
-	--SW after LW
-	forwardC <= '1';
-end if;
---EX hazard
 if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(25 downto 21))) then
 	forwardA <= "10";
+	forwardD <= "01";
+elsif((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(25 downto 21)) and ((rd_exmem /= instr_idex(25 downto 21)) or (rd_exmem = "00000") or (regwrite_exmem = '0'))) then
+	forwardA <= "01";
+	forwardD <= "10";
 end if;
 if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(20 downto 16))) then
 	forwardB <= "10";
-end if;
-if((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(25 downto 21)) then 
-	forwardD <= "10";
-end if;
-if((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(20 downto 16)) then 
-	forwardE <= "10";
-end if;
-if((regwrite_exmem = '1' and rd_exmem /= "00000") and rd_exmem = instr_ifid(25 downto 21)) then 
-	forwardD <= "01";
-end if;
-if((regwrite_exmem = '1' and rd_exmem /= "00000") and rd_exmem = instr_ifid(20 downto 16)) then 
 	forwardE <= "01";
+elsif((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(20 downto 16)) and ((rd_exmem /= instr_idex(20 downto 16)) or (rd_exmem = "00000") or (regwrite_exmem = '0'))) then
+	forwardB <= "01";
+	forwardE <= "10";
+	--SW after LW
+	forwardC <= '1';
 end if;
+--if((regwrite_exmem = '1' and rd_exmem /= "00000") and rd_exmem = instr_ifid(25 downto 21)) then 
+--	forwardD <= "01";
+--elsif((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(25 downto 21)) then 
+--	forwardD <= "10";
+--end if;
+--if((regwrite_exmem = '1' and rd_exmem /= "00000") and rd_exmem = instr_ifid(20 downto 16)) then 
+--	forwardE <= "01";
+--elsif((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(20 downto 16)) then 
+--	forwardE <= "10";
+--end if;
 end process;
 end mixed;
