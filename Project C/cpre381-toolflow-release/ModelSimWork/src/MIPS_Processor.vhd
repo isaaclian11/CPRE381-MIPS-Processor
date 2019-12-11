@@ -266,7 +266,8 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	forwardA : out std_logic_vector(1 downto 0);
 	forwardB : out std_logic_vector(1 downto 0);
 	forwardC : out std_logic;
-	forwardD : out std_logic_vector(1 downto 0)
+	forwardD : out std_logic_vector(1 downto 0);
+	forwardE : out std_logic_vector(1 downto 0)
 	);
   END COMPONENT;
   
@@ -324,7 +325,7 @@ END COMPONENT;
 	SIGNAL s_flushifid, s_flushidex, regwrite_idex, memtoreg_idex, memwrite_idex, alusrc_idex, regdst_idex, 
 			regwrite_exmem, memtoreg_exmem, memtoreg_memwb, jal_idex, lui_idex, unsigned_idex, 
 			shamtCtl_idex, jal_exmem, lui_exmem, jal_memwb, lui_memwb, forwardC, s_bothBranches, s_flushBranch, s_bothJumps, s_branchJump : std_logic;
-	SIGNAL forwardA, forwardB, forwardD : std_logic_vector(1 downto 0);
+	SIGNAL forwardA, forwardB, forwardD, forwardE : std_logic_vector(1 downto 0);
 			
 	begin
 	-- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
@@ -607,11 +608,13 @@ END COMPONENT;
 					s_memDataForward when others;
 					
 	with forwardD select
-	s_orsForward <= s_RegWrData when "01",
+	s_orsForward <= s_RegWrData when "10",
+					s_DMemAddr when "01",
 					s_oRs when others;
 	
-	with forwardD select
+	with forwardE select
 	s_ortForward <= s_RegWrData when "10",
+					s_DMemAddr when "01",
 					s_rtout when others;
 					
 	DMem : mem
@@ -689,7 +692,8 @@ END COMPONENT;
 		forwardA => forwardA,
 		forwardB => forwardB,
 		forwardC => forwardC,
-		forwardD => forwardD
+		forwardD => forwardD,
+		forwardE => forwardE
 	);
 	
 	hazards : hazard_detection
@@ -731,7 +735,7 @@ END COMPONENT;
 				s_bothBranches when others;
 		
 	
-	s_flushBranch <= (s_jr OR s_jump OR s_hazardBranch);
+	s_flushBranch <= (s_jr OR s_jump OR s_branch);
 
 
 	--Output of mux that goes into PC reg

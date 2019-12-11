@@ -13,7 +13,8 @@ port(
 	forwardA : out std_logic_vector(1 downto 0);
 	forwardB : out std_logic_vector(1 downto 0);
 	forwardC : out std_logic;
-	forwardD : out std_logic_vector(1 downto 0)
+	forwardD : out std_logic_vector(1 downto 0);	
+	forwardE : out std_logic_vector(1 downto 0)
 );
 
 end forwarding_unit;
@@ -30,6 +31,8 @@ forwardA <= "00";
 forwardB <= "00";
 forwardC <= '0';
 forwardD <= "00";
+forwardE <= "00";
+
 
 --MEM hazard
 if((regwrite_memwb = '1' and rd_memwb /= "00000") and (rd_memwb = instr_idex(25 downto 21))) then
@@ -48,10 +51,16 @@ if((regwrite_exmem = '1' and rd_exmem /= "00000") and (rd_exmem = instr_idex(20 
 	forwardB <= "10";
 end if;
 if((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(25 downto 21)) then 
-	forwardD <= "01";
+	forwardD <= "10";
 end if;
 if((regwrite_memwb = '1' and rd_memwb /= "00000") and rd_memwb = instr_ifid(20 downto 16)) then 
-	forwardD <= "10";
+	forwardE <= "10";
+end if;
+if((regwrite_exmem = '1' and rd_exmem /= "00000") and rd_exmem = instr_ifid(25 downto 21)) then 
+	forwardD <= "01";
+end if;
+if((regwrite_exmem = '1' and rd_exmem /= "00000") and rd_exmem = instr_ifid(20 downto 16)) then 
+	forwardE <= "01";
 end if;
 end process;
 end mixed;
