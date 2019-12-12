@@ -62,3 +62,5 @@ run
 add wave -position insertpoint vsim1:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 # Compile of MIPS_Processor.vhd was successful.
 add wave -position insertpoint vsim2:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim3:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim4:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*

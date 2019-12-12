@@ -700,7 +700,7 @@ END COMPONENT;
 	port MAP(
 		instr_idex => inst_idex,
 		instr_ifid => instr_ifid,
-		branch => s_bothBranches,
+		branch => s_branch,
 		jr => s_jr,
 		jump => s_jump,
 		stall => s_nop,
