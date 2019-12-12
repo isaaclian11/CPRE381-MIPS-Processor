@@ -23,7 +23,7 @@ begin
 	
 branchStall <= ((branch='1') and (((instr_idex(15 downto 11)=instr_ifid(25 downto 21)) and (instr_ifid(25 downto 21)/="00000")) or ((instr_idex(15 downto 11)=instr_ifid(20 downto 16)) and (instr_ifid(20 downto 16)/="00000"))));
 
-process(instr_idex, instr_ifid, branch, jump, branchStall)
+process(instr_idex, instr_ifid, branch, jr, jump, branchStall)
 begin
 	
 	stall <= '0';
@@ -47,7 +47,12 @@ if(jump = '1') then
 	stall <= '0';
 	flush_idex <='0';
 end if;
-if(jr = '1' and instr_ifid(26 downto 21)=instr_idex(15 downto 11)) then
+if(jr='1') then
+	flush_ifid <= '1';
+	stall <= '0';
+	flush_idex <='0';
+end if;
+if(jr = '1' and instr_idex(15 downto 11)="11111") then
 	stall <= '1';
 	flush_idex <= '1';
 	flush_ifid <= '0';

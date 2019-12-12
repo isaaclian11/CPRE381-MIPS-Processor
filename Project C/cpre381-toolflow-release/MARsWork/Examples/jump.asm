@@ -14,6 +14,8 @@ add $0, $0, $0
 
 jrTest:
 addi $t2, $0, 2
+addi $31, $31, -4
+addi $31, $31, 4
 jr $ra
 add $0, $0, $0
 

@@ -64,3 +64,10 @@ add wave -position insertpoint vsim1:/tb_simplifiedmipsprocessor/MySimplifiedMIP
 add wave -position insertpoint vsim2:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 add wave -position insertpoint vsim3:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 add wave -position insertpoint vsim4:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim5:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+# ** Note: (vish-4074) File //my.files.iastate.edu/Users/isanga/Desktop/Phase 2/cpre381-projects/Project C/cpre381-toolflow-release/temp/vsim.wlf is still open, viewing file in live viewing mode.
+# 
+add wave -position insertpoint vsim6:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim7:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim8:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim9:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
