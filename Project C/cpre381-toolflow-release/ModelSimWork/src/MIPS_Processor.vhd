@@ -440,7 +440,7 @@ END COMPONENT;
 		jal => s_jal,
 		lui => s_lui,
 		shamt => s_shamt,
-		sel => s_nop
+		sel => '0'
 	);
 	
 	mux7 : mux21_n_st
