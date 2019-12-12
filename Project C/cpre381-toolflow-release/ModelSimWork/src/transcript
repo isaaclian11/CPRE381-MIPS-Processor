@@ -71,3 +71,8 @@ add wave -position insertpoint vsim6:/tb_simplifiedmipsprocessor/MySimplifiedMIP
 add wave -position insertpoint vsim7:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 add wave -position insertpoint vsim8:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 add wave -position insertpoint vsim9:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+add wave -position insertpoint vsim10:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
+# Project file //my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/project c.mpf is write protected, data cannot be saved.
+# Unable to save project.
+# End time: 22:11:50 on Dec 11,2019, Elapsed time: 2:32:29
+# Errors: 1156, Warnings: 2
