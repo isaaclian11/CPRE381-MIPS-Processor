@@ -14,7 +14,7 @@
 # Compile of fulladder.vhd was successful.
 # Compile of fulladder_n_df.vhd was successful.
 # Compile of fulladder_n_st.vhd was successful.
-# Compile of hazard_detection.vhd was successful with warnings.
+# Compile of hazard_detection.vhd was successful.
 # Compile of IDEXreg.vhd was successful.
 # Compile of IFIDreg.vhd was successful.
 # Compile of invg.vhd was successful.
@@ -39,40 +39,18 @@
 # Compile of twoToOneMux_dataflow.vhd was successful.
 # Compile of xorg2.vhd was successful.
 # 40 compiles, 0 failed with no errors.
-vsim -gui work.hazard_detection
-# vsim -gui work.hazard_detection 
-# Start time: 19:39:21 on Dec 11,2019
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.hazard_detection(dataflow)
-add wave -position insertpoint sim:/hazard_detection/*
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: isanga  Hostname: CO1313-48  ProcessID: 8628
-#           Attempting to use alternate WLF file "./wlft60n4b1".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft60n4b1
-force -freeze sim:/hazard_detection/instr_idex 32'h01084820 0
-force -freeze sim:/hazard_detection/instr_ifid 32'h15200002 0
-force -freeze sim:/hazard_detection/branch 1 0
-force -freeze sim:/hazard_detection/jump 0 0
-force -freeze sim:/hazard_detection/jr 0 0
-run
+# //  ModelSim DE-64 10.7b Jun  8 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+add wave -position insertpoint vsim:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
 add wave -position insertpoint vsim1:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-# Compile of MIPS_Processor.vhd was successful.
-add wave -position insertpoint vsim2:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim3:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim4:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim5:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-# ** Note: (vish-4074) File //my.files.iastate.edu/Users/isanga/Desktop/Phase 2/cpre381-projects/Project C/cpre381-toolflow-release/temp/vsim.wlf is still open, viewing file in live viewing mode.
-# 
-add wave -position insertpoint vsim6:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim7:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim8:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim9:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-add wave -position insertpoint vsim10:/tb_simplifiedmipsprocessor/MySimplifiedMIPSProcess/*
-# Project file //my.files.iastate.edu/Users/isanga/Desktop/cpre381-projects/Project C/cpre381-toolflow-release/ModelSimWork/src/project c.mpf is write protected, data cannot be saved.
-# Unable to save project.
-# End time: 22:11:50 on Dec 11,2019, Elapsed time: 2:32:29
-# Errors: 1156, Warnings: 2

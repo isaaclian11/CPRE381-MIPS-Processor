@@ -247,6 +247,7 @@ ARCHITECTURE structure OF MIPS_Processor IS
 	instr_idex: in std_logic_vector(31 downto 0); --Used to check lw and rt_idex
 	instr_ifid: in std_logic_vector(31 downto 0); --Used for rs_ifid and rt_ifid
 	branch : in std_logic; --Branch signal from the control unit
+	branchTaken : in std_logic;
 	jump : in std_logic;
 	jr : in std_logic;
 	stall : out std_logic;
@@ -700,7 +701,8 @@ END COMPONENT;
 	port MAP(
 		instr_idex => inst_idex,
 		instr_ifid => instr_ifid,
-		branch => s_branch,
+		branch => s_bothBranches,
+		branchTaken => s_branch,
 		jr => s_jr,
 		jump => s_jump,
 		stall => s_nop,

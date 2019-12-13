@@ -20,24 +20,20 @@ condition1:
 sll $s4, $s1, 2     #byte addressing i
 slt $t0, $s4, $s6   #i<n-1?
 beq $t0, $0, print   #if not, exit
-add $0, $0, $0
 
 condition2:
 sll $s5, $s2, 2     #byte addressing j
 slt $t0, $s5, $s7   #j<m?
 beq $t0, $0, incrementi   #if not, increment i
-add $0, $0, $0
 add $a1, $a0, $s5   #address of arr[j]
 lw $t1, 0($a1)      #arr[j]
 lw $t2, 4($a1)      #arr[j+1]
 slt $t3, $t2, $t1   #arr[j+1]<arr[j]?
 beq $t3, $0, incrementj #if not, increment j
-add $0, $0, $0
 addi $t4, $t1, 0    #temp = arr[j]
 sw $t2, 0($a1)      #arr[j] = arr[j+1]
 sw $t4, 4($a1)      #arr[j+1] = temp
 j incrementj
-add $0, $0, $0
 
 
 incrementi:
@@ -48,12 +44,10 @@ sll $s7, $s3, 2     #byte addressing m
 
 
 j condition1
-add $0, $0, $0
 
 incrementj:
 addi $s2, $s2, 1    #j++
 j condition2
-add $0, $0, $0
 
 
 
@@ -64,14 +58,12 @@ la $t2, size
 loop:
 slt $t5, $t0, $t2 
 beq $t5, $0, exit
-add $0, $0, $0
 lw $t3, 0($t0)
 addi $t0, $t0, 4
 li $v0, 1
 move $a0, $t3
 syscall
 j loop
-add $0, $0, $0
 
 
 exit:

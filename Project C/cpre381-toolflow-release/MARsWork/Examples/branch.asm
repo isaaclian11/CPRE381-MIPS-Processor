@@ -3,8 +3,7 @@
 
 addi $t0, $0, 5
 add $t1, $t0, $t0
-beq $t1, $0, exit
-add $0, $0, $0
+bne $t1, $0, exit 
 add $t2, $t0, $t1
 
 exit:
